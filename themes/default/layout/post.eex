@@ -1,0 +1,6 @@
+<div id="post">
+  <h2>
+    <a href="<%= @filename %>"><%= @frontmatter.title %></a>
+  </h2>
+  <%= @content %>
+</div>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/2008/fbml" itemscope="itemscope" itemtype="http://schema.org/Product">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="readme-deploy" content="0a76ad4a2ae68a6f7b480e04f93f1d2d4fab9046">
+    <title>Phoenix</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    <meta name="description" content="Productive. Reliable. Fast. A productive web framework that does not compromise speed and maintainability">
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <meta property="og:title" content="Phoenix">
+    <meta property="og:description" content="Productive. Reliable. Fast. A productive web framework that does not compromise speed and maintainability">
+    <meta property="og:image" content="https://files.readme.io/PKPqx8L9TJSAY2Bnmw7F_phoenixframework-logo-white@2x.png">
+    <meta property="og:site_name" content="Phoenix">
+    <meta id="config-proxy-url" content="https://proxy.readme.io/proxy">
+    <link rel="canonical" href="http://www.phoenixframework.org/www.phoenixframework.org">
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed for Phoenix" href="/blog.rss">
+    <%= @css %>
+    <%= @js %>
+
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-52479696-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <script>
+        ga('create', 'UA-57337100-1', 'auto', {
+            'name': 'custom'
+        });
+        ga('custom.send', 'pageview');
+    </script>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:400:sans-serif|Open+Sans:400:sans-serif" rel="stylesheet" type="text/css">
+  </head>
+
+  <body class="layout page-home body-none theme-solid header-solid header-bg-size-auto header-bg-pos-tl header-overlay-triangles lumosity-light undefined theme-threes ng-scope os-linux" cz-shortcut-listen="true">
+    <%= @content %>
+  </body>
+</html>

@@ -6395,7 +6395,7 @@ input[type="checkbox"] {
     margin: 4px 0 0;
     margin-top: 1px \9;
     /* IE8-9 */
-    
+
     line-height: normal;
 }
 input[type="file"] {
@@ -13291,7 +13291,7 @@ screen and (max-height: 300px) {
     /**
        * Remove all paddings around the image on small screen
        */
-    
+
     .mfp-img-mobile .mfp-image-holder {
         padding-left: 0;
         padding-right: 0;
@@ -13400,7 +13400,7 @@ screen and (max-height: 300px) {
 .github-fork-ribbon:before,
 .github-fork-ribbon:after {
     /* The right and left classes determine the side we attach our banner to */
-    
+
     position: absolute;
     display: block;
     width: 15.38em;
@@ -13416,13 +13416,13 @@ screen and (max-height: 300px) {
 .github-fork-ribbon:before {
     content: "";
     /* Add a bit of padding to give some substance outside the "stitching" */
-    
+
     padding: .38em 0;
     /* Set the base colour */
-    
+
     background-color: #a00;
     /* Set a gradient: transparent black at the top to almost-transparent black at the bottom */
-    
+
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.15)));
     background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
     background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
@@ -13430,7 +13430,7 @@ screen and (max-height: 300px) {
     background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
     /* Add a drop shadow */
-    
+
     -webkit-box-shadow: 0 .15em .23em 0 rgba(0, 0, 0, 0.5);
     -moz-box-shadow: 0 .15em .23em 0 rgba(0, 0, 0, 0.5);
     box-shadow: 0 .15em .23em 0 rgba(0, 0, 0, 0.5);
@@ -13438,10 +13438,10 @@ screen and (max-height: 300px) {
 }
 .github-fork-ribbon:after {
     /* Set the text from the title attribute */
-    
+
     content: attr(title);
     /* Set the text properties */
-    
+
     color: #fff;
     font: 700 1em "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1.54em;
@@ -13450,11 +13450,11 @@ screen and (max-height: 300px) {
     text-align: center;
     text-indent: 0;
     /* Set the layout properties */
-    
+
     padding: .15em 0;
     margin: .15em 0;
     /* Add "stitching" effect */
-    
+
     border-width: .08em 0;
     border-style: dotted;
     border-color: #fff;
@@ -13849,7 +13849,7 @@ tags-input.ti-input-sm .tags .input {
 
 .CodeMirror {
     /* Set height, width, borders, and global font properties here */
-    
+
     font-family: monospace;
     height: 300px;
     color: black;
@@ -14075,14 +14075,14 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
     /* Things will break if this is overridden */
     /* 30px is the magic margin used to hide the element's real scrollbars */
     /* See overflow: hidden in .CodeMirror */
-    
+
     margin-bottom: -30px;
     margin-right: -30px;
     padding-bottom: 30px;
     height: 100%;
     outline: none;
     /* Prevent dragging from highlighting the element */
-    
+
     position: relative;
 }
 .CodeMirror-sizer {
@@ -14133,7 +14133,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
     display: inline-block;
     margin-bottom: -30px;
     /* Hack to make IE7 behave */
-    
+
     *zoom: 1;
     *display: inline;
 }
@@ -14159,7 +14159,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 }
 .CodeMirror pre {
     /* Reset some styles that the rest of the page might have set */
-    
+
     -moz-border-radius: 0;
     -webkit-border-radius: 0;
     border-radius: 0;
@@ -14262,7 +14262,7 @@ div.CodeMirror-cursors {
 }
 @media print {
     /* Hide the cursor when printing */
-    
+
     .CodeMirror div.CodeMirror-cursors {
         visibility: hidden;
     }
@@ -14647,4 +14647,8 @@ a:hover,
 
 .header h1.navbar-brand {
   width: 260px;
+}
+
+.content img {
+  max-width: 100%;
 }

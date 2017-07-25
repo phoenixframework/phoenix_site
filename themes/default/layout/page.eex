@@ -1,1 +1,22 @@
-<%= @content %>
+<br/>
+<div class="container body-container">
+  <div class="row">
+    <div class="col-sm-3 border-right"><div class="sidebar-nav"><h4>News</h4><ul><li><a href="/blog/upgrading-from-11x-to-120"><span>Upgrading from 1.1.x to 1.2.0</span></a></li><li><a href="/blog/upgrading-from-111-to-112"><span>Upgrading from 1.1.1 to 1.1.2</span></a></li><li><a href="/blog/upgrading-from-v10-to-v11"><span>Upgrading from v1.0 to v1.1</span></a></li><li><a href="/blog/the-road-to-2-million-websocket-connections" class="active"><span>The Road to 2 Million Websocket Connections in Phoenix</span></a></li><li><a href="/blog/phoenix-10-the-framework-for-the-modern-web-just-landed"><span>Phoenix 1.0 – the framework for the modern web just landed</span></a></li><li><a href="/blog/upgrading-from-v016-to-v017"><span>Upgrading from v0.16 to v0.17</span></a></li><li><a href="/blog/upgrading-from-v0150-to-v0160"><span>Upgrading from v0.15.0 to v0.16.0</span></a></li><li><a href="/blog/upgrading-from-v0140-to-v0150"><span>Upgrading from v0.14.0 to v0.15.0</span></a></li><li><a href="/blog/upgrading-from-v013x-to-v0140"><span>Upgrading from v0.13.x to v0.14.0</span></a></li><li><a href="/blog/upgrading-from-v0120-to-v0130"><span>Upgrading from v0.12.0 to v0.13.0</span></a></li><li><a href="/blog/upgrading-from-v0110-to-v0120"><span>Upgrading from v0.11.0 to v0.12.0</span></a></li><li><a href="/blog/upgrading-from-v0100-to-v0110"><span>Upgrading from v0.10.0 to v0.11.0</span></a></li><li><a href="/blog/upgrading-from-v090-to-v0100"><span>Upgrading from v0.9.0 to v0.10.0</span></a></li><li><a href="/blog/upgrading-from-v080-to-v090"><span>Upgrading from v0.8.0 to v0.9.0</span></a></li><li><a href="/blog/phoenix-0100-released-with-assets-handling-generat"><span>Phoenix 0.10.0 released with assets handling, generators, &amp; more</span></a></li></ul></div></div>
+    <div class="col-sm-9 border-left">
+      <div class="docs-content">
+        <div class="docs-header">
+          <h1><%= @frontmatter.title %></h1>
+          <div class="byline">
+            <span>By <%= @frontmatter.author %></span>
+            &nbsp;·&nbsp;<span class="ago"><%= @frontmatter.published_date %></span>
+            &nbsp;·&nbsp;<span><%= @frontmatter.phoenix_version %></span>
+          </div>
+          <hr>
+        </div>
+        <div class="content block-content ready">
+          <%= @content %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

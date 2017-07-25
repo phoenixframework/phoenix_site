@@ -32,6 +32,10 @@ Your built static files will be located in `build/`
 
 ## Publishing Guides to S3
 
+Ensure that purifycss is installed
+
+`npm install -g purifycss`
+
 To publish all content to S3, simply run `mix guides.publish`
 
 

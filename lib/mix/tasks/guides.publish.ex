@@ -8,6 +8,7 @@ defmodule Mix.Tasks.Guides.Publish do
 
   def run([]) do
     build_local_files()
+    minify_css()
     copy_assets()
     copy_index_files()
     copy_blog_files()
@@ -16,6 +17,16 @@ defmodule Mix.Tasks.Guides.Publish do
   defp build_local_files do
     log "obelisk: building static files"
     Mix.Task.run("obelisk", ["build"])
+  end
+
+  defp minify_css do
+    purify = System.cmd("purifycss", ["build/assets/css/base.css",
+                                      "build/*.html"])
+
+    case purify do
+       {output, 0} -> File.write!("build/assets/css/base.css", output)
+       _ -> nil
+    end
   end
 
   defp copy_assets do

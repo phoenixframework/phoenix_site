@@ -1,19 +1,40 @@
 # PhoenixSite
 
-**TODO: Add description**
+> Phoenix Guides landing page publisher
 
-## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `phoenix_site` to your list of dependencies in `mix.exs`:
+## Setup
 
-```elixir
-def deps do
-  [{:phoenix_site, "~> 0.1.0"}]
-end
+1. Install `awscli`
+
+```console
+$ brew install awscli
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/phoenix_site](https://hexdocs.pm/phoenix_site).
+see the [awscli docs](http://docs.aws.amazon.com/cli/latest/userguide/cli-install-macos.html#awscli-install-osx-path) for other installation options.
 
+2. Configure your awscli credentials:
+
+```console
+$ aws configure
+```
+
+3. Fetch mix deps and test local build
+
+```console
+
+$ mix deps.get
+$ mix obelisk build
+```
+
+Your built static files will be located in `build/`
+
+
+## Publishing Guides to S3
+
+To publish all content to S3, simply run `mix guides.publish`
+
+
+## Blog/News naming convention
+
+Blog posts are normal obelisk "pages", but are specially named with a `"blog--"` filename prefix. Pages must have a `.markown` extension. The published pages will be uploaded to S3 with the file basename.

@@ -25,9 +25,9 @@ defmodule Mix.Tasks.Guides.Publish do
   end
 
   defp copy_index_files do
-    for file <- Path.wildcard("build/*.{html,rss}") do
-      log "s3: copying index file #{file}"
-      System.cmd("aws", ~w(s3 cp #{file} s3://#{@bucket} --acl public-read))
+    for name <- Path.wildcard("build/*.{html,rss}") do
+      log "s3: copying index file #{name}"
+      s3_cp(name, Path.basename(name, ".html"), Path.extname(name))
     end
   end
 
@@ -36,13 +36,20 @@ defmodule Mix.Tasks.Guides.Publish do
       basename = Path.basename(name, ".html")
 
       log "s3: publishing blog/#{basename}"
-      System.cmd("aws", ["s3", "cp", full_name,
-                         "s3://#{@bucket}/blog/#{basename}",
-                         "--content-type",
-                         "text/html",
-                         "--acl",
-                         "public-read"])
+      s3_cp(full_name, "blog/#{basename}", ".html")
     end
+  end
+
+  defp s3_cp(name, s3_path, ".html") do
+    System.cmd("aws", ["s3", "cp", name,
+                       "s3://#{@bucket}/#{s3_path}",
+                       "--content-type","text/html",
+                       "--acl", "public-read"])
+  end
+  defp s3_cp(name, s3_path, _ext) do
+    System.cmd("aws", ["s3", "cp", name,
+                       "s3://#{@bucket}/#{s3_path}",
+                       "--acl", "public-read"])
   end
 
   defp log(msg) do

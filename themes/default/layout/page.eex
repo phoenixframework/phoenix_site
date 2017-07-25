@@ -6,11 +6,13 @@
       <div class="docs-content">
         <div class="docs-header">
           <h1><%= @frontmatter.title %></h1>
-          <div class="byline">
-            <span>By <%= @frontmatter.author %></span>
-            &nbsp;·&nbsp;<span class="ago"><%= @frontmatter.published_date %></span>
-            &nbsp;·&nbsp;<span><%= @frontmatter.phoenix_version %></span>
-          </div>
+          <%= if author = @frontmatter[:author] do %>
+            <div class="byline">
+                <span>By <%= author %></span>
+                &nbsp;·&nbsp;<span class="ago"><%= @frontmatter.published_date %></span>
+                &nbsp;·&nbsp;<span><%= @frontmatter.phoenix_version %></span>
+            </div>
+          <% end %>
           <hr>
         </div>
         <div class="content block-content ready">

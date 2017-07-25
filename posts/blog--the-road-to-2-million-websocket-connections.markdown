@@ -1,7 +1,7 @@
 ---
 title: The Road to 2 Million Websocket Connections in Phoenix
 author: Gary Rennie
-published_date: 2015-11-03
+created: 2015-11-03
 phoenix_version: v1.0.0
 ---
 

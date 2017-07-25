@@ -51,7 +51,7 @@
       <h1 class="navbar-brand"><a href="/">Phoenix</a></h1>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li><a href="/docs/overview">Guides</a></li>
+          <li><a href="https://hexdocs.pm/phoenix/1.3.0-rc.3/overview.html">Guides</a></li>
           <li><a href="http://hexdocs.pm/phoenix/">Docs</a></li>
           <li><a href="/docs/community">Community</a></li>
           <li><a href="https://github.com/phoenixframework/phoenix">GitHub</a></li>

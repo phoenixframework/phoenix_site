@@ -9,6 +9,7 @@ defmodule Mix.Tasks.Guides.Publish do
   def run([]) do
     build_local_files()
     copy_assets()
+    copy_index_files()
     copy_blog_files()
   end
 
@@ -18,9 +19,16 @@ defmodule Mix.Tasks.Guides.Publish do
   end
 
   defp copy_assets do
-    IO.puts "s3: copying assets"
+    log "s3: copying assets"
     System.cmd("aws",
       ~w(s3 cp build/assets s3://#{@bucket}/assets --acl public-read --recursive))
+  end
+
+  defp copy_index_files do
+    for file <- Path.wildcard("build/*.{html,rss}") do
+      log "s3: copying index file #{file}"
+      System.cmd("aws", ~w(s3 cp #{file} s3://#{@bucket} --acl public-read))
+    end
   end
 
   defp copy_blog_files() do

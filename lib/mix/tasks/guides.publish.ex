@@ -7,15 +7,20 @@ defmodule Mix.Tasks.Guides.Publish do
   @doc "Publishes guides to S3"
 
   def run([]) do
+    build_local_files()
     copy_blog_files()
+  end
+
+  defp build_local_files do
+    log "obelisk: building static files"
+    Mix.Task.run("obelisk", ["build"])
   end
 
   defp copy_blog_files() do
     for @blog_prefix <> name = full_name <- Path.wildcard(@blog_prefix <> "*") do
       basename = Path.basename(name, ".html")
 
-
-      IO.puts ">> Publishing blog/#{basename}"
+      log "s3: publishing blog/#{basename}"
       System.cmd("aws", ["s3", "cp", full_name,
                          "s3://#{@bucket}/blog/#{basename}",
                          "--content-type",
@@ -23,5 +28,9 @@ defmodule Mix.Tasks.Guides.Publish do
                          "--acl",
                          "public-read"])
     end
+  end
+
+  defp log(msg) do
+    IO.puts ">> #{msg}"
   end
 end

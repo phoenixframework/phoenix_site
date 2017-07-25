@@ -16,8 +16,8 @@
     <meta id="config-proxy-url" content="https://proxy.readme.io/proxy">
     <link rel="canonical" href="http://www.phoenixframework.org/www.phoenixframework.org">
     <link rel="alternate" type="application/rss+xml" title="RSS Feed for Phoenix" href="/blog.rss">
-    <%= @css %>
-    <%= @js %>
+    <%= String.replace(@css,"assets/", "/assets/") %>
+    <%= String.replace(@js,"assets/", "/assets/") %>
 
     <script>
         (function(i, s, o, g, r, a, m) {

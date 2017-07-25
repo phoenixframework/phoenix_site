@@ -8,12 +8,19 @@ defmodule Mix.Tasks.Guides.Publish do
 
   def run([]) do
     build_local_files()
+    copy_assets()
     copy_blog_files()
   end
 
   defp build_local_files do
     log "obelisk: building static files"
     Mix.Task.run("obelisk", ["build"])
+  end
+
+  defp copy_assets do
+    IO.puts "s3: copying assets"
+    System.cmd("aws",
+      ~w(s3 cp build/assets s3://#{@bucket}/assets --acl public-read --recursive))
   end
 
   defp copy_blog_files() do

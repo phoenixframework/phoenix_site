@@ -37,4 +37,4 @@ To publish all content to S3, simply run `mix guides.publish`
 
 ## Blog/News naming convention
 
-Blog posts are normal obelisk posts, but are specially named with a `"blog--"` filename prefix. Pages must have a `.markown` extension. The published pages will be uploaded to S3 with the file basename.
+Blog posts are normal obelisk posts, but are specially named with a `"blog--"` filename prefix. Pages must have a `.markdown` extension. The published pages will be uploaded to S3 with the file basename.

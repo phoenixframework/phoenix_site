@@ -1,31 +1,21 @@
 <div class="wrapper">
   <header id="header" class="header">
-    <div class="container">
-      <h1 class="navbar-brand"><a href="/">Phoenix</a></h1>
-      <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-          <li><a href="/docs/overview">Guides</a></li>
-          <li><a href="http://hexdocs.pm/phoenix/">Docs</a></li>
-          <li><a href="/docs/community">Community</a></li>
-          <li><a href="https://github.com/phoenixframework/phoenix">GitHub</a></li>
-          <li><a href="/blog" title="Blog">News</a></li>
-        </ul>
-      </div>
-      <div id="jumbotron" class="promos">
-        <div class="row">
-          <div class="col-sm-offset-2 col-sm-8">
-            <h2>Productive. Reliable. Fast.</h2>
-            <p>A productive web framework that
-              <br>does not compromise speed and maintainability.</p>
-              <a href="/docs/up-and-running" class="btn btn-lg btn-primary">
-                <span class="button-title">Build APIs, HTML 5 apps &amp; more</span>
-                <br><span class="button-teaser">See our guides</span>
-              </a>
-          </div>
+    <div id="jumbotron" class="promos">
+      <div class="row">
+        <div class="col-sm-offset-2 col-sm-8">
+          <h2>Productive. Reliable. Fast.</h2>
+          <p>A productive web framework that
+            <br>does not compromise speed and maintainability.</p>
+            <a href="/docs/up-and-running" class="btn btn-lg btn-primary">
+              <span class="button-title">Build APIs, HTML 5 apps &amp; more</span>
+              <br><span class="button-teaser">See our guides</span>
+            </a>
         </div>
       </div>
     </div>
   </header>
+</div>
+
   <div class="container body-container">
     <div>
       <div class="main-head"></div>

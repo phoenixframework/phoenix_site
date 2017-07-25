@@ -45,6 +45,22 @@
   </head>
 
   <body class="layout page-home body-none theme-solid header-solid header-bg-size-auto header-bg-pos-tl header-overlay-triangles lumosity-light undefined theme-threes ng-scope os-linux" cz-shortcut-listen="true">
+<div class="wrapper">
+  <header id="header" class="header">
+    <div class="container">
+      <h1 class="navbar-brand"><a href="/">Phoenix</a></h1>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="/docs/overview">Guides</a></li>
+          <li><a href="http://hexdocs.pm/phoenix/">Docs</a></li>
+          <li><a href="/docs/community">Community</a></li>
+          <li><a href="https://github.com/phoenixframework/phoenix">GitHub</a></li>
+          <li><a href="/blog" title="Blog">News</a></li>
+        </ul>
+      </div>
+    </div>
+    </header>
     <%= @content %>
+  </div>
   </body>
 </html>

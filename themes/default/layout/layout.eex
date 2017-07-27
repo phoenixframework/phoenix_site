@@ -32,13 +32,7 @@
             m.parentNode.insertBefore(a, m)
         })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-        ga('create', 'UA-52479696-1', 'auto');
-        ga('send', 'pageview');
-    </script>
-    <script>
-        ga('create', 'UA-57337100-1', 'auto', {
-            'name': 'custom'
-        });
+        ga('create', 'UA-57337100-1', 'auto');
         ga('custom.send', 'pageview');
     </script>
     <link href="//fonts.googleapis.com/css?family=Open+Sans:400:sans-serif|Open+Sans:400:sans-serif" rel="stylesheet" type="text/css">

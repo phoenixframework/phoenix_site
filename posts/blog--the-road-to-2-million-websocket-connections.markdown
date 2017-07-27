@@ -6,7 +6,7 @@ phoenix_version: v1.0.0
 ---
 
 
-![](/assets/img/2m-ws/top.png)
+![](/assets/img/blog/2m-ws/top.png)
 
 If you have been paying attention on Twitter recently, you have likely seen some increasing numbers regarding the number of simultaneous connections the Phoenix web framework can handle. This post documents some of the techniques used to perform the benchmarks.
 
@@ -25,7 +25,7 @@ To benchmark the number of simultaneous web sockets that can be open at a time, 
 Most of these tests were performed on [Rackspace 15 GB I/O v1](http://www.rackspace.com/cloud/servers#dd-wrap-iov1) - these machines have 15GB RAM and 4 cores. [Rackspace](https://www.rackspace.com) kindly let us use 3 of these servers for our benchmarks free of charge. They also let us use a [OnMetal I/O](http://www.rackspace.com/cloud/servers) which had 128GB RAM and showed 40 cores in htop.
 
 
-![](/assets/img/2m-ws/htop.png)
+![](/assets/img/blog/2m-ws/htop.png)
 
 One additional change you may want to make is to remove `check_origin` in `conf/prod.exs` - this will mean that the application can be connected to regardless of the ip address/hostname used.
 
@@ -122,7 +122,7 @@ I had been talking about Tsung in IRC when Chris McCord (creator of Phoenix) con
 After we were up and running we dedicated one machine to Phoenix and two for running Tsung. Our first real benchmark ended up with about 27k connections.
 
 
-![](/assets/img/2m-ws/30k.png)
+![](/assets/img/blog/2m-ws/30k.png)
 
 In the above image there are two lines on the chart, the line on the top is labeled "users" and the line on the bottom labeled "connected". The users increases based on arrival rate. For most of these tests we used an arrival rate of 1000 users per second.
 
@@ -130,14 +130,14 @@ As soon as the results were in, José Valim was on the case with [this commit](h
 
 This was our first improvement and it was a big one. From this we got up to about 50k connections.
 
-![](/assets/img/2m-ws/50k.png)
+![](/assets/img/blog/2m-ws/50k.png)
 
 
 ## Observing the Changes
 
 After our first improvement we realized that we were going in blind. If only there was some way we could observe what was happening. Luckily for use Erlang ships with [observer](http://www.erlang.org/doc/apps/observer/observer_ug.html) and it can be used remotely. We used the following technique from [https://gist.github.com/pnc/9e957e17d4f9c6c81294](https://gist.github.com/pnc/9e957e17d4f9c6c81294) to open a remote observer.
 
-![](/assets/img/2m-ws/observer.png)
+![](/assets/img/blog/2m-ws/observer.png)
 
 
 Chris was able to use the observer to order the processes by the size of their mailbox. The `:timer` process had about 40k messages in its mailbox. This is due to Phoenix doing a heartbeat every 30 seconds to ensure the client is still connected.
@@ -146,14 +146,10 @@ Luckily, Cowboy already takes care of this, so after [this commit](https://githu
 
 
 
-![](/assets/img/2m-ws/100k.png)
+![](/assets/img/blog/2m-ws/100k.png)
 
 
 I actually killed the pubsub supervisor using observer in this image which explains the 100k drop at the end. This was the second 2x performance gain. The result was 100k concurrent connections using 2 Tsung machines.
-
-
-[tweet]
-
 
 
 ## We Need More Machines
@@ -165,19 +161,18 @@ At this stage RackSpace had given us the 128GB box, so we actually had another m
 We ran the benchmarks again and we got about 330k connected clients.
 
 
-![](/assets/img/2m-ws/16gb-330k.png)
+![](/assets/img/blog/2m-ws/16gb-330k.png)
 
 
 The big problem is about 70k didn't actually connect to the machine. We couldn't work out why. Probably hardware issues. We decided to try running Phoenix on the 128GB machine instead. Surely there would be no issues reaching our connection limits, right?
 
-![](/assets/img/2m-ws/128gb-347k.png)
+![](/assets/img/blog/2m-ws/128gb-347k.png)
 
 
 Wrong. The results here are almost identical to those above. Chris and I thought 330k was pretty good. Chris tweeted out the results and we called it a night.
 
 
-[tweet]
-
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Calling it quits trying to max Channels– at 333k clients. It took maxed ports on 8 servers to push that, 40% mem left. We’re out of servers!</p>&mdash; Chris McCord (@chris_mccord) <a href="https://twitter.com/chris_mccord/status/657716607578472448">October 24, 2015</a></blockquote> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
 ## Know Your ETS Types
@@ -191,7 +186,7 @@ After achieving 330k and having 2 fairly easy performance gains, we weren't sure
 
 Those 10 additional characters made the chart look like this:
 
-![](/assets/img/2m-ws/420k.png)
+![](/assets/img/blog/2m-ws/420k.png)
 
 
 Not only did it increase the number of concurrent connections. It also allowed us to increase the arrival rate 10x too. Which made subsequent tests much faster.
@@ -200,9 +195,7 @@ The difference between `bag` and `duplicate_bag` is that `duplicate_bag` will al
 
 This maxed out at around 450k connections. At this point the 16GB box was out of memory. We were now ready to really test the larger box.
 
-
-
-[tweet]
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I called it quits too early on the channel bench’s, with an optimization by <a href="https://twitter.com/gabiz">@gabiz</a> , we have now maxed our 4core/15gb box @ 450k clients!</p>&mdash; Chris McCord (@chris_mccord) <a href="https://twitter.com/chris_mccord/status/658393399821795328">October 25, 2015</a></blockquote> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
 ## We Need Even More Machines
@@ -211,27 +204,22 @@ Justin Schneck ([@mobileoverlord](https://twitter.com/mobileoverlord)) informed 
 
 We set up a few machines and set the threshold for Tsung to be 1 million connections. Which was a new milestone that was easily achieved by the 128GB machine:
 
-![](/assets/img/2m-ws/1m.png)
+![](/assets/img/blog/2m-ws/1m.png)
 
 
-[tweet]
-
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">On a bigger <a href="https://twitter.com/Rackspace">@Rackspace</a> box we just 1 million phoenix channel clients on a single server! Quick screencast in action:<a href="https://t.co/ONQcVWWdy1">https://t.co/ONQcVWWdy1</a></p>&mdash; Chris McCord (@chris_mccord) <a href="https://twitter.com/chris_mccord/status/658767562231185408">October 26, 2015</a></blockquote> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
 By the time Justin finished setting up all 45 boxes we were convinced 2 million connections was possible. Unfortunately that wasn't the case. There was a new bottleneck that only started appearing at 1.3 million connections!
 
-
-
-![](/assets/img/2m-ws/1.3m.png)
-
+![](/assets/img/blog/2m-ws/1.3m.png)
 
 That was it. 1.3M connections is good enough, right? Wrong. At the same time we hit 1.3M subscribers, we started getting regular timeouts when asking to subscribe to the single pubsub server. We also notice a large increase in broadcast time, taking over 5s to broadcast to all subscribers.
 
 Justin is interested in Internet of (useful) Things, and wanted to see if we could optimize broadcasts for 1.3+M subscribers since he sees real use cases at these levels. He had the idea to shard broadcasts by chunking the subscribers and parellizing the broadcast work. We trialed this idea and it reduced the broadcast time back down to 1-2s. But, we still had those pesky subscribe timeouts. We were at the limits of a single pubsub server and single ets table. So Chris started work to pool the pubsub servers, and we realized we could combine Justin's broadcast sharding with a pool of pubsub servers and ets tables. So we sharded by subscriber pid into a pool of pubsub servers each managing their own ets table per shard. This let us to reach 2M subscribers without timeouts and maintain 1s broadcasts. The change is on [this commit](https://github.com/phoenixframework/phoenix/compare/c114704...cm-local-pool) which is being refined before merging in to master.
 
 
-[tweet]
-
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Final results from Phoenix channel benchmarks on 40core/128gb box. 2 million clients, limited by ulimit<a href="https://twitter.com/hashtag/elixirlang?src=hash">#elixirlang</a> <a href="https://t.co/6wRUIfFyKZ">pic.twitter.com/6wRUIfFyKZ</a></p>&mdash; Chris McCord (@chris_mccord) <a href="https://twitter.com/chris_mccord/status/659430661942550528">October 28, 2015</a></blockquote> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
 So there you have it. 2 million connections! Each time we thought there were no more optimizations to be made, another idea was pitched leading to a huge improvement in performance.

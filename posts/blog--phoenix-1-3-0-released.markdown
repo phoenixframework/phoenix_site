@@ -133,22 +133,21 @@ application directory structure:
 
     lib
     ├── my_app
-    ├──── accounts
-    │     ├── user.ex
-    │     └── accounts.ex
-    ├──── sales
-    │     ├── ticket.ex
-    │     ├── manager.ex
-    │     └── sales.ex
-    ├──── repo.ex
-    ├──── my_app.ex
-    |
+    │  ├── acccounts
+    │  │   ├── accounts.ex
+    │  │   └── user.ex
+    │  ├── sales
+    │  │   ├── manager.ex
+    │  │   ├── sales.ex
+    │  │   └── ticket.ex
+    │  └── repo.ex
+    ├── my_app.ex
     ├── my_app_web
-    |     ├── channels
-    |     ├── controllers
-    |     ├── templates
-    |     └── views
-    ├──── my_app_web.ex
+    │   ├── channels
+    │   ├── controllers
+    │   ├── templates
+    │   └── views
+    └── my_app_web.ex
 
 
 With just a glance at the directory structure, we can see this

@@ -128,7 +128,7 @@ Designing with contexts gives you a solid foundation to grow your
 application from. Using discrete, well-defined APIs that expose the
 intent of your system allows you to write more maintainable
 applications with reusable code. Additionally, we can get a glimpse of
-what the application does and its feature-set just be exploring the
+what the application does and its feature-set just by exploring the
 application directory structure:
 
     lib

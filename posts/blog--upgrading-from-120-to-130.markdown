@@ -123,7 +123,7 @@ Migrate your files to the new structure with the following steps:
   * `MyApp.UserSocket` => `MyAppWeb.UserSocket`
   * etc
 
-7. Update all alias in `lib/app_name_web/router.ex` to include new `Web` namespace. Most likely you can accomplish this by adding `Web` to the second argument of your scope blocks, for example:
+7. Update all aliases in `lib/app_name_web/router.ex` to include new `Web` namespace. Most likely you can accomplish this by adding `Web` to the second argument of your scope blocks, for example:
 
   ```diff
   - defmodule MyApp.Router do
@@ -151,7 +151,9 @@ Migrate your files to the new structure with the following steps:
   +   plug MyAppWeb.Router
   ```
 
-8. in `lib/my_app.ex`, update your children to reference the new endpoint and remove the config_change callback:
+8. Rename `lib/my_app.ex` to `lib/my_app/application.ex` and `MyApp` to `MyApp.Application`
+8. in `mix.exs`, change `mod: {MyApp, []}` to `mod: {MyApp.Application, []}`
+8. in `lib/my_app/application.ex`, update your children to reference the new endpoint and remove the `config_change` callback:
 
 ```diff
     ...
@@ -169,7 +171,7 @@ Migrate your files to the new structure with the following steps:
 - end
 ```
 
-8. Update all endpoint aliases in config/*.exs (config.exs, prod.exs, prod.secret.exs dev.exs, test.exs, etc) aliases to use new `Web` namespace:
+8. Update all endpoint aliases in `config/*.exs` (`config.exs`, `prod.exs`, `prod.secret.exs`, `dev.exs`, `test.exs`, etc) to use new `Web` namespace:
 
   ```diff
   - config :my_app, MyApp.Endpoint,

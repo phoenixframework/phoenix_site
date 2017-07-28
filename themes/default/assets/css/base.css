@@ -1,4 +1,12 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+
+.phx-book {
+    background: rgba(255, 255, 255, 0.25)!important;
+    border-radius: 14px;
+    padding: 0.5em!important;
+    padding-right: 1em!important;
+}
+
 .magictextarea {
     position: relative;
     padding-right: 200px;

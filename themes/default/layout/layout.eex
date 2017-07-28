@@ -51,6 +51,10 @@
           <li><a href="https://github.com/phoenixframework/phoenix">GitHub</a></li>
           <li><a href="/blog" title="Blog">News</a></li>
         </ul>
+
+        <ul class="nav navbar-nav pull-right">
+          <li><a class="phx-book" href="https://pragprog.com/book/phoenix/programming-phoenix" title="Book">📙 Book</a></li>
+        </ul>
       </div>
     </div>
     </header>

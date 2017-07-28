@@ -88,7 +88,7 @@
             <img title="The Outline" alt="The Outline" src="/assets/img/logos/the-outline.png">
           </a>
         </div>
-        <div class="col-sm-6 col-md-4">
+        <div class="col-sm-6 col-md-4 col-sm-offset-4">
           <br>
           <a href="https://voicelayer.io" class="thumbnail">
             <img title="VoiceLayer" alt="VoiceLayer" src="/assets/img/logos/voicelayer.png">

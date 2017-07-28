@@ -2,6 +2,7 @@
 title: News
 ---
 
+- #### [Phoenix 1.3.0 Released](/blog/phoenix-1-3-0-released)
 - #### [Upgrading from 1.2.x to 1.3.0](/blog/upgrading-from-120-to-130)
 - #### [Upgrading from 1.1.x to 1.2.0](/blog/upgrading-from-11x-to-120)
 - #### [Upgrading from 1.1.1 to 1.1.2](/blog/upgrading-from-111-to-112)

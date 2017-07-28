@@ -133,14 +133,14 @@ application directory structure:
 
     lib
     ├── my_app
-    │  ├── acccounts
-    │  │   ├── accounts.ex
-    │  │   └── user.ex
-    │  ├── sales
-    │  │   ├── manager.ex
-    │  │   ├── sales.ex
-    │  │   └── ticket.ex
-    │  └── repo.ex
+    │   ├── acccounts
+    │   │   ├── accounts.ex
+    │   │   └── user.ex
+    │   ├── sales
+    │   │   ├── manager.ex
+    │   │   ├── sales.ex
+    │   │   └── ticket.ex
+    │   └── repo.ex
     ├── my_app.ex
     ├── my_app_web
     │   ├── channels

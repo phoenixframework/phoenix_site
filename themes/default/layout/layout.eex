@@ -8,7 +8,7 @@
     <title>Phoenix</title>
     <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
     <meta name="description" content="Productive. Reliable. Fast. A productive web framework that does not compromise speed and maintainability">
-    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
     <meta property="og:title" content="Phoenix">
     <meta property="og:description" content="Productive. Reliable. Fast. A productive web framework that does not compromise speed and maintainability">
     <meta property="og:image" content="https://files.readme.io/PKPqx8L9TJSAY2Bnmw7F_phoenixframework-logo-white@2x.png">

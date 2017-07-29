@@ -33,6 +33,8 @@ defmodule Mix.Tasks.Guides.Publish do
     log "s3: copying assets"
     System.cmd("aws",
       ~w(s3 cp build/assets s3://#{@bucket}/assets --acl public-read --recursive))
+    System.cmd("aws",
+      ~w(s3 cp build/assets/favicon.ico s3://#{@bucket}/favicon.ico --acl public-read))
   end
 
   defp copy_index_files do

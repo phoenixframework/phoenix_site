@@ -133,7 +133,7 @@ application directory structure:
 
     lib
     ├── my_app
-    │   ├── acccounts
+    │   ├── accounts
     │   │   ├── accounts.ex
     │   │   └── user.ex
     │   ├── sales

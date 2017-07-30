@@ -49,7 +49,7 @@ they're learning. New projects have a `lib/my_app` directory for
 business logic and a `lib/my_app_web` directory that holds all Phoenix
 related web modules, which are the web interface into your greater
 Elixir application. Along with new project structure, comes new
-`phx.gen.html` and `phx.html.json` generators that adopt these
+`phx.gen.html` and `phx.gen.json` generators that adopt these
 goals of isolating your web interface from your domain.
 
 ### Contexts

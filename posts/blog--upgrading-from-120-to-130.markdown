@@ -16,7 +16,7 @@ Phoenix v1.3.0 is a backwards compatible release with v1.2.x. To upgrade your ex
 
 ```elixir
 def deps do
-  [{:phoenix, "~> 1.3.0-rc"},
+  [{:phoenix, "~> 1.3.0"},
    ...]
 end
 ```

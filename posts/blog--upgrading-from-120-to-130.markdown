@@ -312,6 +312,15 @@ New projects now include a root-level `assets/` directory, which serves as a sel
 
    ```
 
+1. Update your `.gitignore` to the updated `node_modules` path:
+
+```diff
+ 
+ # Static artifacts
+-/node_modules
++/assets/node_modules
+```
+
 1. Install the node deps: `$cd assets && npm install`
 
 

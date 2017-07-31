@@ -5,7 +5,7 @@ created: 2017-07-27
 phoenix_version: v1.3.0
 ---
 
-If you want a run-down of the 1.3 changes and the design decisions behidn those changes, check out the LonestarElixir Phoenix 1.3 keynote: https://www.youtube.com/watch?v=tMO28ar0lW8
+If you want a run-down of the 1.3 changes and the design decisions behind those changes, check out the LonestarElixir Phoenix 1.3 keynote: https://www.youtube.com/watch?v=tMO28ar0lW8
 
 To use the new `phx.new` project generator, you can install the archive with the following command:
 

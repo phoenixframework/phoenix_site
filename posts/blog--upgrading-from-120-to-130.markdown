@@ -151,7 +151,7 @@ Migrate your files to the new structure with the following steps:
 
 1. Rename `lib/my_app.ex` to `lib/my_app/application.ex` and `MyApp` to `MyApp.Application`
 1. in `mix.exs`, change `mod: {MyApp, []}` to `mod: {MyApp.Application, []}`
-1. in `lib/my_app/application.ex`, update your children to reference the new endpoint and remove the `config_change` callback:
+1. in `lib/my_app/application.ex`, update your children to reference the new endpoint:
 
    ```diff
        ...
@@ -163,10 +163,6 @@ Migrate your files to the new structure with the following steps:
        ]
 
      ...
-   - def config_change(changed, _new, removed) do
-   -   MyApp.Endpoint.config_change(changed, removed)
-   -   :ok
-   - end
    ```
 
 1. Update all endpoint aliases in `config/*.exs` (`config.exs`, `prod.exs`, `prod.secret.exs`, `dev.exs`, `test.exs`, etc) to use new `Web` namespace:
@@ -315,7 +311,7 @@ New projects now include a root-level `assets/` directory, which serves as a sel
 1. Update your `.gitignore` to the updated `node_modules` path:
 
 ```diff
- 
+
  # Static artifacts
 -/node_modules
 +/assets/node_modules

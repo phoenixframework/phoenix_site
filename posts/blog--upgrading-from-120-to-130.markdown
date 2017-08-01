@@ -58,6 +58,7 @@ Migrate your files to the new structure with the following steps:
 1. `$ mv web/web.ex lib/my_app_web.ex`
 1. `$ mv web lib/my_app_web`
 1. `$ mv lib/my_app/endpoint.ex lib/my_app_web/`
+1. Rename the `MyApp.Web` module to `MyAppWeb` in `lib/my_app_web.ex` 
 1. Update your view root path in `lib/my_app_web.ex` to point to the new template location, and add the `:namespace` option:
 
    ```diff
@@ -119,6 +120,7 @@ Migrate your files to the new structure with the following steps:
    * `MyApp.PageController` => `MyAppWeb.PageController`
    * `MyApp.PageView` => `MyAppWeb.PageView`
    * `MyApp.UserSocket` => `MyAppWeb.UserSocket`
+   * `MyApp.Web` => `MyAppWeb`
    * etc
 
 1. Update all aliases in `lib/app_name_web/router.ex` to include new `Web` namespace. Most likely you can accomplish this by adding `Web` to the second argument of your scope blocks, for example:

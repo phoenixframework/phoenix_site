@@ -18,6 +18,15 @@ There are a number of places to connect with community members at all experience
 
 In addition to the [Guides](https://hexdocs.pm/phoenix/overview.html), [Docs](https://hexdocs.pm/phoenix/Phoenix.html), and Elixir Forum [Learning Resources](https://elixirforum.com/c/learning-resources) & [Courses](https://elixirforum.com/c/learning-resources/courses), the following are some recent courses and books on Phoenix:
 
+
+** Books **
+
+* [Programming Phoenix Productive |> Reliable |> Fast (by Bruce Tate and Phoenix core team members Chris McCord and José Valim - Apr 2016)](https://pragprog.com/book/phoenix/programming-phoenix)
+
+* [Phoenix Inside Out - Book Series (by July 2017 - Shankar Dhanasekaran)](https://shankardevy.com/phoenix-book/)
+
+* [Functional Web Development with Elixir, OTP, and Phoenix Rethink the Modern Web App (by by Lance Halvorsen - Oct 2017)](https://pragprog.com/book/cdc-elixir/learn-functional-programming-with-elixir)
+
 ** Screencasts/Courses **
 
 * [The Complete Elixir and Phoenix Bootcamp Master Functional Programming Techniques with Elixir and Phoenix while Learning to Build Compelling Web Applications (Udemy - Jun 2017)](https://www.udemy.com/the-complete-elixir-and-phoenix-bootcamp-and-tutorial/)
@@ -35,11 +44,3 @@ In addition to the [Guides](https://hexdocs.pm/phoenix/overview.html), [Docs](ht
 * [Build Real-Time Web Apps with Phoenix (Oct 2016)](https://pragprog.com/screencast/v-bhphnx/build-real-time-web-apps-with-phoenix)
 
 * [LearnPhoenix.io: Build Scalable, Real-Time Apps with Phoenix, React, and React Native (Aug 2016)](https://www.learnphoenix.io/)
-
-** Books **
-
-* [Phoenix Inside Out - Book Series (by July 2017 - Shankar Dhanasekaran)](https://shankardevy.com/phoenix-book/)
-
-* [Functional Web Development with Elixir, OTP, and Phoenix Rethink the Modern Web App (by by Lance Halvorsen - Oct 2017)](https://pragprog.com/book/cdc-elixir/learn-functional-programming-with-elixir)
-
-* [Programming Phoenix Productive |> Reliable |> Fast (by Chris McCord, Bruce Tate, and José Valim - Apr 2016)](https://pragprog.com/book/phoenix/programming-phoenix)

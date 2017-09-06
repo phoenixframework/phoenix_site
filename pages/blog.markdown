@@ -13,7 +13,7 @@ title: Blog
 
 
 
-## Guides
+### Guides
 - #### [Config](/blog/config)
 - #### [Seeding Data](/blog/seeding-data)
 - #### [Sending Email With SMTP](/blog/sending-email-with-smtp)

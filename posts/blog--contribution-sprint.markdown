@@ -1,6 +1,6 @@
 ---
 title: Contribution Sprint
-author: Chris McCord
+author: Willy Karam
 created: 2017-09-06
 phoenix_version: v1.3.0
 ---

@@ -98,7 +98,7 @@ Migrate your files to the new structure with the following steps:
    -     import MyApp.Router.Helpers
    +     import MyAppWeb.Router.Helpers
    -     import MyApp.ErrorHelpers
-   +     import MyAppWebErrorHelpers
+   +     import MyAppWeb.ErrorHelpers
    -     import MyApp.Gettext
    +     import MyAppWeb.Gettext
        end

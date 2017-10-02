@@ -2978,7 +2978,7 @@ scope,
     background-color: #917698
 }
 .header #jumbotron {
-    margin: 55px 70px 50px;
+    margin-top: 55px;
     text-align: center;
 }
 .header #jumbotron h2 {
@@ -14345,7 +14345,7 @@ h6 {
     background: rgba(255, 255, 255, 0.07);
     border: 3px solid #FEF4F2;
     height: 80px;
-    width: 340px;
+    max-width: 340px;
     box-sizing: border-box;
     padding-top: 14px;
     border-radius: 48px;

@@ -23,9 +23,11 @@ In addition to the [Guides](https://hexdocs.pm/phoenix/overview.html), [Docs](ht
 
 * [Programming Phoenix Productive |> Reliable |> Fast (by Bruce Tate and Phoenix core team members Chris McCord and José Valim - Apr 2016)](https://pragprog.com/book/phoenix/programming-phoenix)
 
-* [Phoenix Inside Out - Book Series (by July 2017 - Shankar Dhanasekaran)](https://shankardevy.com/phoenix-book/)
+* [Phoenix Inside Out - Book Series (by Shankar Dhanasekaran - July 2017)](https://shankardevy.com/phoenix-book/)
 
-* [Functional Web Development with Elixir, OTP, and Phoenix Rethink the Modern Web App (by by Lance Halvorsen - Oct 2017)](https://pragprog.com/book/cdc-elixir/learn-functional-programming-with-elixir)
+* [Functional Web Development with Elixir, OTP, and Phoenix Rethink the Modern Web App (by Lance Halvorsen - Oct 2017)](https://pragprog.com/book/cdc-elixir/learn-functional-programming-with-elixir)
+
+* [Phoenix in Action (by Geoffrey Lessel - 2017)](https://manning.com/books/phoenix-in-action)
 
 ** Screencasts/Courses **
 

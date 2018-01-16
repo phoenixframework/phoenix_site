@@ -1,5 +1,5 @@
 ---
-title: Seeding Data 
+title: Seeding Data
 created: 2016-07-28
 phoenix_version: v1.3.0
 ---
@@ -64,25 +64,25 @@ defmodule <%= application_name %>.DatabaseSeeder do
 
   def insert_link do
     Repo.insert! %Link{
-      title: (@titles_list |> Enum.take_random),
-      url: (@urls_list |> Enum.take_random)
+      title: (@titles_list |> Enum.take_random()),
+      url: (@urls_list |> Enum.take_random())
     }
   end
 
   def clear do
-    Repo.delete_all
+    Repo.delete_all()
   end
 end
 
-(1..100) |> Enum.each(fn _ -> <%= application_name %>.DatabaseSeeder.insert_link end)
+(1..100) |> Enum.each(fn _ -> <%= application_name %>.DatabaseSeeder.insert_link() end)
 ```
 
 Now, we could add links trivially to our database in IEx like so:
 
 ```elixir
 $ iex -S mix
-iex(1)> <%= application_name %>.DatabaseSeeder.add_link
-iex(2)> <%= application_name %>.Link |> <%= application_name %>.Repo.all
+iex(1)> <%= application_name %>.DatabaseSeeder.insert_link()
+iex(2)> <%= application_name %>.Link |> <%= application_name %>.Repo.all()
 #=> [%<%= application_name %>.Link{...}]
 ```
 

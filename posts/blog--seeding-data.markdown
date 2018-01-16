@@ -1,5 +1,5 @@
 ---
-title: Seeding Data 
+title: Seeding Data
 created: 2016-07-28
 phoenix_version: v1.3.0
 ---
@@ -81,7 +81,7 @@ Now, we could add links trivially to our database in IEx like so:
 
 ```elixir
 $ iex -S mix
-iex(1)> <%= application_name %>.DatabaseSeeder.add_link
+iex(1)> <%= application_name %>.DatabaseSeeder.insert_link
 iex(2)> <%= application_name %>.Link |> <%= application_name %>.Repo.all
 #=> [%<%= application_name %>.Link{...}]
 ```

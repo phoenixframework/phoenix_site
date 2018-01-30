@@ -99,7 +99,7 @@ Open default application layout `lib/hello_web/templates/layout/app.html.eex`, f
 and add the following code below:
 
 ```html
-<script>require("assets/static/js/app").App.run()</script>
+<script>require("js/app").App.run()</script>
 ```
 
 When we load this page we should see `Hello!` in the browser Javascript console.

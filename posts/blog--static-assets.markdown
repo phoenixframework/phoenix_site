@@ -16,6 +16,7 @@ Brunch has [a good tutorial](https://github.com/brunch/brunch-guide), which shou
 Brunch is a [Node.js](https://nodejs.org/) application. A newly generated Phoenix project contains `package.json` which lists packages for installation with [npm](https://www.npmjs.com/), the Node Package Manager. If we agree to install dependencies when running `mix phoenix.new`, Phoenix will run `npm` for us. If we don't, or if we change `package.json`, we can always do this ourselves:
 
 ```
+cd assets
 npm install
 ```
 

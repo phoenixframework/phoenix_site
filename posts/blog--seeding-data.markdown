@@ -64,8 +64,8 @@ defmodule <%= application_name %>.DatabaseSeeder do
 
   def insert_link do
     Repo.insert! %Link{
-      title: (@titles_list |> Enum.take_random()),
-      url: (@urls_list |> Enum.take_random())
+      title: (@titles_list |> Enum.random()),
+      url: (@urls_list |> Enum.random())
     }
   end
 

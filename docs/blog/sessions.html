@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/2008/fbml" itemscope="itemscope" itemtype="http://schema.org/Product">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="readme-deploy" content="0a76ad4a2ae68a6f7b480e04f93f1d2d4fab9046">
+    <title>Phoenix</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    <meta name="description" content="Productive. Reliable. Fast. A productive web framework that does not compromise speed and maintainability">
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <meta property="og:title" content="Phoenix">
+    <meta property="og:description" content="Productive. Reliable. Fast. A productive web framework that does not compromise speed and maintainability">
+    <meta property="og:image" content="https://files.readme.io/PKPqx8L9TJSAY2Bnmw7F_phoenixframework-logo-white@2x.png">
+    <meta property="og:site_name" content="Phoenix">
+    <meta id="config-proxy-url" content="https://proxy.readme.io/proxy">
+    <link rel="canonical" href="http://www.phoenixframework.org/www.phoenixframework.org">
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed for Phoenix" href="/blog.rss">
+    <link rel="stylesheet" href="/assets/css/base.css" />
+    <script type="text/javascript" src="/assets/js/app.js"></script>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-57337100-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:400:sans-serif|Open+Sans:400:sans-serif" rel="stylesheet" type="text/css">
+  </head>
+
+  <body class="layout page-home body-none theme-solid header-solid header-bg-size-auto header-bg-pos-tl header-overlay-triangles lumosity-light undefined theme-threes ng-scope os-linux" cz-shortcut-listen="true">
+<div class="wrapper">
+  <header id="header" class="header">
+    <div class="container">
+      <h1 class="navbar-brand"><a href="/">Phoenix</a></h1>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="https://hexdocs.pm/phoenix/overview.html">Guides</a></li>
+          <li><a href="https://hexdocs.pm/phoenix/Phoenix.html">Docs</a></li>
+          <li><a href="/community">Community</a></li>
+          <li><a href="https://github.com/phoenixframework/phoenix">GitHub</a></li>
+          <li><a href="/blog" title="Blog">Blog</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav pull-right">
+          <li><a class="phx-book" href="https://pragprog.com/book/phoenix/programming-phoenix" title="Book">📙 &nbsp;&nbsp; Book</a></li>
+        </ul>
+      </div>
+    </div>
+    </header>
+    <br/>
+<div class="container body-container">
+  <div class="row">
+    <div class="col-sm-3 border-right">
+        <div class="sidebar-nav">
+          <h4>News</h4>
+          <ul>
+            <li><a href="/blog/phoenix-1-3-0-released" class="active"><span>Phoenix 1.3.0 Released</span></a></li>
+            <li><a href="/blog/contribution-sprint" class="active"><span>Contribution Sprint</span></a></li>
+            <li><a href="/blog/upgrading-from-120-to-130" class="active"><span>Upgrading from 1.2.x to 1.3.0</span></a></li>
+            <li><a href="/blog/upgrading-from-11x-to-120" class="active"><span>Upgrading from 1.1.x to 1.2.0</span></a></li>
+            <li><a href="/blog/upgrading-from-111-to-112" class="active"><span>Upgrading from 1.1.1 to 1.1.2</span></a></li>
+            <li><a href="/blog/upgrading-from-v10-to-v11" class="active"><span>Upgrading from v1.0 to v1.1</span></a></li>
+            <li><a href="/blog/the-road-to-2-million-websocket-connections" class="active"><span>The Road to 2 Million Websocket Connections in Phoenix</span></a></li>
+            <li><a href="/blog/phoenix-10-the-framework-for-the-modern-web-just-landed"><span>Phoenix 1.0 – the framework for the modern web just landed</span></a></li>
+            <li><a href="/blog/phoenix-0100-released-with-assets-handling-generat"><span>Phoenix 0.10.0 released with assets handling, generators, &amp; more</span></a></li>
+          </ul>
+        </div>
+    </div>
+    <div class="col-sm-9 border-left">
+      <div class="docs-content">
+        <div class="docs-header">
+          <h1>Sessions</h1>
+          
+          <hr>
+        </div>
+        <div class="content block-content ready">
+          <h1>Sessions</h1>
+<p>Phoenix gets its session functionality from Plug. Plug ships with two forms of session storage out of the box - cookies, and Erlang Term Storage (ETS).</p>
+<h2>Cookies</h2>
+<p>Phoenix uses Plug’s cookie session storage by default. The two things that make this work are having a <code class="inline">secret_key_base</code> configured for our environment - this includes the base <code class="inline">config/config.exs</code> - and the correct configuration for <code class="inline">Plug.Session</code> in our endpoint.</p>
+<p>Here’s the <code class="inline">config/config.exs</code> file from a newly generated Phoenix application, showing the <code class="inline">secret_key_base</code> set for us.</p>
+<pre><code class="elixir">config :hello, HelloWeb.Endpoint,
+  url: [host: &quot;localhost&quot;],
+  root: Path.dirname(__DIR__),
+  secret_key_base: &quot;some_crazy_long_string_phoenix_generated&quot;,
+  debug_errors: false,
+  pubsub: [name: Hello.PubSub,
+           adapter: Phoenix.PubSub.PG2]</code></pre>
+<p>Plug uses our <code class="inline">secret_key_base</code> value to sign each cookie to make sure it can’t be tampered with.</p>
+<p>And here is the default <code class="inline">Plug.Session</code> configuration from <code class="inline">lib/hello_lib/hello_web/endpoint.ex</code>.</p>
+<pre><code class="elixir">defmodule HelloWeb.Endpoint do
+  use Phoenix.Endpoint, otp_app: :hello
+. . .
+  plug Plug.Session,
+    store: :cookie,
+    key: &quot;_hello_key&quot;,
+    signing_salt: &quot;Jk7pxAMf&quot;
+. . .
+end</code></pre>
+<h2>ETS</h2>
+<p>Phoenix also supports server-side sessions via ETS. To configure ETS sessions, we need to create an ETS table when we start our application. We’ll call ours <code class="inline">session</code>. We also need to re-configure <code class="inline">Plug.Session</code> in our endpoint.</p>
+<p>Here’s how we would create an ETS table on application startup in <code class="inline">lib/hello.ex</code>.</p>
+<pre><code class="elixir">def start(_type, _args) do
+  import Supervisor.Spec, warn: false
+  :ets.new(:session, [:named_table, :public, read_concurrency: true])
+. . .</code></pre>
+<p>In order to re-configure <code class="inline">Plug.Session</code>, we need to change the store, specify the name of the key for the ETS table, and specify the name of the table in which we are storing the sessions. The <code class="inline">secret_key_base</code> is not necessary if we are using ETS session storage.</p>
+<p>Here is how it looks in <code class="inline">lib/hello/endpoint.ex</code>.</p>
+<pre><code class="elixir">defmodule HelloWeb.Endpoint do
+  use Phoenix.Endpoint, otp_app: :hello
+  . . .
+  plug Plug.Session,
+    store: :ets,
+    key: &quot;sid&quot;,
+    table: :session,
+  . . .
+end</code></pre>
+<p>While we can use ETS for session storage, it might not be the best idea. This is from the <code class="inline">Plug.Session</code> documentation.</p>
+<blockquote><p>We don’t recommend using this store in production as every session will be stored in ETS and never cleaned until you create a task responsible for cleaning up old entries.</p>
+</blockquote>
+<blockquote><p>Also, since the store is in-memory, it means sessions are not shared between servers. If you deploy to more than one machine, using this store is again not recommended.</p>
+</blockquote>
+<h2>Accessing Session Data</h2>
+<p>With the proper configuration in place, we can access session data in our application’s controllers.</p>
+<p>Here’s a really quick example of putting a value into the session and getting it out again. We can change the <code class="inline">index</code> action of our generated <code class="inline">HelloWeb.PageController</code> at <code class="inline">lib/hello_web/controllers/page_controller.ex</code> to use <code class="inline">put_session/3</code>, <code class="inline">get_session/2</code>, and then render only the text that made the session round-trip.</p>
+<pre><code class="elixir">defmodule HelloWeb.PageController do
+  use HelloWeb, :controller
+
+  def index(conn, _params) do
+    conn = put_session(conn, :message, &quot;new stuff we just set in the session&quot;)
+    message = get_session(conn, :message)
+
+    text conn, message
+  end
+end</code></pre>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+  </body>
+</html>

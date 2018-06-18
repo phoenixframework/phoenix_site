@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/2008/fbml" itemscope="itemscope" itemtype="http://schema.org/Product">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="readme-deploy" content="0a76ad4a2ae68a6f7b480e04f93f1d2d4fab9046">
+    <title>Phoenix</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    <meta name="description" content="Productive. Reliable. Fast. A productive web framework that does not compromise speed and maintainability">
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <meta property="og:title" content="Phoenix">
+    <meta property="og:description" content="Productive. Reliable. Fast. A productive web framework that does not compromise speed and maintainability">
+    <meta property="og:image" content="https://files.readme.io/PKPqx8L9TJSAY2Bnmw7F_phoenixframework-logo-white@2x.png">
+    <meta property="og:site_name" content="Phoenix">
+    <meta id="config-proxy-url" content="https://proxy.readme.io/proxy">
+    <link rel="canonical" href="http://www.phoenixframework.org/www.phoenixframework.org">
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed for Phoenix" href="/blog.rss">
+    <link rel="stylesheet" href="/assets/css/base.css" />
+    <script type="text/javascript" src="/assets/js/app.js"></script>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-57337100-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:400:sans-serif|Open+Sans:400:sans-serif" rel="stylesheet" type="text/css">
+  </head>
+
+  <body class="layout page-home body-none theme-solid header-solid header-bg-size-auto header-bg-pos-tl header-overlay-triangles lumosity-light undefined theme-threes ng-scope os-linux" cz-shortcut-listen="true">
+<div class="wrapper">
+  <header id="header" class="header">
+    <div class="container">
+      <h1 class="navbar-brand"><a href="/">Phoenix</a></h1>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="https://hexdocs.pm/phoenix/overview.html">Guides</a></li>
+          <li><a href="https://hexdocs.pm/phoenix/Phoenix.html">Docs</a></li>
+          <li><a href="/community">Community</a></li>
+          <li><a href="https://github.com/phoenixframework/phoenix">GitHub</a></li>
+          <li><a href="/blog" title="Blog">Blog</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav pull-right">
+          <li><a class="phx-book" href="https://pragprog.com/book/phoenix/programming-phoenix" title="Book">📙 &nbsp;&nbsp; Book</a></li>
+        </ul>
+      </div>
+    </div>
+    </header>
+    <br/>
+<div class="container body-container">
+  <div class="row">
+    <div class="col-sm-3 border-right">
+        <div class="sidebar-nav">
+          <h4>News</h4>
+          <ul>
+            <li><a href="/blog/phoenix-1-3-0-released" class="active"><span>Phoenix 1.3.0 Released</span></a></li>
+            <li><a href="/blog/contribution-sprint" class="active"><span>Contribution Sprint</span></a></li>
+            <li><a href="/blog/upgrading-from-120-to-130" class="active"><span>Upgrading from 1.2.x to 1.3.0</span></a></li>
+            <li><a href="/blog/upgrading-from-11x-to-120" class="active"><span>Upgrading from 1.1.x to 1.2.0</span></a></li>
+            <li><a href="/blog/upgrading-from-111-to-112" class="active"><span>Upgrading from 1.1.1 to 1.1.2</span></a></li>
+            <li><a href="/blog/upgrading-from-v10-to-v11" class="active"><span>Upgrading from v1.0 to v1.1</span></a></li>
+            <li><a href="/blog/the-road-to-2-million-websocket-connections" class="active"><span>The Road to 2 Million Websocket Connections in Phoenix</span></a></li>
+            <li><a href="/blog/phoenix-10-the-framework-for-the-modern-web-just-landed"><span>Phoenix 1.0 – the framework for the modern web just landed</span></a></li>
+            <li><a href="/blog/phoenix-0100-released-with-assets-handling-generat"><span>Phoenix 0.10.0 released with assets handling, generators, &amp; more</span></a></li>
+          </ul>
+        </div>
+    </div>
+    <div class="col-sm-9 border-left">
+      <div class="docs-content">
+        <div class="docs-header">
+          <h1>Phoenix Behind a Proxy</h1>
+          
+          <hr>
+        </div>
+        <div class="content block-content ready">
+          <h1>Using a Proxy Server</h1>
+<p>In order to serve an application behind a proxy webserver such as <code class="inline">nginx</code> or <code class="inline">apache</code>, we will need to configure a specific port for our application to listen on.</p>
+<p>There are two ways we can approach this. If we are sure that we can pick a port number which will not need to change, we can hard-code it as <code class="inline">http: [port: 8080]</code> line of our <code class="inline">config/prod.exs</code> file.</p>
+<pre><code class="elixir">use Mix.Config
+
+. . .
+
+config :hello, HelloWeb.Endpoint,
+  http: [port: 8080],
+  cache_static_manifest: &quot;priv/static/cache_manifest.json&quot;
+
+. . .</code></pre>
+<p>If we need our port configuration to be flexible, perhaps even change for every host we deploy to, we can get the port value from an existing environment value set on the system. Again, here is our <code class="inline">config/prod.exs</code> file.</p>
+<pre><code class="elixir">use Mix.Config
+
+. . .
+
+config :hello, HelloWeb.Endpoint,
+  http: [port: {:system, &quot;PORT&quot;}],
+  cache_static_manifest: &quot;priv/static/cache_manifest.json&quot;
+
+. . .</code></pre>
+<p>Urls generated using a <code class="inline">_url</code> function from the <code class="inline">HelloWeb.Router.Helpers</code> module will include a url such as <a href="http://localhost:8080/users">http://localhost:8080/users</a> for <code class="inline">user_url(conn, :index)</code>. To fix this we can use the <code class="inline">url</code> option:</p>
+<pre><code class="elixir">use Mix.Config
+
+. . .
+
+config :hello, HelloWeb.Endpoint,
+  http: [port: 8080],
+  url: [host: &quot;example.com&quot;, port: 80],
+  cache_static_manifest: &quot;priv/static/cache_manifest.json&quot;
+
+. . .</code></pre>
+<p>Our url will now be <a href="http://example.com/users">http://example.com/users</a> for the <code class="inline">user_url(conn, :index)</code> function. Note that the port is not present in the url. If the scheme is <code class="inline">http</code> and the port is <code class="inline">80</code>, or the scheme is <code class="inline">https</code> and the port is <code class="inline">443</code>, then the port will not be present in the url. In all other circumstances it will be present.</p>
+<h3>Nginx Considerations</h3>
+<p>Nginx requires some additional configuration in order to use channels. Websockets, which are based on HTTP requests, operate on the notion that you are <em>Upgrading</em> the connection from standard stateless HTTP to a persistent websocket connection.</p>
+<p>Thankfully, this is relatively straightforward to accomplish with nginx.</p>
+<p>Below is a standard <code class="inline">sites-enabled</code> style nginx configuration, for a given domain <code class="inline">my-app.domain</code>.</p>
+<pre><code class=""># /etc/nginx/sites-enabled/my-app.domain
+upstream phoenix {
+  server 127.0.0.1:4000 max_fails=5 fail_timeout=60s;
+}
+
+server {
+  server_name my-app.domain;
+  listen 80;
+
+  location / {
+    allow all;
+
+    # Proxy Headers
+    proxy_http_version 1.1;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header Host $http_host;
+    proxy_set_header X-Cluster-Client-Ip $remote_addr;
+
+    # The Important Websocket Bits!
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection &quot;upgrade&quot;;
+
+    proxy_pass http://phoenix;
+  }
+}</code></pre>
+<p>This configures two objects - the proxy endpoint, defined as an <code class="inline">upstream</code>, as well as a <code class="inline">server</code>, which is configured to listen under a specific domain name and port.</p>
+<p>The <code class="inline">server</code> is the primary concern here. With this configuration, you have ensured that the correct headers are passed down to the Phoenix process for channels to work, through the <code class="inline">Upgrade</code> and <code class="inline">Connection</code> headers.</p>
+<p>These headers do not immediately turn on websockets, you’re still responsible for that in your javascript code, the headers simply allow for the correct capabilities to be passed to Phoenix from the browser.</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+  </body>
+</html>

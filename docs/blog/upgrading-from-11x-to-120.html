@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/2008/fbml" itemscope="itemscope" itemtype="http://schema.org/Product">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="readme-deploy" content="0a76ad4a2ae68a6f7b480e04f93f1d2d4fab9046">
+    <title>Phoenix</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    <meta name="description" content="Productive. Reliable. Fast. A productive web framework that does not compromise speed and maintainability">
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <meta property="og:title" content="Phoenix">
+    <meta property="og:description" content="Productive. Reliable. Fast. A productive web framework that does not compromise speed and maintainability">
+    <meta property="og:image" content="https://files.readme.io/PKPqx8L9TJSAY2Bnmw7F_phoenixframework-logo-white@2x.png">
+    <meta property="og:site_name" content="Phoenix">
+    <meta id="config-proxy-url" content="https://proxy.readme.io/proxy">
+    <link rel="canonical" href="http://www.phoenixframework.org/www.phoenixframework.org">
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed for Phoenix" href="/blog.rss">
+    <link rel="stylesheet" href="/assets/css/base.css" />
+    <script type="text/javascript" src="/assets/js/app.js"></script>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-57337100-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:400:sans-serif|Open+Sans:400:sans-serif" rel="stylesheet" type="text/css">
+  </head>
+
+  <body class="layout page-home body-none theme-solid header-solid header-bg-size-auto header-bg-pos-tl header-overlay-triangles lumosity-light undefined theme-threes ng-scope os-linux" cz-shortcut-listen="true">
+<div class="wrapper">
+  <header id="header" class="header">
+    <div class="container">
+      <h1 class="navbar-brand"><a href="/">Phoenix</a></h1>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="https://hexdocs.pm/phoenix/overview.html">Guides</a></li>
+          <li><a href="https://hexdocs.pm/phoenix/Phoenix.html">Docs</a></li>
+          <li><a href="/community">Community</a></li>
+          <li><a href="https://github.com/phoenixframework/phoenix">GitHub</a></li>
+          <li><a href="/blog" title="Blog">Blog</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav pull-right">
+          <li><a class="phx-book" href="https://pragprog.com/book/phoenix/programming-phoenix" title="Book">📙 &nbsp;&nbsp; Book</a></li>
+        </ul>
+      </div>
+    </div>
+    </header>
+    <br/>
+<div class="container body-container">
+  <div class="row">
+    <div class="col-sm-3 border-right">
+        <div class="sidebar-nav">
+          <h4>News</h4>
+          <ul>
+            <li><a href="/blog/phoenix-1-3-0-released" class="active"><span>Phoenix 1.3.0 Released</span></a></li>
+            <li><a href="/blog/contribution-sprint" class="active"><span>Contribution Sprint</span></a></li>
+            <li><a href="/blog/upgrading-from-120-to-130" class="active"><span>Upgrading from 1.2.x to 1.3.0</span></a></li>
+            <li><a href="/blog/upgrading-from-11x-to-120" class="active"><span>Upgrading from 1.1.x to 1.2.0</span></a></li>
+            <li><a href="/blog/upgrading-from-111-to-112" class="active"><span>Upgrading from 1.1.1 to 1.1.2</span></a></li>
+            <li><a href="/blog/upgrading-from-v10-to-v11" class="active"><span>Upgrading from v1.0 to v1.1</span></a></li>
+            <li><a href="/blog/the-road-to-2-million-websocket-connections" class="active"><span>The Road to 2 Million Websocket Connections in Phoenix</span></a></li>
+            <li><a href="/blog/phoenix-10-the-framework-for-the-modern-web-just-landed"><span>Phoenix 1.0 – the framework for the modern web just landed</span></a></li>
+            <li><a href="/blog/phoenix-0100-released-with-assets-handling-generat"><span>Phoenix 0.10.0 released with assets handling, generators, &amp; more</span></a></li>
+          </ul>
+        </div>
+    </div>
+    <div class="col-sm-9 border-left">
+      <div class="docs-content">
+        <div class="docs-header">
+          <h1>Upgrading from v1.1.1 to v1.1.2</h1>
+          
+            <div class="byline">
+                <span>By Jason Stiebs</span>
+                &nbsp;·&nbsp;<span class="ago">2016-08-17</span>
+                &nbsp;·&nbsp;<span>v1.0.0</span>
+            </div>
+          
+          <hr>
+        </div>
+        <div class="content block-content ready">
+          <p><a href="https://gist.github.com/chrismccord/29100e16d3990469c47f851e3142f766">https://gist.github.com/chrismccord/29100e16d3990469c47f851e3142f766</a></p>
+<h2>Project Generator</h2>
+<p>To generate new projects as 1.2.0, install the new mix archive:</p>
+<pre><code>mix archive.install https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez</code></pre>
+<h2>Deps</h2>
+<p>Update your phoenix dep for phoenix and include the extracted <code class="inline">:phoenix_pubsub</code> depdendency. If using Ecto, bump your <code class="inline">:phoenix_ecto</code> dependency as well:</p>
+<pre><code class="elixir"># mix.exs
+def deps do
+  [{:phoenix, &quot;~&gt; 1.2.0&quot;},
+   {:phoenix_pubsub, &quot;~&gt; 1.0&quot;},
+   # if using Ecto:
+   {:phoenix_ecto, &quot;~&gt; 3.0-rc&quot;},
+   ...]
+end</code></pre>
+<p>Next, add <code class="inline">:phoenix_pubsub</code> to your <code class="inline">:applications</code> list in mix.exs:</p>
+<pre><code class="elixir">def application do
+    [mod: {MyApp, []},
+     applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
+                    :phoenix_ecto, :postgrex]]
+  end</code></pre>
+<p>Next, update your deps:</p>
+<pre><code>$ mix deps.update phoenix phoenix_pubsub phoenix_ecto phoenix_live_reload phoenix_html --unlock</code></pre>
+<h2>Tests</h2>
+<p>The <code class="inline">conn/0</code> helper imported into your tests has been deprecated. use <code class="inline">build_conn/0</code> instead.</p>
+<h2>Ecto 2.0</h2>
+<p>If using Ecto, update your test_helper.exs:</p>
+<pre><code class="diff">ExUnit.start
+
+- Mix.Task.run &quot;ecto.create&quot;, ~w(-r Onetwo.Repo --quiet)
+- Mix.Task.run &quot;ecto.migrate&quot;, ~w(-r Onetwo.Repo --quiet)
+- Ecto.Adapters.SQL.begin_test_transaction(Onetwo.Repo)
++ Ecto.Adapters.SQL.Sandbox.mode(MyAPp.Repo, :manual)</code></pre>
+<p>Next, add the following to <code class="inline">config/config.exs</code>:</p>
+<pre><code class="elixir">config :my_app, ecto_repos: [MyApp.Repo]</code></pre>
+<p>Next, add a new <code class="inline">test</code> alias to your <code class="inline">aliases</code> in mix.exs:</p>
+<pre><code class="diff">defp aliases do
+    [&quot;ecto.setup&quot;: [&quot;ecto.create&quot;, &quot;ecto.migrate&quot;, &quot;run priv/repo/seeds.exs&quot;],
+     &quot;ecto.reset&quot;: [&quot;ecto.drop&quot;, &quot;ecto.setup&quot;],
++    &quot;test&quot;: [&quot;ecto.create --quiet&quot;, &quot;ecto.migrate&quot;, &quot;test&quot;]]
+  end</code></pre>
+<p>Next, update your <code class="inline">setup</code> blocks in <code class="inline">test/support/model_case.ex</code> and <code class="inline">test/support/channel_case.ex</code>:</p>
+<pre><code class="diff">setup tags do
+-   unless tags[:async] do
+-     Ecto.Adapters.SQL.restart_test_transaction(MyApp.Repo, [])
+-   end
+
++   :ok = Ecto.Adapters.SQL.Sandbox.checkout(MyApp.Repo)
+
++   unless tags[:async] do
++     Ecto.Adapters.SQL.Sandbox.mode(MyApp.Repo, {:shared, self()})
++   end
+
+    :ok
+  end</code></pre>
+<p>And update your <code class="inline">test/support/conn_case.ex</code>:</p>
+<pre><code class="diff">setup tags do
+-   unless tags[:async] do
+-     Ecto.Adapters.SQL.restart_test_transaction(MyApp.Repo, [])
+-   end
+
+-   {:ok, conn: Phoenix.ConnTest.conn()}
++   :ok = Ecto.Adapters.SQL.Sandbox.checkout(MyApp.Repo)
+
++   unless tags[:async] do
++     Ecto.Adapters.SQL.Sandbox.mode(MyApp.Repo, {:shared, self()})
++   end
+
++   {:ok, conn: Phoenix.ConnTest.build_conn()}
+  end</code></pre>
+<p>Passing <code class="inline">:empty</code> to <code class="inline">cast</code> has been deprecated. Pass an empty map in your changesets instead:</p>
+<pre><code class="diff">-  def changeset(struct, params \\ :empty) do
++  def changeset(struct, params \\ %{}) do</code></pre>
+<h2>ErrorHelpers</h2>
+<p>Update your <code class="inline">translate_error</code> function in <code class="inline">web/views/error_helpers.ex</code>:</p>
+<pre><code class="diff">- @doc &quot;&quot;&quot;
+- Translates an error message using gettext.
+- &quot;&quot;&quot;
+- def translate_error({msg, opts}) do
+-   # Because error messages were defined within Ecto, we must
+-   # call the Gettext module passing our Gettext backend. We
+-   # also use the &quot;errors&quot; domain as translations are placed
+-   # in the errors.po file. On your own code and templates,
+-   # this could be written simply as:
+-   #
+-   #     dngettext &quot;errors&quot;, &quot;1 file&quot;, &quot;%{count} files&quot;, count
+-   #
+-   Gettext.dngettext(MyApp.Gettext, &quot;errors&quot;, msg, msg, opts[:count], opts)
+- end
+
+- def translate_error(msg) do
+-   Gettext.dgettext(MyApp.Gettext, &quot;errors&quot;, msg)
+- end
++def translate_error({msg, opts}) do
++   # Because error messages were defined within Ecto, we must
++   # call the Gettext module passing our Gettext backend. We
++   # also use the &quot;errors&quot; domain as translations are placed
++   # in the errors.po file.
++   # Ecto will pass the :count keyword if the error message is
++   # meant to be pluralized.
++   # On your own code and templates, depending on whether you
++   # need the message to be pluralized or not, this could be
++   # written simply as:
++   #
++   #     dngettext &quot;errors&quot;, &quot;1 file&quot;, &quot;%{count} files&quot;, count
++   #     dgettext &quot;errors&quot;, &quot;is invalid&quot;
++   #
++   if count = opts[:count] do
++     Gettext.dngettext(MyApp.Gettext, &quot;errors&quot;, msg, msg, count, opts)
++   else
++     Gettext.dgettext(MyApp.Gettext, &quot;errors&quot;, msg, opts)
++   end
++ end</code></pre>
+<p>Next, update your <code class="inline">test/support/model_case.ex</code>’s <code class="inline">errors_on</code> function:</p>
+<pre><code class="diff">-  def errors_on(model, data) do
+-    model.__struct__.changeset(model, data).errors
+-  end
+  
++  def errors_on(struct, data) do
++    struct.__struct__.changeset(struct, data)
++    |&gt; Ecto.Changeset.traverse_errors(&amp;MyApp.ErrorHelpers.translate_error/1)
++    |&gt; Enum.flat_map(fn {key, errors} -&gt; for msg &lt;- errors, do: {key, msg} end)
++  end</code></pre>
+<h2>Configuration</h2>
+<h3>Watcher</h3>
+<p>Using the <code class="inline">:root</code> endpoint configuration for watchers is deprecated and can be removed from <code class="inline">config/config.exs</code>. Instead, pass the <code class="inline">:cd</code> option at the end of your watcher argument list in <code class="inline">config/dev.exs</code>. For example:</p>
+<pre><code class="elixir">watchers: [node: [&quot;node_modules/brunch/bin/brunch&quot;, &quot;watch&quot;, &quot;--stdin&quot;,
+           cd: Path.expand(&quot;../&quot;, __DIR__)]]</code></pre>
+<h3>Namespace</h3>
+<p>Change <code class="inline">app_namespace:</code> in the application configuration to <code class="inline">namespace:</code>.</p>
+<pre><code class="diff">config :my_app,
++  namespace: My.App
+-  app_namespace: My.App</code></pre>
+<h2>JavaScript Client</h2>
+<p>If using brunch, run <code class="inline">npm update phoenix phoenix_html</code>.</p>
+<p>If vendoring the phoenix.js JavaScript client, grab a new copy:
+<a href="https://raw.githubusercontent.com/phoenixframework/phoenix/v1.2.0/web/static/js/phoenix.js">https://raw.githubusercontent.com/phoenixframework/phoenix/v1.2.0/web/static/js/phoenix.js</a></p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+  </body>
+</html>

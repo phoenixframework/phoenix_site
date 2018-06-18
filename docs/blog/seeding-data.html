@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/2008/fbml" itemscope="itemscope" itemtype="http://schema.org/Product">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="readme-deploy" content="0a76ad4a2ae68a6f7b480e04f93f1d2d4fab9046">
+    <title>Phoenix</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    <meta name="description" content="Productive. Reliable. Fast. A productive web framework that does not compromise speed and maintainability">
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <meta property="og:title" content="Phoenix">
+    <meta property="og:description" content="Productive. Reliable. Fast. A productive web framework that does not compromise speed and maintainability">
+    <meta property="og:image" content="https://files.readme.io/PKPqx8L9TJSAY2Bnmw7F_phoenixframework-logo-white@2x.png">
+    <meta property="og:site_name" content="Phoenix">
+    <meta id="config-proxy-url" content="https://proxy.readme.io/proxy">
+    <link rel="canonical" href="http://www.phoenixframework.org/www.phoenixframework.org">
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed for Phoenix" href="/blog.rss">
+    <link rel="stylesheet" href="/assets/css/base.css" />
+    <script type="text/javascript" src="/assets/js/app.js"></script>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-57337100-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:400:sans-serif|Open+Sans:400:sans-serif" rel="stylesheet" type="text/css">
+  </head>
+
+  <body class="layout page-home body-none theme-solid header-solid header-bg-size-auto header-bg-pos-tl header-overlay-triangles lumosity-light undefined theme-threes ng-scope os-linux" cz-shortcut-listen="true">
+<div class="wrapper">
+  <header id="header" class="header">
+    <div class="container">
+      <h1 class="navbar-brand"><a href="/">Phoenix</a></h1>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="https://hexdocs.pm/phoenix/overview.html">Guides</a></li>
+          <li><a href="https://hexdocs.pm/phoenix/Phoenix.html">Docs</a></li>
+          <li><a href="/community">Community</a></li>
+          <li><a href="https://github.com/phoenixframework/phoenix">GitHub</a></li>
+          <li><a href="/blog" title="Blog">Blog</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav pull-right">
+          <li><a class="phx-book" href="https://pragprog.com/book/phoenix/programming-phoenix" title="Book">📙 &nbsp;&nbsp; Book</a></li>
+        </ul>
+      </div>
+    </div>
+    </header>
+    <br/>
+<div class="container body-container">
+  <div class="row">
+    <div class="col-sm-3 border-right">
+        <div class="sidebar-nav">
+          <h4>News</h4>
+          <ul>
+            <li><a href="/blog/phoenix-1-3-0-released" class="active"><span>Phoenix 1.3.0 Released</span></a></li>
+            <li><a href="/blog/contribution-sprint" class="active"><span>Contribution Sprint</span></a></li>
+            <li><a href="/blog/upgrading-from-120-to-130" class="active"><span>Upgrading from 1.2.x to 1.3.0</span></a></li>
+            <li><a href="/blog/upgrading-from-11x-to-120" class="active"><span>Upgrading from 1.1.x to 1.2.0</span></a></li>
+            <li><a href="/blog/upgrading-from-111-to-112" class="active"><span>Upgrading from 1.1.1 to 1.1.2</span></a></li>
+            <li><a href="/blog/upgrading-from-v10-to-v11" class="active"><span>Upgrading from v1.0 to v1.1</span></a></li>
+            <li><a href="/blog/the-road-to-2-million-websocket-connections" class="active"><span>The Road to 2 Million Websocket Connections in Phoenix</span></a></li>
+            <li><a href="/blog/phoenix-10-the-framework-for-the-modern-web-just-landed"><span>Phoenix 1.0 – the framework for the modern web just landed</span></a></li>
+            <li><a href="/blog/phoenix-0100-released-with-assets-handling-generat"><span>Phoenix 0.10.0 released with assets handling, generators, &amp; more</span></a></li>
+          </ul>
+        </div>
+    </div>
+    <div class="col-sm-9 border-left">
+      <div class="docs-content">
+        <div class="docs-header">
+          <h1>Seeding Data</h1>
+          
+          <hr>
+        </div>
+        <div class="content block-content ready">
+          <h1>Seeding Data</h1>
+<p>When creating an app, it’s important that we’re able to seed our datastore with some initial data (e.g., for early development work or pre-launch testing purposes).</p>
+<p>Fortunately, Phoenix already provides us with a convention for seeding data. By default Phoenix generates a script file for each app at <code class="inline">priv/repo/seeds.exs</code>, which we can use to populate our datastore.</p>
+<p>Also note that in order to seed data as in the example below you should have already generated and run the related migration (i.e., Link migration, controller, model, etc.) and updated your <code class="inline">router.ex</code>, as described in the <a href="https://hexdocs.pm/phoenix/ecto.html">Ecto Guide</a> (if you haven’t completed that Guide yet, you should do so before proceeding further).</p>
+<p>So in order to seed data, we simply need to add a script to <code class="inline">seeds.exs</code> that uses our datastore to directly add the data we want. As you can see from the comments that Phoenix generated for us in <code class="inline">seeds.exs</code> file, we should follow this pattern:</p>
+<pre><code class="elixir">&lt;%= application_module %&gt;.Repo.insert!(%&lt;%= application_module %&gt;.SomeModel{})</code></pre>
+<p>For example, if we were creating an app called Linker and wanted to seed a Link table in our datastore with with a series of links, we could simply add the following script to our <code class="inline">seeds.exs</code> file:</p>
+<pre><code class="elixir">...
+  alias Linker.Repo
+  alias Linker.Link
+
+  Repo.insert! %Link{
+    title: &quot;Phoenix Framework&quot;,
+    url: &quot;http://www.phoenixframework.org/&quot;
+  }
+
+  Repo.insert! %Link{
+    title: &quot;Elixir&quot;,
+    url: &quot;http://elixir-lang.org/&quot;
+  }
+
+  Repo.insert! %Link{
+    title: &quot;Erlang&quot;,
+    url: &quot;https://www.erlang.org/&quot;
+  }
+  ...</code></pre>
+<p>With this script, we’ve set up some aliases and then progressed through a list of our Links which will each be written to the datastore when we run the <code class="inline">seeds.exs</code> file with mix run:</p>
+<pre><code class="elixir">mix run priv/repo/seeds.exs</code></pre>
+<p>Note that if we wanted to delete/scrub all prior data that we seeded in the Link table, we could also include <code class="inline">Repo.delete_all Link</code> in your script immediate above <code class="inline">Repo.insert!</code></p>
+<p>We can also create a module to seed our data.
+The reason this is sometimes advantageous is it allows us to quickly seed from IEx, and also keeps things modular.
+For example:</p>
+<pre><code class="elixir">defmodule &lt;%= application_name %&gt;.DatabaseSeeder do
+  alias &lt;%= application_name %&gt;.Repo
+  alias &lt;%= application_name %&gt;.Link
+
+  @titles_list [&quot;Erlang&quot;, &quot;Elixir&quot;, &quot;Phoenix Framework&quot;] # list of titles
+  @urls_list [&quot;http://www.erlang.org&quot;, &quot;http://www.elixir-lang.org&quot;, &quot;http://www.phoenixframework.org&quot;] # list of urls
+
+  def insert_link do
+    Repo.insert! %Link{
+      title: (@titles_list |&gt; Enum.random()),
+      url: (@urls_list |&gt; Enum.random())
+    }
+  end
+
+  def clear do
+    Repo.delete_all()
+  end
+end
+
+(1..100) |&gt; Enum.each(fn _ -&gt; &lt;%= application_name %&gt;.DatabaseSeeder.insert_link() end)</code></pre>
+<p>Now, we could add links trivially to our database in IEx like so:</p>
+<pre><code class="elixir">$ iex -S mix
+iex(1)&gt; &lt;%= application_name %&gt;.DatabaseSeeder.insert_link()
+iex(2)&gt; &lt;%= application_name %&gt;.Link |&gt; &lt;%= application_name %&gt;.Repo.all()
+#=&gt; [%&lt;%= application_name %&gt;.Link{...}]</code></pre>
+<p>This is nice for experimenting in IEx during development in many cases.</p>
+<h4>Models are Initialized</h4>
+<p>Conveniently, when following this convention, Phoenix makes sure that our models are appropriately initialized; and as long as we use the bang functions (e.g.,  <code class="inline">insert!</code>, <code class="inline">update!</code>, etc.), they will also fail if something goes wrong.</p>
+<p>This is helpful, since it means that if we make a programming error (e.g., attempting to add a duplicate entry to a table where the field is required to be unique), the data in our database won’t lose its integrity. The database will refuse to execute the query and Ecto will throw an exception, such as:</p>
+<pre><code class="elixir">** (Ecto.ConstraintError) constraint error when attempting to insert model:</code></pre>
+<p>Which will be followed by a description of any constraint errors.</p>
+<p>In the development environment, we can also modify our script to check for errors before executing the bang functions (e.g., checking for duplicates) to prevent them from failing.</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+  </body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/2008/fbml" itemscope="itemscope" itemtype="http://schema.org/Product">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="readme-deploy" content="0a76ad4a2ae68a6f7b480e04f93f1d2d4fab9046">
+    <title>Phoenix</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    <meta name="description" content="Productive. Reliable. Fast. A productive web framework that does not compromise speed and maintainability">
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <meta property="og:title" content="Phoenix">
+    <meta property="og:description" content="Productive. Reliable. Fast. A productive web framework that does not compromise speed and maintainability">
+    <meta property="og:image" content="https://files.readme.io/PKPqx8L9TJSAY2Bnmw7F_phoenixframework-logo-white@2x.png">
+    <meta property="og:site_name" content="Phoenix">
+    <meta id="config-proxy-url" content="https://proxy.readme.io/proxy">
+    <link rel="canonical" href="http://www.phoenixframework.org/www.phoenixframework.org">
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed for Phoenix" href="/blog.rss">
+    <link rel="stylesheet" href="/assets/css/base.css" />
+    <script type="text/javascript" src="/assets/js/app.js"></script>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-57337100-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:400:sans-serif|Open+Sans:400:sans-serif" rel="stylesheet" type="text/css">
+  </head>
+
+  <body class="layout page-home body-none theme-solid header-solid header-bg-size-auto header-bg-pos-tl header-overlay-triangles lumosity-light undefined theme-threes ng-scope os-linux" cz-shortcut-listen="true">
+<div class="wrapper">
+  <header id="header" class="header">
+    <div class="container">
+      <h1 class="navbar-brand"><a href="/">Phoenix</a></h1>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="https://hexdocs.pm/phoenix/overview.html">Guides</a></li>
+          <li><a href="https://hexdocs.pm/phoenix/Phoenix.html">Docs</a></li>
+          <li><a href="/community">Community</a></li>
+          <li><a href="https://github.com/phoenixframework/phoenix">GitHub</a></li>
+          <li><a href="/blog" title="Blog">Blog</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav pull-right">
+          <li><a class="phx-book" href="https://pragprog.com/book/phoenix/programming-phoenix" title="Book">📙 &nbsp;&nbsp; Book</a></li>
+        </ul>
+      </div>
+    </div>
+    </header>
+    <br/>
+<div class="container body-container">
+  <div class="row">
+    <div class="col-sm-3 border-right">
+        <div class="sidebar-nav">
+          <h4>News</h4>
+          <ul>
+            <li><a href="/blog/phoenix-1-3-0-released" class="active"><span>Phoenix 1.3.0 Released</span></a></li>
+            <li><a href="/blog/contribution-sprint" class="active"><span>Contribution Sprint</span></a></li>
+            <li><a href="/blog/upgrading-from-120-to-130" class="active"><span>Upgrading from 1.2.x to 1.3.0</span></a></li>
+            <li><a href="/blog/upgrading-from-11x-to-120" class="active"><span>Upgrading from 1.1.x to 1.2.0</span></a></li>
+            <li><a href="/blog/upgrading-from-111-to-112" class="active"><span>Upgrading from 1.1.1 to 1.1.2</span></a></li>
+            <li><a href="/blog/upgrading-from-v10-to-v11" class="active"><span>Upgrading from v1.0 to v1.1</span></a></li>
+            <li><a href="/blog/the-road-to-2-million-websocket-connections" class="active"><span>The Road to 2 Million Websocket Connections in Phoenix</span></a></li>
+            <li><a href="/blog/phoenix-10-the-framework-for-the-modern-web-just-landed"><span>Phoenix 1.0 – the framework for the modern web just landed</span></a></li>
+            <li><a href="/blog/phoenix-0100-released-with-assets-handling-generat"><span>Phoenix 0.10.0 released with assets handling, generators, &amp; more</span></a></li>
+          </ul>
+        </div>
+    </div>
+    <div class="col-sm-9 border-left">
+      <div class="docs-content">
+        <div class="docs-header">
+          <h1>Task Supervisor</h1>
+          
+          <hr>
+        </div>
+        <div class="content block-content ready">
+          <h1>Running Asynchronous Tasks</h1>
+<p>There are many instances where we will have multiple things to do that aren’t
+dependent on each other. When we run into these cases, we would like to start
+separate processes that are not linked to the caller. This allows the caller to
+continue running if the new process crashes. To do this, we use
+<a href="https://hexdocs.pm/elixir/1.5.1/Task.Supervisor.html"><code class="inline">Task.Supervisor.</code></a></p>
+<h3>Starting Our Supervisor</h3>
+<p>In <code class="inline">lib/hello.ex</code>, where our app is started, we can see that we have
+<code class="inline">HelloWeb.Endpoint</code> as a supervisor, which is handling our web requests. If
+we want to hand off async tasks to from our <code class="inline">HelloWeb.Endpoint</code> supervisor
+to a <code class="inline">Task.Supervisor</code>, we need to start one here. Inside of the <code class="inline">children</code>
+list, add:</p>
+<pre><code class="elixir">supervisor(Task.Supervisor, [[name: Hello.TaskSupervisor]])</code></pre>
+<p>Which gives us:</p>
+<pre><code class="elixir">defmodule Hello do
+  use Application
+
+  # See https://hexdocs.pm/elixir/1.5.1/Application.html
+  # for more information on OTP Applications
+  def start(_type, _args) do
+    import Supervisor.Spec, warn: false
+
+    children = [
+      # Start the endpoint when the application starts
+      supervisor(HelloWeb.Endpoint, []),
+      supervisor(Task.Supervisor, [[name: Hello.TaskSupervisor]]),
+      # Start the Ecto repository
+      worker(Hello.Repo, []),
+      # Here you could define other workers and supervisors as children
+      # worker(Hello.Worker, [arg1, arg2, arg3]),
+    ]
+
+    # See https://hexdocs.pm/elixir/1.5.1/Supervisor.html
+    # for other strategies and supported options
+    opts = [strategy: :one_for_one, name: Hello.Supervisor]
+    Supervisor.start_link(children, opts)
+  end
+
+  # Tell Phoenix to update the endpoint configuration
+  # whenever the application is updated.
+  def config_change(changed, _new, removed) do
+    HelloWeb.Endpoint.config_change(changed, removed)
+    :ok
+  end
+end</code></pre>
+<p>Now we have a <code class="inline">Task.Supervisor</code> that we can refer to as
+<code class="inline">Hello.TaskSupervisor</code>, waiting to receive any tasks that we’d like to
+offload from another process. Let’s see what this does for us.</p>
+<h3>Fire and Forget</h3>
+<p>Often we’d like to “fire and forget” certain types of work.  A common example
+here would be to send an email to an end user in a controller, then sending
+some sort of notification or redirect in the response without waiting for the
+email to send. Our email needs to be handled in an async task so we don’t block
+our calling process (where the controller response will be sent).
+Additionally, unlike some async tasks, we don’t care about the result of the
+task, so we don’t need to await the result.  We like to say we can “fire and
+forget” these types of tasks.</p>
+<p>Since the result of the new async process and the calling process are
+independent of each other, we need to make sure if something goes wrong in
+our async task, it doesn’t crash the calling process. To do this, we need a
+separate supervisor that can supervise our async process. We can use the
+<code class="inline">Hello.TaskSupervisor</code> that we created earlier for this, as we will see
+below.</p>
+<p>Let’s prove that we can send a task to our supervisor that is completely
+independent of the calling process, allowing the caller to continue running if
+the task blows up.</p>
+<p>In the new processes, we will crash it with <code class="inline">1/0</code> (which will raise
+(ArithmeticError) bad argument in arithmetic expression), to make sure our
+request still finishes despite the error. We will also sleep for 2 seconds, so
+we can see that our calling process is not blocked by the async task runs.</p>
+<pre><code class="elixir">defmodule Hello.PageController do
+  use Hello.Web, :controller
+
+  def index(conn, _params) do
+
+    Task.Supervisor.async_nolink(Hello.TaskSupervisor, fn -&gt;
+      :timer.sleep(2000)
+      1 / 0
+    end)
+
+    render conn, &quot;index.html&quot;
+  end
+end</code></pre>
+<p><code class="inline">async_nolink/2</code> accepts the name of a supervisor as the first argument, we
+passed in the name of the supervisor we specified in <code class="inline">lib/hello.ex</code>.
+The next argument is an anonymous function that will become a task supervised
+by the passed in supervisor.  As the name suggested, this task will not be
+linked to the calling process, allowing our request to finish when our task
+fails.</p>
+<p>When we spin up our server and visit our <code class="inline">&quot;/&quot;</code> route at <code class="inline">localhost:4000</code>, the
+request finishes and responds as normal - followed by an arithmetic error after
+a few seconds. Since the tasks aren’t linked, we can execute any task using the
+other supervisor, and our controller is able to send a response regardless of
+the error.</p>
+<p>It’s worth noting that if these tasks fail, they won’t be retried. Consider
+building a solution using
+<a href="https://hexdocs.pm/gen_stage/GenStage.html">GenStage</a></p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+  </body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/2008/fbml" itemscope="itemscope" itemtype="http://schema.org/Product">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="readme-deploy" content="0a76ad4a2ae68a6f7b480e04f93f1d2d4fab9046">
+    <title>Phoenix</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    <meta name="description" content="Productive. Reliable. Fast. A productive web framework that does not compromise speed and maintainability">
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <meta property="og:title" content="Phoenix">
+    <meta property="og:description" content="Productive. Reliable. Fast. A productive web framework that does not compromise speed and maintainability">
+    <meta property="og:image" content="https://files.readme.io/PKPqx8L9TJSAY2Bnmw7F_phoenixframework-logo-white@2x.png">
+    <meta property="og:site_name" content="Phoenix">
+    <meta id="config-proxy-url" content="https://proxy.readme.io/proxy">
+    <link rel="canonical" href="http://www.phoenixframework.org/www.phoenixframework.org">
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed for Phoenix" href="/blog.rss">
+    <link rel="stylesheet" href="/assets/css/base.css" />
+    <script type="text/javascript" src="/assets/js/app.js"></script>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-57337100-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:400:sans-serif|Open+Sans:400:sans-serif" rel="stylesheet" type="text/css">
+  </head>
+
+  <body class="layout page-home body-none theme-solid header-solid header-bg-size-auto header-bg-pos-tl header-overlay-triangles lumosity-light undefined theme-threes ng-scope os-linux" cz-shortcut-listen="true">
+<div class="wrapper">
+  <header id="header" class="header">
+    <div class="container">
+      <h1 class="navbar-brand"><a href="/">Phoenix</a></h1>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="https://hexdocs.pm/phoenix/overview.html">Guides</a></li>
+          <li><a href="https://hexdocs.pm/phoenix/Phoenix.html">Docs</a></li>
+          <li><a href="/community">Community</a></li>
+          <li><a href="https://github.com/phoenixframework/phoenix">GitHub</a></li>
+          <li><a href="/blog" title="Blog">Blog</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav pull-right">
+          <li><a class="phx-book" href="https://pragprog.com/book/phoenix/programming-phoenix" title="Book">📙 &nbsp;&nbsp; Book</a></li>
+        </ul>
+      </div>
+    </div>
+    </header>
+    <br/>
+<div class="container body-container">
+  <div class="row">
+    <div class="col-sm-3 border-right">
+        <div class="sidebar-nav">
+          <h4>News</h4>
+          <ul>
+            <li><a href="/blog/phoenix-1-3-0-released" class="active"><span>Phoenix 1.3.0 Released</span></a></li>
+            <li><a href="/blog/contribution-sprint" class="active"><span>Contribution Sprint</span></a></li>
+            <li><a href="/blog/upgrading-from-120-to-130" class="active"><span>Upgrading from 1.2.x to 1.3.0</span></a></li>
+            <li><a href="/blog/upgrading-from-11x-to-120" class="active"><span>Upgrading from 1.1.x to 1.2.0</span></a></li>
+            <li><a href="/blog/upgrading-from-111-to-112" class="active"><span>Upgrading from 1.1.1 to 1.1.2</span></a></li>
+            <li><a href="/blog/upgrading-from-v10-to-v11" class="active"><span>Upgrading from v1.0 to v1.1</span></a></li>
+            <li><a href="/blog/the-road-to-2-million-websocket-connections" class="active"><span>The Road to 2 Million Websocket Connections in Phoenix</span></a></li>
+            <li><a href="/blog/phoenix-10-the-framework-for-the-modern-web-just-landed"><span>Phoenix 1.0 – the framework for the modern web just landed</span></a></li>
+            <li><a href="/blog/phoenix-0100-released-with-assets-handling-generat"><span>Phoenix 0.10.0 released with assets handling, generators, &amp; more</span></a></li>
+          </ul>
+        </div>
+    </div>
+    <div class="col-sm-9 border-left">
+      <div class="docs-content">
+        <div class="docs-header">
+          <h1>Custom primary Keys</h1>
+          
+          <hr>
+        </div>
+        <div class="content block-content ready">
+          <h1>Custom Primary Keys</h1>
+<p>Sometimes we inherit a legacy database on top of which we need to build a new application. We can’t control how these databases were created, and changing them to meet our current needs can be both difficult and expensive.</p>
+<p>Ecto expects each table to have an auto-incremented integer for a primary key. What if our legacy database requires a string as the primary key instead? No problem. We can create our models with a custom primary key, and Ecto will work just the same as if we had an integer.</p>
+<blockquote><p>Note: While Ecto allows us to do this, it’s not the natural path Ecto wants to take. Allowing Ecto to use an auto-incremented integer is definitely the right way to go for new applications.</p>
+</blockquote>
+<blockquote><p>Also, we chose this example for simplicity. <code class="inline">name</code> might not be the best choice for a primary key.</p>
+</blockquote>
+<p>Let’s say that we need a JSON resource that stores rows of team athletes. Each athlete has a name, a position they play on the field, and the number of their jersey. The database that will back this resource requires that each table have a string for a primary key.</p>
+<p>We can generate that resource like this.</p>
+<pre><code class="console">$ mix phoenix.gen.json Player players name:string position:string number:integer
+* creating priv/repo/migrations/20150908003815_create_player.exs
+* creating web/models/player.ex
+* creating test/models/player_test.exs
+* creating web/controllers/player_controller.ex
+* creating web/views/player_view.ex
+* creating test/controllers/player_controller_test.exs
+* creating web/views/changeset_view.ex
+
+Add the resource to your api scope in web/router.ex:
+
+    resources &quot;/players&quot;, PlayerController
+
+and then update your repository by running migrations:
+
+    $ mix ecto.migrate</code></pre>
+<p>The first thing we need to do is add the resources route to the <code class="inline">api</code> scope in the router.</p>
+<pre><code class="elixir">. . .
+scope &quot;/api&quot;, Hello do
+  pipe_through :api
+
+  resources &quot;/players&quot;, PlayerController
+end
+. . .</code></pre>
+<p>Now we’ll need to make a few quick changes to the generated files.</p>
+<p>Let’s take a look at the migration first, <code class="inline">priv/repo/migrations/20150908003815_create_player.exs</code>. We’ll need to do two things. The first is to pass in a second argument - <code class="inline">primary_key: false</code> to the <code class="inline">table/2</code> function so that it won’t create a primary_key. Then we’ll need to pass <code class="inline">primary_key: true</code> to the <code class="inline">add/3</code> function for the name field to signal that it will be the primary_key instead.</p>
+<pre><code class="elixir">defmodule Hello.Repo.Migrations.CreatePlayer do
+  use Ecto.Migration
+
+  def change do
+    create table(:players, primary_key: false) do
+      add :name, :string, primary_key: true
+      add :position, :string
+      add :number, :integer
+
+      timestamps
+    end
+  end
+end</code></pre>
+<p>Let’s move on to <code class="inline">lib/hello_web/models/player.ex</code> next. We’ll need to add a module attribute <code class="inline">@primary_key {:name, :string, []}</code> describing our primary key as a string. Then we’ll need to tell Phoenix how to convert our data structure to an ID that is used in the routes: <code class="inline">@derive {Phoenix.Param, key: :name}</code>. We’ll also need to remove the <code class="inline">field :name, :string</code> line because this is our new primary key. If this seems unusual, recall that the schema doesn’t list the <code class="inline">id</code> field in models where <code class="inline">id</code> is the primary key.</p>
+<pre><code class="elixir">defmodule Hello.Player do
+  use Hello.Web, :model
+
+  @primary_key {:name, :string, []}
+  @derive {Phoenix.Param, key: :name}
+  schema &quot;players&quot; do
+    field :position, :string
+    field :number, :integer
+
+    timestamps
+  end
+  . . .</code></pre>
+<p>There’s just one more thing we’ll need to do, and that’s remove the reference to <code class="inline">id: player.id,</code> in the <code class="inline">def render(&quot;player.json&quot;, %{player: player})</code> function body.</p>
+<pre><code class="elixir">defmodule Hello.PlayerView do
+  use Hello.Web, :view
+
+  . . .
+
+  def render(&quot;player.json&quot;, %{player: player}) do
+    %{name: player.name,
+      position: player.position,
+      number: player.number}
+  end
+end</code></pre>
+<p>With all of that taken care of, let’s run our migration.</p>
+<pre><code class="console">$mix ecto.migrate</code></pre>
+<p>The resulting <code class="inline">players</code> table will look like this:</p>
+<pre><code class="sql">hello_dev=# \d players
+                Table &quot;public.players&quot;
+   Column    |            Type             | Modifiers
+-------------+-----------------------------+-----------
+ name        | character varying(255)      | not null
+ position    | character varying(255)      |
+ number      | integer                     |
+ inserted_at | timestamp without time zone | not null
+ updated_at  | timestamp without time zone | not null
+Indexes:
+    &quot;players_pkey&quot; PRIMARY KEY, btree (name)</code></pre>
+<p>Now we have a model with the primary key <code class="inline">name</code> that we can query for with <code class="inline">Repo.get!/2</code>. We can also use it in our routes instead of an integer id - <code class="inline">localhost:4000/players/iguberman</code>.</p>
+<h3>Composite primary keys</h3>
+<p>In some cases, you will want two or more fields to make up the primary key. In
+this case, the syntax becomes:</p>
+<pre><code class="elixir">defmodule Hello.Repo.Migrations.CreatePlayer do
+  use Ecto.Migration
+
+  def change do
+    create table(:players, primary_key: false) do
+      add :first_name, :string, primary_key: true
+      add :last_name, :string, primary_key: true
+      add :position, :string
+      add :number, :integer
+  . . .</code></pre>
+<p>and</p>
+<pre><code class="elixir">defmodule Hello.Player do
+  use Hello.Web, :model
+
+  @primary_key false
+  schema &quot;players&quot; do
+    field :first_name, :string, primary_key: true
+    field :last_name, :string, primary_key: true
+    field :position, :string
+    field :number, :integer
+  . . .</code></pre>
+<p>With composite primary keys, you can no longer use get/3 or get!/3,
+but you have to use the more generic get_by/3 or get_by!/3, like so:</p>
+<pre><code class="elixir">localhost:4000/players?first_name=John&amp;last_name=Doe
+
+def index(conn, %{&quot;first_name&quot; =&gt; first_name, &quot;last_name&quot; =&gt; last_name}) do
+  player = Repo.get_by!(Player, first_name: first_name, last_name: last_name)
+  . . .</code></pre>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+  </body>
+</html>

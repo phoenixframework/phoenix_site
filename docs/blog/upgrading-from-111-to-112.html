@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/2008/fbml" itemscope="itemscope" itemtype="http://schema.org/Product">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="readme-deploy" content="0a76ad4a2ae68a6f7b480e04f93f1d2d4fab9046">
+    <title>Phoenix</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    <meta name="description" content="Productive. Reliable. Fast. A productive web framework that does not compromise speed and maintainability">
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <meta property="og:title" content="Phoenix">
+    <meta property="og:description" content="Productive. Reliable. Fast. A productive web framework that does not compromise speed and maintainability">
+    <meta property="og:image" content="https://files.readme.io/PKPqx8L9TJSAY2Bnmw7F_phoenixframework-logo-white@2x.png">
+    <meta property="og:site_name" content="Phoenix">
+    <meta id="config-proxy-url" content="https://proxy.readme.io/proxy">
+    <link rel="canonical" href="http://www.phoenixframework.org/www.phoenixframework.org">
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed for Phoenix" href="/blog.rss">
+    <link rel="stylesheet" href="/assets/css/base.css" />
+    <script type="text/javascript" src="/assets/js/app.js"></script>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-57337100-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:400:sans-serif|Open+Sans:400:sans-serif" rel="stylesheet" type="text/css">
+  </head>
+
+  <body class="layout page-home body-none theme-solid header-solid header-bg-size-auto header-bg-pos-tl header-overlay-triangles lumosity-light undefined theme-threes ng-scope os-linux" cz-shortcut-listen="true">
+<div class="wrapper">
+  <header id="header" class="header">
+    <div class="container">
+      <h1 class="navbar-brand"><a href="/">Phoenix</a></h1>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="https://hexdocs.pm/phoenix/overview.html">Guides</a></li>
+          <li><a href="https://hexdocs.pm/phoenix/Phoenix.html">Docs</a></li>
+          <li><a href="/community">Community</a></li>
+          <li><a href="https://github.com/phoenixframework/phoenix">GitHub</a></li>
+          <li><a href="/blog" title="Blog">Blog</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav pull-right">
+          <li><a class="phx-book" href="https://pragprog.com/book/phoenix/programming-phoenix" title="Book">📙 &nbsp;&nbsp; Book</a></li>
+        </ul>
+      </div>
+    </div>
+    </header>
+    <br/>
+<div class="container body-container">
+  <div class="row">
+    <div class="col-sm-3 border-right">
+        <div class="sidebar-nav">
+          <h4>News</h4>
+          <ul>
+            <li><a href="/blog/phoenix-1-3-0-released" class="active"><span>Phoenix 1.3.0 Released</span></a></li>
+            <li><a href="/blog/contribution-sprint" class="active"><span>Contribution Sprint</span></a></li>
+            <li><a href="/blog/upgrading-from-120-to-130" class="active"><span>Upgrading from 1.2.x to 1.3.0</span></a></li>
+            <li><a href="/blog/upgrading-from-11x-to-120" class="active"><span>Upgrading from 1.1.x to 1.2.0</span></a></li>
+            <li><a href="/blog/upgrading-from-111-to-112" class="active"><span>Upgrading from 1.1.1 to 1.1.2</span></a></li>
+            <li><a href="/blog/upgrading-from-v10-to-v11" class="active"><span>Upgrading from v1.0 to v1.1</span></a></li>
+            <li><a href="/blog/the-road-to-2-million-websocket-connections" class="active"><span>The Road to 2 Million Websocket Connections in Phoenix</span></a></li>
+            <li><a href="/blog/phoenix-10-the-framework-for-the-modern-web-just-landed"><span>Phoenix 1.0 – the framework for the modern web just landed</span></a></li>
+            <li><a href="/blog/phoenix-0100-released-with-assets-handling-generat"><span>Phoenix 0.10.0 released with assets handling, generators, &amp; more</span></a></li>
+          </ul>
+        </div>
+    </div>
+    <div class="col-sm-9 border-left">
+      <div class="docs-content">
+        <div class="docs-header">
+          <h1>Upgrading from v1.1.1 to v1.1.2</h1>
+          
+            <div class="byline">
+                <span>By Jason Stiebs</span>
+                &nbsp;·&nbsp;<span class="ago">2016-01-27</span>
+                &nbsp;·&nbsp;<span>v1.0.0</span>
+            </div>
+          
+          <hr>
+        </div>
+        <div class="content block-content ready">
+          <h2>Phoenix 1.1.1 to 1.1.2 upgrade instructions</h2>
+<p>Check out <a href="https://gist.github.com/chrismccord/d5bc5f8e38c8f76cad33">https://gist.github.com/chrismccord/d5bc5f8e38c8f76cad33</a> for latest details</p>
+<blockquote><p>Optional upgrade for new brunch features</p>
+</blockquote>
+<h3>Update your phoenix deps</h3>
+<pre><code class="elixir">def deps do
+  [{:phoenix, &quot;~&gt; 1.1.2&quot;},
+  ...]
+end</code></pre>
+<p>Now, update your phoenix deps to grab the latest minor releases:</p>
+<pre><code class="console">$ mix deps.update phoenix phoenix_html phoenix_live_reload</code></pre>
+<h3>Update your <code class="inline">package.json</code></h3>
+<blockquote><p>(for umbrellas the <code class="inline">file</code> prefix will need <code class="inline">file:../../deps/</code>)</p>
+</blockquote>
+<pre><code class="javascript">{
+  &quot;repository&quot;: {
+  },
+  &quot;dependencies&quot;: {
+    &quot;babel-brunch&quot;: &quot;^6.0.0&quot;,
+    &quot;brunch&quot;: &quot;^2.1.1&quot;,
+    &quot;clean-css-brunch&quot;: &quot;&gt;= 1.0 &lt; 1.8&quot;,
+    &quot;css-brunch&quot;: &quot;&gt;= 1.0 &lt; 1.8&quot;,
+    &quot;javascript-brunch&quot;: &quot;&gt;= 1.0 &lt; 1.8&quot;,
+    &quot;uglify-js-brunch&quot;: &quot;&gt;= 1.0 &lt; 1.8&quot;,
+    &quot;phoenix&quot;: &quot;file:deps/phoenix&quot;,
+    &quot;phoenix_html&quot;: &quot;file:deps/phoenix_html&quot;
+  }
+}</code></pre>
+<p>And run <code class="inline">$ npm install</code> to bring in the new node deps</p>
+<h3>Update you brunch-config.js:</h3>
+<p>Remove phoenix and phoenix_html from your <code class="inline">watched</code> configuration:</p>
+<pre><code class="diff">paths: {
+    // Dependencies and current project directories to watch
+    watched: [
+-     &quot;deps/phoenix/web/static&quot;,
+-     &quot;deps/phoenix_html/web/static&quot;,
+      &quot;web/static&quot;,
+      &quot;test/static&quot;
+    ],
+
+    // Where to compile files to
+    public: &quot;priv/static&quot;
+  },</code></pre>
+<p>Add <code class="inline">npm.whitelist</code> to your <code class="inline">npm</code> config:</p>
+<pre><code class="diff">npm: {
+    enabled: true,
++   whitelist: [&quot;phoenix&quot;, &quot;phoenix_html&quot;]
+  }</code></pre>
+<h3>Update your js imports</h3>
+<pre><code class="diff">- import &quot;deps/phoenix_html/web/static/js/phoenix_html&quot;
++ import &quot;phoenix_html&quot;
+
+- import {Socket} from &quot;deps/phoenix/web/static/js/phoenix&quot;
++ import {Socket} from &quot;phoenix&quot;</code></pre>
+<h2>Test it</h2>
+<pre><code>$ mix phoenix.server
+07 Jan 16:16:59 - info: compiled 5 files into 2 files, copied 3 in 1.2 sec</code></pre>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+  </body>
+</html>

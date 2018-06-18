@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/2008/fbml" itemscope="itemscope" itemtype="http://schema.org/Product">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="readme-deploy" content="0a76ad4a2ae68a6f7b480e04f93f1d2d4fab9046">
+    <title>Phoenix</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    <meta name="description" content="Productive. Reliable. Fast. A productive web framework that does not compromise speed and maintainability">
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <meta property="og:title" content="Phoenix">
+    <meta property="og:description" content="Productive. Reliable. Fast. A productive web framework that does not compromise speed and maintainability">
+    <meta property="og:image" content="https://files.readme.io/PKPqx8L9TJSAY2Bnmw7F_phoenixframework-logo-white@2x.png">
+    <meta property="og:site_name" content="Phoenix">
+    <meta id="config-proxy-url" content="https://proxy.readme.io/proxy">
+    <link rel="canonical" href="http://www.phoenixframework.org/www.phoenixframework.org">
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed for Phoenix" href="/blog.rss">
+    <link rel="stylesheet" href="/assets/css/base.css" />
+    <script type="text/javascript" src="/assets/js/app.js"></script>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-57337100-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:400:sans-serif|Open+Sans:400:sans-serif" rel="stylesheet" type="text/css">
+  </head>
+
+  <body class="layout page-home body-none theme-solid header-solid header-bg-size-auto header-bg-pos-tl header-overlay-triangles lumosity-light undefined theme-threes ng-scope os-linux" cz-shortcut-listen="true">
+<div class="wrapper">
+  <header id="header" class="header">
+    <div class="container">
+      <h1 class="navbar-brand"><a href="/">Phoenix</a></h1>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="https://hexdocs.pm/phoenix/overview.html">Guides</a></li>
+          <li><a href="https://hexdocs.pm/phoenix/Phoenix.html">Docs</a></li>
+          <li><a href="/community">Community</a></li>
+          <li><a href="https://github.com/phoenixframework/phoenix">GitHub</a></li>
+          <li><a href="/blog" title="Blog">Blog</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav pull-right">
+          <li><a class="phx-book" href="https://pragprog.com/book/phoenix/programming-phoenix" title="Book">📙 &nbsp;&nbsp; Book</a></li>
+        </ul>
+      </div>
+    </div>
+    </header>
+    <br/>
+<div class="container body-container">
+  <div class="row">
+    <div class="col-sm-3 border-right">
+        <div class="sidebar-nav">
+          <h4>News</h4>
+          <ul>
+            <li><a href="/blog/phoenix-1-3-0-released" class="active"><span>Phoenix 1.3.0 Released</span></a></li>
+            <li><a href="/blog/contribution-sprint" class="active"><span>Contribution Sprint</span></a></li>
+            <li><a href="/blog/upgrading-from-120-to-130" class="active"><span>Upgrading from 1.2.x to 1.3.0</span></a></li>
+            <li><a href="/blog/upgrading-from-11x-to-120" class="active"><span>Upgrading from 1.1.x to 1.2.0</span></a></li>
+            <li><a href="/blog/upgrading-from-111-to-112" class="active"><span>Upgrading from 1.1.1 to 1.1.2</span></a></li>
+            <li><a href="/blog/upgrading-from-v10-to-v11" class="active"><span>Upgrading from v1.0 to v1.1</span></a></li>
+            <li><a href="/blog/the-road-to-2-million-websocket-connections" class="active"><span>The Road to 2 Million Websocket Connections in Phoenix</span></a></li>
+            <li><a href="/blog/phoenix-10-the-framework-for-the-modern-web-just-landed"><span>Phoenix 1.0 – the framework for the modern web just landed</span></a></li>
+            <li><a href="/blog/phoenix-0100-released-with-assets-handling-generat"><span>Phoenix 0.10.0 released with assets handling, generators, &amp; more</span></a></li>
+          </ul>
+        </div>
+    </div>
+    <div class="col-sm-9 border-left">
+      <div class="docs-content">
+        <div class="docs-header">
+          <h1>Phoenix 1.3.0 released</h1>
+          
+            <div class="byline">
+                <span>By Chris McCord</span>
+                &nbsp;·&nbsp;<span class="ago">2017-07-28</span>
+                &nbsp;·&nbsp;<span>v1.3.0</span>
+            </div>
+          
+          <hr>
+        </div>
+        <div class="content block-content ready">
+          <p>Phoenix 1.3.0 is out! This release focuses on code generators with
+improved project structure, first class umbrella project support, and
+scaffolding that re-enforces Phoenix as a web-interface to your
+greater Elixir application. We have also included a new
+<code class="inline">action_fallback</code> feature in <code class="inline">Phoenix.Controller</code> that allows you to
+translate common datastructures in your domain to valid responses. In
+practice, this cleans up your controller code and gives you a single
+place to handle otherwise duplicated code-paths. It is <a href="https://swanros.com/2017/03/03/phoenix-1-3-is-pure-love-for-api-development/">particularly
+nice for JSON API controllers</a>.
+Also making it into the 1.3 release is a V2 of our channel wire protocol that resolves race
+conditions under certain messaging patterns as well as an improved
+serialization format.</p>
+<p>For those interested in a detailed overview of the changes and design
+decisions, check out my LonestarElixir keynote:
+<a href="https://www.youtube.com/watch?v=tMO28ar0lW8">https://www.youtube.com/watch?v=tMO28ar0lW8</a>. Note that the directory
+structure in the talk is slightly outdated but all ideas still apply.</p>
+<p>To use the new <code class="inline">phx.new</code> project generator, you can install the
+archive with the following command:</p>
+<pre><code>$ mix archive.install https://github.com/phoenixframework/archives/raw/master/phx_new.ez</code></pre>
+<p>1.3.0 uses the <code class="inline">phx.</code> prefix on all generators. The old generators
+are still around though to give the community and learning resources
+time to catch up. They will be removed on 1.4.0.</p>
+<p>As always, we have <a href="http://phoenixframework.org/blog/upgrading-from-120-to-130">an upgrade guide</a>
+with detailed instructions for migrating from 1.2.x projects.</p>
+<p>1.3.0 is a backwards compatible release, so upgrading can be as easy
+as bumping your <code class="inline">:phoenix</code> dep in mix.exs to “~&gt; 1.3”. For those wanting
+to adopt the new conventions, the upgrade guides will take you
+step-by-step. Before you upgrade, it’s worth watching the keynote or
+exploring the design decisions outlined below.</p>
+<h2>Phoenix 1.3 – Design With Intent</h2>
+<p>The new project and code generators take the lessons learned from the
+last two years and push folks towards better design decisions as
+they’re learning. New projects have a <code class="inline">lib/my_app</code> directory for
+business logic and a <code class="inline">lib/my_app_web</code> directory that holds all Phoenix
+related web modules, which are the web interface into your greater
+Elixir application. Along with new project structure, comes new
+<code class="inline">phx.gen.html</code> and <code class="inline">phx.gen.json</code> generators that adopt these
+goals of isolating your web interface from your domain.</p>
+<h3>Contexts</h3>
+<p>When you generate a HTML or JSON resource with <code class="inline">phx.gen.html|json</code>,
+Phoenix will generate code inside a <em>Context</em>. Contexts are dedicated
+modules that expose and group related functionality. For example,
+anytime you call Elixir’s standard library, be it <code class="inline">Logger.info/1</code> or
+<code class="inline">Stream.map/2</code>, you are accessing different contexts. Internally,
+Elixir’s logger is made of multiple modules, such as <code class="inline">Logger.Config</code>
+and <code class="inline">Logger.Backends</code>, but we never interact with those modules
+directly. We call the <code class="inline">Logger</code> module the context, exactly because it
+exposes and groups all of the logging functionality.</p>
+<p>For example, to generate a “user” resource we’d run:</p>
+<pre><code>$ mix phx.gen.html Accounts User users email:string:unique</code></pre>
+<p>Notice how “Accounts” is a new required first parameter. This is the
+context module where your code will live that carries out the business
+logic of user accounts in your application. It could include features
+like authentication and user registration. Here’s a peek at part of
+the code that’s generated:</p>
+<pre><code># lib/my_app_web/controllers/user_controller.ex
+defmodule MyAppWeb.UserController do
+  ...
+  alias MyApp.Accounts
+
+  def index(conn, _params) do
+    users = Accounts.list_users()
+    render(conn, &quot;index.html&quot;, users: users)
+  end
+
+  def create(conn, %{&quot;user&quot; =&gt; user_params}) do
+    case Accounts.create_user(user_params) do
+      {:ok, user} -&gt;
+        conn
+        |&gt; put_flash(:info, &quot;user created successfully.&quot;)
+        |&gt; redirect(to: user_path(conn, :show, user))
+      {:error, %Ecto.Changeset{} = changeset} -&gt;
+        render(conn, &quot;new.html&quot;, changeset: changeset)
+    end
+  end
+  ...
+end
+
+
+# lib/my_app/accounts/accounts.ex
+defmodule MyApp.Accounts do
+  alias MyApp.Accounts.User
+
+  def list_users do
+    Repo.all(User)
+  end
+
+  def create_user(attrs \\ %{}) do
+    %User{}
+    |&gt; User.changeset(attrs)
+    |&gt; Repo.insert()
+  end
+  ...
+end</code></pre>
+<p>You will also have an Ecto schema generated inside
+<code class="inline">lib/my_app/accounts/user.ex</code>. Notice how our controller calls into an
+API boundary to create or fetch users in the system. Now we can easily
+reuse that logic in other controllers, in Phoenix channels, in
+administrative tasks, etc. Testing also becomes more straight-forward,
+as we can test the ins and outs of domain without going through the
+web stack.</p>
+<p>Designing with contexts gives you a solid foundation to grow your
+application from. Using discrete, well-defined APIs that expose the
+intent of your system allows you to write more maintainable
+applications with reusable code. Additionally, we can get a glimpse of
+what the application does and its feature-set just by exploring the
+application directory structure:</p>
+<pre><code>lib
+├── my_app
+│   ├── accounts
+│   │   ├── accounts.ex
+│   │   └── user.ex
+│   ├── sales
+│   │   ├── manager.ex
+│   │   ├── sales.ex
+│   │   └── ticket.ex
+│   └── repo.ex
+├── my_app.ex
+├── my_app_web
+│   ├── channels
+│   ├── controllers
+│   ├── templates
+│   └── views
+└── my_app_web.ex</code></pre>
+<p>With just a glance at the directory structure, we can see this
+application has a user Accounts system, as well as sales system. We
+can also infer that there is a natural API between these systems thru
+the <code class="inline">sales.ex</code> and <code class="inline">accounts.ex</code> modules. We gain this insight
+<em>without seeing a single line of code</em>. Contrast that to the previous
+<code class="inline">web/models</code>, which did not reveal any relationship between files, and
+mostly reflected your database structure, providing no insight on how
+they actually related to your domain.</p>
+<h2><code class="inline">action_fallback</code></h2>
+<p>The new <code class="inline">action_fallback</code> feature allows you to specify a plug that is
+called if your controller action fails to return a valid <code class="inline">Plug.Conn{}</code>
+struct. The action fallback plug’s job is then to take the connection
+before the controller action, as well as the result and convert it to
+a valid plug response. This is particularly nice for JSON APIs as it
+removes duplication across controllers. For example, your previous
+controllers probably looked something like this:</p>
+<pre><code class="elixir">def MyAppWeb.PageController do
+  alias MyApp.CMS
+  def show(conn, %{&quot;id&quot; =&gt; id}) do
+    case CMS.get_page(id, conn.assigns.current_user) do
+      {:ok, page} -&gt; render(conn, &quot;show.html&quot;, page: page)
+      {:error, :not_found} -&gt;
+        conn
+        |&gt; put_status(404)
+        |&gt; render(MyAppWeb.ErrorView, :&quot;404&quot;)
+      {:error, :unauthorized} -&gt;
+        conn
+        |&gt; put_status(401)
+        |&gt; render(MyAppWeb.ErrorView, :&quot;401&quot;)
+    end
+  end
+end</code></pre>
+<p>This code on its own is fine, but the issue is common data-structures
+in our domain, such as <code class="inline">{:error, :not_found}</code>, and `{:error,
+:unauthorized}` must be handled repeatedly across many different
+controllers. Now there’s a better way with action fallback. With 1.3,
+we can write:</p>
+<pre><code class="elixir">def MyAppWeb.PageController do
+  alias MyApp.CMS
+
+  action_fallback MyAppWeb.FallbackController
+
+  def show(conn, %{&quot;id&quot; =&gt; id}) do
+    with {:ok, page} &lt;- CMS.get_page(id, conn.assigns.current_user) do
+      render(conn, &quot;show.html&quot;, page: page)
+    end
+  end
+end
+
+
+defmodule MyAppWeb.FallbackController do
+  def call(conn, {:error, :not_found}) do
+    conn
+    |&gt; put_status(:not_found)
+    |&gt; render(MyAppWeb.ErrorView, :&quot;404&quot;)
+  end
+
+  def call(conn, {:error, :unauthorized}) do
+    conn
+    |&gt; put_status(:unauthorized)
+    |&gt; render(MyAppWeb.ErrorView, :&quot;401&quot;)
+  end
+end</code></pre>
+<p>Notice how our controller can now match on the happy path using a
+<code class="inline">with</code> expression. We can then specify a fallback controller that
+handles the response conversion in a single place. This is a huge win
+for code clarity and removing duplication.</p>
+<p>We are excited about these changes and their long-term payoff in
+maintainability. We also feel they’ll lead to sharable, isolated
+libraries that the whole community can take advantage of – inside and
+outside of Phoenix related projects.</p>
+<p>If you have issues upgrading, please find us on #elixir-lang irc or
+slack and we’ll get things sorted out!</p>
+<p>Last but not least, I would like to take a moment to thank the companies that
+make this project possible. Much love to <a href="http://plataformatec.com.br">plataformatec</a> for their
+continued support of Elixir development and to <a href="https://dockyard.com">DockYard</a> for their sponsorship of Phoenix.</p>
+<p>Happy coding! 🐥🔥</p>
+<p>-Chris</p>
+<p>Full changelog:</p>
+<h2>1.3.0-rc.3 (2017-07-24)</h2>
+<ul>
+<li>Enhancements
+</li>
+<li>[ChannelTest] Subscribe <code class="inline">connect</code> to <code class="inline">UserSocket.id</code> to support
+testing forceful disconnects
+</li>
+<li>[Socket] Support static <code class="inline">:assigns</code> when defining channel routes
+</li>
+<li>[Channel] Add V2 of wire channel wire protocol with resolved race
+conditions and compacted payloads
+</li>
+<li>[phx.new] Use new <code class="inline">lib/my_app</code> and <code class="inline">lib/my_app_web</code> directory
+structure
+</li>
+<li>[phx.new] Use new <code class="inline">MyAppWeb</code> alias convention for web modules
+</li>
+<li><p>[phx.gen.context] No longer prefix Ecto table name by context name</p>
+</li>
+<li>JavaScript client enhancements
+</li>
+<li><p>Use V2 channel wire protocol support</p>
+</li>
+<li>JavaScript client bug fixes
+</li>
+<li>Resolve race conditions when join timeouts occur on client, while
+server channel successfully joins
+</li>
+</ul>
+<h2>1.3.0-rc.2 (2017-05-15)</h2>
+<p>See
+these <a href="https://gist.github.com/chrismccord/71ab10d433c98b714b75c886eff17357"><code class="inline">1.2.x</code> to <code class="inline">1.3.x</code> upgrade instructions</a>
+to bring your existing apps up to speed.</p>
+<ul>
+<li>Enhancements
+</li>
+<li>[Generator] Add new <code class="inline">phx.new</code>, <code class="inline">phx.new.web</code>, <code class="inline">phx.new.ecto</code>
+project generators with improved application structure and support for
+umbrella applications
+</li>
+<li>[Generator] Add new <code class="inline">phx.gen.html</code> and <code class="inline">phx.gen.json</code> resource
+generators with improved isolation of API boundaries
+</li>
+<li>[Controller] Add <code class="inline">current_path</code> and <code class="inline">current_url</code> to generate a
+connection’s path and url
+</li>
+<li>[Controller] Introduce <code class="inline">action_fallback</code> to registers a plug to
+call as a fallback to the controller action
+</li>
+<li>[Controller] Wrap exceptions at controller to maintain connection
+state
+</li>
+<li>[Channel] Add ability to configure channel event logging with
+<code class="inline">:log_join</code> and <code class="inline">:log_handle_in</code> options
+</li>
+<li>[Channel] Warn on unhandled <code class="inline">handle_info/2</code> messages
+</li>
+<li>[Channel] Channels now distinguish from graceful exits and
+application restarts, allowing clients to enter error mode and
+reconnected after cold deploys.
+</li>
+<li>[Router] Document <code class="inline">match</code> support for matching on any HTTP method
+with the special <code class="inline">:*</code> argument
+</li>
+<li>[Router] Populate <code class="inline">conn.path_params</code> with path parameters for the
+route
+</li>
+<li>[ConnTest] Add <code class="inline">redirected_params/1</code> to return the named params
+matched in the router for the redirected URL
+</li>
+<li>[Digester] Add <code class="inline">mix phx.digest.clean</code> to remove old versions of
+compiled assets
+</li>
+<li><p>[phx.new] Add Erlang 20 support in <code class="inline">phx.new</code> installer archive</p>
+</li>
+<li>Bug Fixes
+</li>
+<li>[Controller] Harden local redirect against arbitrary URL
+redirection
+</li>
+<li><p>[Controller] Fix issue causing flash session to remain when using
+<code class="inline">clear_flash/1</code></p>
+</li>
+<li>Deprecations
+</li>
+<li><p>[Generator] All <code class="inline">phoenix.*</code> mix tasks have been deprecated in
+favor of new <code class="inline">phx.*</code> tasks</p>
+</li>
+<li>JavaScript client enhancements
+</li>
+<li>Add ability to pass <code class="inline">encode</code> and <code class="inline">decode</code> functions to socket
+constructor for custom encoding and decoding of outgoing and incoming
+messages.
+</li>
+<li>Detect heartbeat timeouts on client to handle ungraceful
+connection loss for faster socket error detection
+</li>
+<li>Add support for AMD/RequireJS
+</li>
+</ul>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+  </body>
+</html>

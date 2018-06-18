@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/2008/fbml" itemscope="itemscope" itemtype="http://schema.org/Product">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="readme-deploy" content="0a76ad4a2ae68a6f7b480e04f93f1d2d4fab9046">
+    <title>Phoenix</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    <meta name="description" content="Productive. Reliable. Fast. A productive web framework that does not compromise speed and maintainability">
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <meta property="og:title" content="Phoenix">
+    <meta property="og:description" content="Productive. Reliable. Fast. A productive web framework that does not compromise speed and maintainability">
+    <meta property="og:image" content="https://files.readme.io/PKPqx8L9TJSAY2Bnmw7F_phoenixframework-logo-white@2x.png">
+    <meta property="og:site_name" content="Phoenix">
+    <meta id="config-proxy-url" content="https://proxy.readme.io/proxy">
+    <link rel="canonical" href="http://www.phoenixframework.org/www.phoenixframework.org">
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed for Phoenix" href="/blog.rss">
+    <link rel="stylesheet" href="/assets/css/base.css" />
+    <script type="text/javascript" src="/assets/js/app.js"></script>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-57337100-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:400:sans-serif|Open+Sans:400:sans-serif" rel="stylesheet" type="text/css">
+  </head>
+
+  <body class="layout page-home body-none theme-solid header-solid header-bg-size-auto header-bg-pos-tl header-overlay-triangles lumosity-light undefined theme-threes ng-scope os-linux" cz-shortcut-listen="true">
+<div class="wrapper">
+  <header id="header" class="header">
+    <div class="container">
+      <h1 class="navbar-brand"><a href="/">Phoenix</a></h1>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="https://hexdocs.pm/phoenix/overview.html">Guides</a></li>
+          <li><a href="https://hexdocs.pm/phoenix/Phoenix.html">Docs</a></li>
+          <li><a href="/community">Community</a></li>
+          <li><a href="https://github.com/phoenixframework/phoenix">GitHub</a></li>
+          <li><a href="/blog" title="Blog">Blog</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav pull-right">
+          <li><a class="phx-book" href="https://pragprog.com/book/phoenix/programming-phoenix" title="Book">📙 &nbsp;&nbsp; Book</a></li>
+        </ul>
+      </div>
+    </div>
+    </header>
+    <br/>
+<div class="container body-container">
+  <div class="row">
+    <div class="col-sm-3 border-right">
+        <div class="sidebar-nav">
+          <h4>News</h4>
+          <ul>
+            <li><a href="/blog/phoenix-1-3-0-released" class="active"><span>Phoenix 1.3.0 Released</span></a></li>
+            <li><a href="/blog/contribution-sprint" class="active"><span>Contribution Sprint</span></a></li>
+            <li><a href="/blog/upgrading-from-120-to-130" class="active"><span>Upgrading from 1.2.x to 1.3.0</span></a></li>
+            <li><a href="/blog/upgrading-from-11x-to-120" class="active"><span>Upgrading from 1.1.x to 1.2.0</span></a></li>
+            <li><a href="/blog/upgrading-from-111-to-112" class="active"><span>Upgrading from 1.1.1 to 1.1.2</span></a></li>
+            <li><a href="/blog/upgrading-from-v10-to-v11" class="active"><span>Upgrading from v1.0 to v1.1</span></a></li>
+            <li><a href="/blog/the-road-to-2-million-websocket-connections" class="active"><span>The Road to 2 Million Websocket Connections in Phoenix</span></a></li>
+            <li><a href="/blog/phoenix-10-the-framework-for-the-modern-web-just-landed"><span>Phoenix 1.0 – the framework for the modern web just landed</span></a></li>
+            <li><a href="/blog/phoenix-0100-released-with-assets-handling-generat"><span>Phoenix 0.10.0 released with assets handling, generators, &amp; more</span></a></li>
+          </ul>
+        </div>
+    </div>
+    <div class="col-sm-9 border-left">
+      <div class="docs-content">
+        <div class="docs-header">
+          <h1>Upgrading from v1.2 to v1.3</h1>
+          
+            <div class="byline">
+                <span>By Chris McCord</span>
+                &nbsp;·&nbsp;<span class="ago">2017-07-27</span>
+                &nbsp;·&nbsp;<span>v1.3.0</span>
+            </div>
+          
+          <hr>
+        </div>
+        <div class="content block-content ready">
+          <p>If you want a run-down of the 1.3 changes and the design decisions behind those changes, check out the LonestarElixir Phoenix 1.3 keynote: <a href="https://www.youtube.com/watch?v=tMO28ar0lW8">https://www.youtube.com/watch?v=tMO28ar0lW8</a></p>
+<p>To use the new <code class="inline">phx.new</code> project generator, you can install the archive with the following command:</p>
+<pre><code>$ mix archive.install https://github.com/phoenixframework/archives/raw/master/phx_new.ez</code></pre>
+<h2>Bump your phoenix dep</h2>
+<p>Phoenix v1.3.0 is a backwards compatible release with v1.2.x. To upgrade your existing 1.2.x project, simply bump your phoenix dependency in <code class="inline">mix.exs</code>:</p>
+<pre><code class="elixir">def deps do
+  [{:phoenix, &quot;~&gt; 1.3.0&quot;},
+   ...]
+end</code></pre>
+<h2>Update your static manifest location</h2>
+<p>If using the digest task (mix phoenix.digest), the location of the built manifest has changed from <code class="inline">priv/static/manifest.json</code> to <code class="inline">priv/static/cache_manifest.json</code>. Update your <code class="inline">config/prod.exs</code> endpoint config with the following changes:</p>
+<pre><code class="diff">-cache_static_manifest: &quot;priv/static/manifest.json&quot;
++cache_static_manifest: &quot;priv/static/cache_manifest.json&quot;</code></pre>
+<p>Next, run <code class="inline">mix deps.get</code> and you’re all set! Continue reading to jump on the latest project structure conventions (optional).</p>
+<h2>Update your project the new 1.3 directory structure (optional)</h2>
+<h3>mix.exs</h3>
+<p>In <code class="inline">mix.exs</code>, update your <code class="inline">elixirc_paths/1</code> clauses to remove “web”:</p>
+<pre><code class="diff">- defp elixirc_paths(:test), do: [&quot;lib&quot;, &quot;web&quot;, &quot;test/support&quot;]
+- defp elixirc_paths(_),     do: [&quot;lib&quot;, &quot;web&quot;]
++ defp elixirc_paths(:test), do: [&quot;lib&quot;, &quot;test/support&quot;]
++ defp elixirc_paths(_),     do: [&quot;lib&quot;]</code></pre>
+<p>If you have a <code class="inline">reloadable_paths</code> configuration in your <code class="inline">config/dev.exs</code>, you may remove this value as all <code class="inline">elixirc_paths</code> are now reloaded in dev by default.</p>
+<h3>Move your root-level <code class="inline">web/</code> directory to <code class="inline">lib/app_name_web</code>, and migrate to new <code class="inline">Web</code> namespace</h3>
+<p>The root level <code class="inline">web/</code> directory for new projects has been removed in favor of <code class="inline">lib/my_app_web</code>. Additionally, a <code class="inline">Web</code> namespace convention has been added to isolate the web interface from your elixir application.</p>
+<p>Migrate your files to the new structure with the following steps:</p>
+<ol>
+<li><code class="inline">$ cd my_app</code>
+</li>
+<li><code class="inline">$ mv web/web.ex lib/my_app_web.ex</code>
+</li>
+<li><code class="inline">$ mv web lib/my_app_web</code>
+</li>
+<li><code class="inline">$ mv lib/my_app/endpoint.ex lib/my_app_web/</code>
+</li>
+<li>Rename the <code class="inline">MyApp.Web</code> module to <code class="inline">MyAppWeb</code> in <code class="inline">lib/my_app_web.ex</code> 
+</li>
+<li>Update your view root path in <code class="inline">lib/my_app_web.ex</code> to point to the new template location, and add the <code class="inline">:namespace</code> option:
+</li>
+</ol>
+<pre><code class="diff">def view do
+       quote do
+   -      use Phoenix.View, root: &quot;web/templates&quot;
+   +      use Phoenix.View, root: &quot;lib/my_app_web/templates&quot;,
+   +                        namespace: MyAppWeb
+          ...</code></pre>
+<ol>
+<li>Add the namespace option to your <code class="inline">controller</code> definition in <code class="inline">web.ex</code>:
+</li>
+</ol>
+<pre><code class="diff">def controller do
+       quote do
+   -     use Phoenix.Controller
+   +     use Phoenix.Controller, namespace: MyAppWeb</code></pre>
+<ol>
+<li>Update your aliases in web.ex <code class="inline">controller</code>, <code class="inline">view</code>, and <code class="inline">channel</code> definitions to use the new <code class="inline">Web</code> namespace:
+</li>
+</ol>
+<pre><code class="diff">def controller do
+       quote do
+         ...
+   -     import MyApp.Router.Helpers
+   +     import MyAppWeb.Router.Helpers
+   -     import MyApp.Gettext
+   +     import MyAppWeb.Gettext
+       end
+     end
+
+     def view do
+       quote do
+         ...
+   -     import MyApp.Router.Helpers
+   +     import MyAppWeb.Router.Helpers
+   -     import MyApp.ErrorHelpers
+   +     import MyAppWeb.ErrorHelpers
+   -     import MyApp.Gettext
+   +     import MyAppWeb.Gettext
+       end
+     end
+
+     def channel do
+       quote do
+         ...
+   -     import MyApp.Gettext
+   +     import MyAppWeb.Gettext
+       end
+     end</code></pre>
+<ol>
+<li>Rename all web related modules in <code class="inline">lib/my_app_web/</code> (<code class="inline">gettext.ex</code>, <code class="inline">controllers/*</code>, <code class="inline">views/*</code>, <code class="inline">channels/*</code>, <code class="inline">endpoint.ex</code>, <code class="inline">router.ex</code>) to include a <code class="inline">Web</code> namespace, for example:
+</li>
+</ol>
+<ul>
+<li><code class="inline">MyApp.Endpoint</code> =&gt; <code class="inline">MyAppWeb.Endpoint</code>
+</li>
+<li><code class="inline">MyApp.Router</code> =&gt; <code class="inline">MyAppWeb.Router</code>
+</li>
+<li><code class="inline">MyApp.PageController</code> =&gt; <code class="inline">MyAppWeb.PageController</code>
+</li>
+<li><code class="inline">MyApp.PageView</code> =&gt; <code class="inline">MyAppWeb.PageView</code>
+</li>
+<li><code class="inline">MyApp.UserSocket</code> =&gt; <code class="inline">MyAppWeb.UserSocket</code>
+</li>
+<li><code class="inline">MyApp.Web</code> =&gt; <code class="inline">MyAppWeb</code>
+</li>
+<li>etc
+</li>
+</ul>
+<ol>
+<li>Update all aliases in <code class="inline">lib/app_name_web/router.ex</code> to include new <code class="inline">Web</code> namespace. Most likely you can accomplish this by adding <code class="inline">Web</code> to the second argument of your scope blocks, for example:
+</li>
+</ol>
+<pre><code class="diff">- defmodule MyApp.Router do
+   + defmodule MyAppWeb.Router do
+     ...
+   -   scope &quot;/&quot;, MyApp do
+   +   scope &quot;/&quot;, MyAppWeb do
+         pipe_through :browser
+
+         resources &quot;/users&quot;, UserController
+         ...
+      end</code></pre>
+<ol>
+<li>Update <code class="inline">endpoint.ex</code> to use new web modules:
+</li>
+</ol>
+<pre><code class="diff">- defmodule MyApp.Endpoint do
+   + defmodule MyAppWeb.Endpoint do
+       ...
+   -   socket &quot;/socket&quot;, MyApp.UserSocket
+   +   socket &quot;/socket&quot;, MyAppWeb.UserSocket
+       ...
+   -   plug MyApp.Router
+   +   plug MyAppWeb.Router</code></pre>
+<ol>
+<li>Rename <code class="inline">lib/my_app.ex</code> to <code class="inline">lib/my_app/application.ex</code> and <code class="inline">MyApp</code> to <code class="inline">MyApp.Application</code>
+</li>
+<li>in <code class="inline">mix.exs</code>, change <code class="inline">mod: {MyApp, []}</code> to <code class="inline">mod: {MyApp.Application, []}</code>
+</li>
+<li>in <code class="inline">lib/my_app/application.ex</code>, update your children to reference the new endpoint:
+</li>
+</ol>
+<pre><code class="diff">...
+       children = [
+         ...
+   -     supervisor(MyApp.Endpoint, []),
+   +     supervisor(MyAppWeb.Endpoint, []),
+         ...
+       ]
+
+     ...</code></pre>
+<ol>
+<li>Update all endpoint aliases in <code class="inline">config/*.exs</code> (<code class="inline">config.exs</code>, <code class="inline">prod.exs</code>, <code class="inline">prod.secret.exs</code>, <code class="inline">dev.exs</code>, <code class="inline">test.exs</code>, etc) to use new <code class="inline">Web</code> namespace:
+</li>
+</ol>
+<pre><code class="diff">- config :my_app, MyApp.Endpoint,
+   + config :my_app, MyAppWeb.Endpoint,
+       ...
+   -   render_errors: [view: MyApp.ErrorView, accepts: ~w(html json)],
+   +   render_errors: [view: MyAppWeb.ErrorView, accepts: ~w(html json)],
+     ...</code></pre>
+<ol>
+<li>Update your live-reload patterns config in <code class="inline">config/dev.exs</code>:
+</li>
+</ol>
+<pre><code class="diff">- config :my_app, MyApp.Endpoint,
+   + config :my_app, MyAppWeb.Endpoint,
+       live_reload: [
+         patterns: [
+           ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
+           ~r{priv/gettext/.*(po)$},
+   -       ~r{web/views/.*(ex)$},
+   -       ~r{web/templates/.*(eex)$}
+   +       ~r{lib/my_app_web/views/.*(ex)$},
+   +       ~r{lib/my_app_web/templates/.*(eex)$}
+         ]
+       ]</code></pre>
+<ol>
+<li>Rename your <code class="inline">test/support/conn_case.ex</code> and <code class="inline">test/support/channel_case.ex</code> modules to include <code class="inline">Web</code> namespace, and update <code class="inline">@endpoint</code> and router aliases in each:
+</li>
+</ol>
+<pre><code class="diff">-defmodule MyApp.ConnCase do
+   +defmodule MyAppWeb.ConnCase do
+     using do
+       quote do
+         ...
+   -     import MyApp.Router.Helpers
+   +     import MyAppWeb.Router.Helpers
+
+         # The default endpoint for testing
+   -     @endpoint MyApp.Endpoint
+   +     @endpoint MyAppWeb.Endpoint
+       end
+     end
+     ...
+
+
+   -defmodule MyApp.ChannelCase do
+   +defmodule MyAppWeb.ChannelCase do
+
+     using do
+       quote do
+         ...
+   -     @endpoint MyApp.Endpoint
+   +     @endpoint MyAppWeb.Endpoint
+       end
+     end
+     ...</code></pre>
+<ol>
+<li>Update all <code class="inline">test/*/**.exs</code> references to <code class="inline">use MyApp.ConnCase</code> or <code class="inline">use MyApp.ChannelCase</code> to use new <code class="inline">MyAppWeb.ConnCase</code> and <code class="inline">MyAppWeb.ChannelCase</code> aliases.
+</li>
+</ol>
+<h3>Move static assets inside self-contained assets/ directory</h3>
+<p>New projects now include a root-level <code class="inline">assets/</code> directory, which serves as a self-contained location for your asset builder’s config, source files, and packages. This changer keeps things like <code class="inline">node_modules</code>, <code class="inline">package.json</code>, and <code class="inline">brunch-config.js</code> from leaking into the root of your elixir application. Update your app to the new structure by following these steps:</p>
+<ol>
+<li>move all <code class="inline">web/static/</code> sources into <code class="inline">assets/</code>, followed by <code class="inline">package.json</code>, <code class="inline">node_modules</code>, and <code class="inline">brunch-config.js</code>
+</li>
+</ol>
+<pre><code class="console">$ mv mv lib/my_app_web/static assets/
+   $ mv assets/assets assets/static
+   $ mv package.json assets/
+   $ mv brunch-config.js assets/
+   $ rm -rf node_modules</code></pre>
+<ol>
+<li>Update your <code class="inline">asset/package.json</code> <code class="inline">phoenix</code> and <code class="inline">phoenix_html</code> paths:
+</li>
+</ol>
+<pre><code class="diff">&quot;dependencies&quot;: {
+   -   &quot;phoenix&quot;: &quot;file:deps/phoenix&quot;,
+   +   &quot;phoenix&quot;: &quot;file:../deps/phoenix&quot;,
+   -   &quot;phoenix_html&quot;: &quot;file:deps/phoenix_html&quot;
+   +   &quot;phoenix_html&quot;: &quot;file:../deps/phoenix_html&quot;
+     },</code></pre>
+<ol>
+<li>Update your <code class="inline">assets/brunch-config.js</code> to be aware of the new conventions:
+</li>
+</ol>
+<pre><code class="diff">conventions: {
+   -   // This option sets where we should place non-css and non-js assets in.
+   -   // By default, we set this to &quot;/web/static/assets&quot;. Files in this directory
+   -   // will be copied to `paths.public`, which is &quot;priv/static&quot; by default.
+   -   assets: /^(web\/static\/assets)/
+   +   // This option sets where we should place non-css and non-js assets in.
+   +   // By default, we set this to &quot;/assets/static&quot;. Files in this directory
+   +   // will be copied to `paths.public`, which is &quot;priv/static&quot; by default.
+   +   assets: /^(static)/
+     },
+
+     paths: {
+       // Dependencies and current project directories to watch
+   -   watched: [
+   -     &quot;web/static&quot;,
+   -     &quot;test/static&quot;
+   -   ],
+   +   watched: [&quot;static&quot;, &quot;css&quot;, &quot;js&quot;, &quot;vendor&quot;],
+
+       // Where to compile files to
+   -   public: &quot;priv/static&quot;
+   +   public: &quot;../priv/static&quot;
+     },
+
+     plugins: {
+       babel: {
+         // Do not use ES6 compiler in vendor code
+   -     ignore: [/web\/static\/vendor/]
+   +     ignore: [/vendor/]
+       }
+     },
+
+     modules: {
+       autoRequire: {
+   -     &quot;js/app.js&quot;: [&quot;web/static/js/app&quot;]
+   +     &quot;js/app.js&quot;: [&quot;js/app&quot;]
+       }
+     },</code></pre>
+<ol>
+<li>Update your <code class="inline">config/dev.exs</code> watcher to run in the new assets directory:
+</li>
+</ol>
+<pre><code class="diff">config :my_app, MyAppWeb.Endpoint,
+     ...
+     watchers: [node: [&quot;node_modules/brunch/bin/brunch&quot;, &quot;watch&quot;, &quot;--stdin&quot;,
+   -                  cd: Path.expand(&quot;../&quot;, __DIR__)]]
+   +                  cd: Path.expand(&quot;../assets&quot;, __DIR__)]]</code></pre>
+<ol>
+<li>Update your <code class="inline">.gitignore</code> to the updated <code class="inline">node_modules</code> path:
+</li>
+</ol>
+<pre><code class="diff"># Static artifacts
+-/node_modules
++/assets/node_modules</code></pre>
+<ol>
+<li>Install the node deps: <code class="inline">$cd assets &amp;&amp; npm install</code>
+</li>
+</ol>
+<p>Test it all with <code class="inline">mix phx.server</code>, and <code class="inline">mix test</code> and you should see:</p>
+<pre><code class="">$ mix phx.server
+[info] Running MyAppWeb.Endpoint with Cowboy using http://0.0.0.0:4000
+01 Mar 15:40:05 - info: compiled 6 files into 2 files, copied 3 in 976ms</code></pre>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+  </body>
+</html>

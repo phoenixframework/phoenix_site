@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/2008/fbml" itemscope="itemscope" itemtype="http://schema.org/Product">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="readme-deploy" content="0a76ad4a2ae68a6f7b480e04f93f1d2d4fab9046">
+    <title>Phoenix</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    <meta name="description" content="Productive. Reliable. Fast. A productive web framework that does not compromise speed and maintainability">
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <meta property="og:title" content="Phoenix">
+    <meta property="og:description" content="Productive. Reliable. Fast. A productive web framework that does not compromise speed and maintainability">
+    <meta property="og:image" content="https://files.readme.io/PKPqx8L9TJSAY2Bnmw7F_phoenixframework-logo-white@2x.png">
+    <meta property="og:site_name" content="Phoenix">
+    <meta id="config-proxy-url" content="https://proxy.readme.io/proxy">
+    <link rel="canonical" href="http://www.phoenixframework.org/www.phoenixframework.org">
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed for Phoenix" href="/blog.rss">
+    <link rel="stylesheet" href="/assets/css/base.css" />
+    <script type="text/javascript" src="/assets/js/app.js"></script>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-57337100-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:400:sans-serif|Open+Sans:400:sans-serif" rel="stylesheet" type="text/css">
+  </head>
+
+  <body class="layout page-home body-none theme-solid header-solid header-bg-size-auto header-bg-pos-tl header-overlay-triangles lumosity-light undefined theme-threes ng-scope os-linux" cz-shortcut-listen="true">
+<div class="wrapper">
+  <header id="header" class="header">
+    <div class="container">
+      <h1 class="navbar-brand"><a href="/">Phoenix</a></h1>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="https://hexdocs.pm/phoenix/overview.html">Guides</a></li>
+          <li><a href="https://hexdocs.pm/phoenix/Phoenix.html">Docs</a></li>
+          <li><a href="/community">Community</a></li>
+          <li><a href="https://github.com/phoenixframework/phoenix">GitHub</a></li>
+          <li><a href="/blog" title="Blog">Blog</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav pull-right">
+          <li><a class="phx-book" href="https://pragprog.com/book/phoenix/programming-phoenix" title="Book">📙 &nbsp;&nbsp; Book</a></li>
+        </ul>
+      </div>
+    </div>
+    </header>
+    <br/>
+<div class="container body-container">
+  <div class="row">
+    <div class="col-sm-3 border-right">
+        <div class="sidebar-nav">
+          <h4>News</h4>
+          <ul>
+            <li><a href="/blog/phoenix-1-3-0-released" class="active"><span>Phoenix 1.3.0 Released</span></a></li>
+            <li><a href="/blog/contribution-sprint" class="active"><span>Contribution Sprint</span></a></li>
+            <li><a href="/blog/upgrading-from-120-to-130" class="active"><span>Upgrading from 1.2.x to 1.3.0</span></a></li>
+            <li><a href="/blog/upgrading-from-11x-to-120" class="active"><span>Upgrading from 1.1.x to 1.2.0</span></a></li>
+            <li><a href="/blog/upgrading-from-111-to-112" class="active"><span>Upgrading from 1.1.1 to 1.1.2</span></a></li>
+            <li><a href="/blog/upgrading-from-v10-to-v11" class="active"><span>Upgrading from v1.0 to v1.1</span></a></li>
+            <li><a href="/blog/the-road-to-2-million-websocket-connections" class="active"><span>The Road to 2 Million Websocket Connections in Phoenix</span></a></li>
+            <li><a href="/blog/phoenix-10-the-framework-for-the-modern-web-just-landed"><span>Phoenix 1.0 – the framework for the modern web just landed</span></a></li>
+            <li><a href="/blog/phoenix-0100-released-with-assets-handling-generat"><span>Phoenix 0.10.0 released with assets handling, generators, &amp; more</span></a></li>
+          </ul>
+        </div>
+    </div>
+    <div class="col-sm-9 border-left">
+      <div class="docs-content">
+        <div class="docs-header">
+          <h1>Static Assets</h1>
+          
+          <hr>
+        </div>
+        <div class="content block-content ready">
+          <h1>Static Assets</h1>
+<p>Instead of implementing its own asset pipeline, Phoenix uses <a href="http://brunch.io">Brunch</a>, a fast and developer-friendly asset build tool. Phoenix comes with a default configuration for Brunch, which works out of the box for Javascript and CSS, and it is very easy to bend it to our needs by adding support for various script and style languages, like CoffeeScript, TypeScript, or LESS.</p>
+<p>Brunch has <a href="https://github.com/brunch/brunch-guide">a good tutorial</a>, which should be enough to get us started with asset management from the Phoenix perspective.</p>
+<h4>Installation</h4>
+<p>Brunch is a <a href="https://nodejs.org/">Node.js</a> application. A newly generated Phoenix project contains <code class="inline">package.json</code> which lists packages for installation with <a href="https://www.npmjs.com/">npm</a>, the Node Package Manager. If we agree to install dependencies when running <code class="inline">mix phoenix.new</code>, Phoenix will run <code class="inline">npm</code> for us. If we don’t, or if we change <code class="inline">package.json</code>, we can always do this ourselves:</p>
+<pre><code class="">cd assets
+npm install</code></pre>
+<p>This will install Brunch and its plugins into the <code class="inline">node_modules</code> directory.</p>
+<h4>Default Configuration And Workflow</h4>
+<p>The second important file is <code class="inline">brunch-config.js</code>. This is configuration for Brunch itself. Let’s see how it configures asset management for Phoenix.</p>
+<p>According to this configuration Brunch will look for asset source files in <code class="inline">assets</code>.</p>
+<p>Files and directories in <code class="inline">assets/static</code> will be copied to the destination <code class="inline">priv/static/</code> without changes.  Only the assets included in the <code class="inline">:only</code> option to Plug.Static in endpoint.ex are mounted at the root path.  By default only js, css, images, and robots.txt are exposed.</p>
+<p>The <code class="inline">css</code> and <code class="inline">js</code> directories inside of <code class="inline">assets</code> are a convention. Brunch will simply look for all files in <code class="inline">assets</code> excluding <code class="inline">assets/static</code> and sort all found files by their type.</p>
+<p>Processed and concatenated javascript will be put into <code class="inline">priv/static/js/app.js</code>, styles will be in <code class="inline">priv/static/css/app.css</code>.</p>
+<p>When Phoenix is running, asset source files are processed automatically when changed, but we can also run Brunch ourselves:</p>
+<pre><code class="">node node_modules/brunch/bin/brunch build</code></pre>
+<p>Or we can install Brunch globally:</p>
+<pre><code class="">npm install -g brunch</code></pre>
+<p>and then building assets is as simple as</p>
+<pre><code class="">brunch build</code></pre>
+<p>In addition to Javascript files found in <code class="inline">assets</code> the following source files will always be included into <code class="inline">priv/static/js/app.js</code>:</p>
+<ul>
+<li>Brunch’s  “bootstrapper” code which provides module management and <code class="inline">require()</code> logic
+</li>
+<li>Phoenix Channels JavaScript client (<code class="inline">deps/phoenix/assets/js/phoenix.js</code>)
+</li>
+<li>Some code from Phoenix.HTML (<code class="inline">deps/phoenix_html/assets/js/phoenix_html.js</code>)
+</li>
+</ul>
+<h4>Modules</h4>
+<p>By default each Javascript file will be wrapped in a module, and for this code to be executed it needs to be required and executed from another module. Brunch uses a file path without an extension as the name of a module. Let’s see how it works.</p>
+<p>Brunch in Phoenix is configured to use ES6, so we can use ES6 module syntax.</p>
+<p>Open <code class="inline">assets/js/app.js</code> and add the following code:</p>
+<pre><code class="javascript">export var App = {
+  run: function(){
+    console.log(&quot;Hello!&quot;)
+  }
+}</code></pre>
+<p>If this ES6 syntax seems new, this code is essentially the same as the following more familiar CommonJS module syntax:</p>
+<pre><code class="javascript">var App = {
+  run: function run() {
+    console.log(&quot;Hello!&quot;);
+  }
+};
+
+module.exports = {
+  App: App
+};</code></pre>
+<p>Open default application layout <code class="inline">lib/hello_web/templates/layout/app.html.eex</code>, find line</p>
+<pre><code class="html">&lt;script src=&quot;&lt;%= static_path(@conn, &quot;/js/app.js&quot;) %&gt;&quot;&gt;&lt;/script&gt;</code></pre>
+<p>and add the following code below:</p>
+<pre><code class="html">&lt;script&gt;require(&quot;js/app&quot;).App.run()&lt;/script&gt;</code></pre>
+<p>When we load this page we should see <code class="inline">Hello!</code> in the browser Javascript console.</p>
+<p>Take notice of <code class="inline">&quot;assets/js/app&quot;</code>. This is not really a file name, this is the name of a module into which Brunch wrapped the code in <code class="inline">&quot;assets/js/app.js&quot;</code></p>
+<p>Let’s add one more file <code class="inline">assets/js/greeter.js</code>:</p>
+<pre><code class="javascript">export var Greet = {
+  greet: function(){
+    console.log(&quot;Hello!&quot;)
+  }
+}
+
+export var Bye = {
+  greet: function(){
+    console.log(&quot;Bye!&quot;)
+  }
+}</code></pre>
+<p>and modify <code class="inline">assets/js/app.js</code> to require the new module:</p>
+<pre><code class="javascript">import { Greet } from &quot;./greeter&quot;
+
+export var App = {
+  run: function(){
+    Greet.greet()
+  }
+}</code></pre>
+<p>Please reload the page. We should see <code class="inline">Hello!</code> in the browser Javascript console.</p>
+<p>Object <code class="inline">Bye</code> was not imported into package <code class="inline">&quot;assets/js/app&quot;</code>, even though <code class="inline">Bye</code> is declared as exportable.</p>
+<p>Please pay attention to how differently we required module <code class="inline">assets/js/app.js</code> from the HTML page, and how we imported module <code class="inline">assets/js/greeter</code> from <code class="inline">assets/js/app</code>. This is because there is no preprocessing happening for HTML pages and we cannot use ES6 syntax.</p>
+<h4>Legacy Non-modularized Code</h4>
+<p>If we have some legacy Javascript code which doesn’t play well with module systems and/or we need global variables it defines, all we need to do is place our Javascript into directory <code class="inline">assets/vendor</code>. Brunch will not wrap these files in modules.</p>
+<p>Let’s test it. Create <code class="inline">assets/vendor</code> if it does not exist yet and create file <code class="inline">assets/vendor/meaning_of_life.js</code> with just one line in it:</p>
+<pre><code class="">meaning_of_life = 42;</code></pre>
+<p>Reload the page. Open the JS console and type <code class="inline">meaning_of_life</code>. This will return <code class="inline">42</code>. The variable is global.</p>
+<p>Important detail: according to the default configuration there is no ES6 support for files in <code class="inline">assets/vendor</code>. Should we need to enable it, look for <code class="inline">plugins: { babel: { ignore:</code> in <code class="inline">brunch-config.js</code>.</p>
+<h4>JavaScript Libraries</h4>
+<p>We may need to use a JavaScript library like jQuery or underscore in our application. As we mentioned above, we could copy the libraries into <code class="inline">assets/vendor</code>. It may be a little bit easier to use <code class="inline">npm</code> to install it: We can simply add <code class="inline">&quot;jquery&quot;: &quot;&gt;= 2.1&quot;</code> to the dependencies in the <code class="inline">package.json</code> file in our projects root and run <code class="inline">npm install --save</code>. If the <code class="inline">npm</code> section in our <code class="inline">brunch-config.js</code> has a <code class="inline">whitelist</code> property, we will also need to add “jquery” to that. Now we can <code class="inline">import $ from &quot;jquery&quot;</code> in our module inside<code class="inline">app.js</code>.</p>
+<p> If we already have code that assumes jQuery is available as a global variable, we’ll either need to migrate our code (which is a must-do in the long run), or leave jQuery as a non-wrapped codebase (which is acceptable as a transition hack).</p>
+<p>To do so, you would add a <code class="inline">globals</code> definition into the config. For example, if we wanted to expose jQuery globally as <code class="inline">$</code>, we would modify the config to look like this:</p>
+<pre><code class="javascript">npm: {globals: {
+    $: &#39;jquery&#39;,
+    jQuery: &#39;jquery&#39;
+  }},</code></pre>
+<p>Additionally, some packages ship with stylesheets. To instruct Brunch to add these into the build, use the styles property in the npm config. For example, if we installed the Pikaday package and wanted to include its styles, we’d adjust the config like this:</p>
+<pre><code class="javascript">npm: {styles: {
+    bootstrap: [&#39;dist/css/bootstrap.min.css&#39;]
+  }},</code></pre>
+<h4>Brunch Plugin Pipeline</h4>
+<p>All transformations Brunch performs are actually done by plugins. Brunch automatically uses installed plugins listed in  <code class="inline">package.json</code>. Here is what the pipeline looks like for a  newly generated Phoenix project:</p>
+<h5>Javascript</h5>
+<ul>
+<li><a href="https://github.com/babel/babel-brunch"><code class="inline">babel-brunch</code></a> transpiles ES6 code to vanilla ES5 Javascript using <a href="https://github.com/babel/babel">Babel</a>
+</li>
+<li><a href="https://github.com/brunch/javascript-brunch"><code class="inline">javascript-brunch</code></a> is the main Javascript processing plugin. Without it Javascript files will be ignored.
+</li>
+<li><a href="https://github.com/brunch/uglify-js-brunch"><code class="inline">uglify-js-brunch</code></a> minifies Javascript code
+</li>
+</ul>
+<h5>CSS</h5>
+<ul>
+<li><a href="https://github.com/brunch/clean-css-brunch"><code class="inline">clean-css-brunch</code></a> is a minifier for CSS
+</li>
+<li><a href="https://github.com/brunch/css-brunch"><code class="inline">css-brunch</code></a> is the main CSS processing plugin. Without it  CSS files will be ignored.
+</li>
+</ul>
+<p>It is very easy to add more plugins. We can find a plethora of Brunch plugins <a href="http://brunch.io/plugins.html">on the Brunch website</a> and <a href="https://www.npmjs.com/search?q=brunch">among NPM packages</a>.</p>
+<p>The order in which plugins run is defined by the order in which they appear in <code class="inline">package.json</code>.</p>
+<p>Let’s add support for CoffeeScript. Edit <code class="inline">package.json</code> by adding the following line <strong>before</strong> <code class="inline">javascript-brunch</code>:</p>
+<pre><code class="json">&quot;coffee-script-brunch&quot;: &quot;^2&quot;,</code></pre>
+<p>and run</p>
+<pre><code class="">npm install</code></pre>
+<p>Let’s rename <code class="inline">greeter.js</code> into <code class="inline">greeter.coffee</code> and modify its contents to look like the following:</p>
+<pre><code class="coffeescript">Greet =
+  greet: -&gt; console.log(&quot;Hello!&quot;)
+
+Bye =
+  greet: -&gt; console.log(&quot;Bye!&quot;)
+
+module.exports =
+  Greet: Greet
+  Bye: Bye</code></pre>
+<p>Once Brunch has built our assets, reload our page, and we should see <code class="inline">Hello!</code> in the browser Javascript console, just like before.</p>
+<p>Adding support for other languages like SASS or TypeScript is as simple as this. Some plugins can be configured in <code class="inline">brunch-config.js</code>, but they will all work out of the box once installed.</p>
+<h4>Other Things Possible With Brunch</h4>
+<p>There are many more nice tricks we can do with Brunch which are not covered in this guide. Here are just a few:</p>
+<ul>
+<li>It is possible to have <a href="https://github.com/brunch/brunch-guide/blob/master/content/en/chapter04-starting-from-scratch.md#split-targets">multiple build targets</a>, for example, <code class="inline">app.js</code> for our code and <code class="inline">vendor.js</code> for third-party libraries
+</li>
+<li>It is possible to control the order of concatenation of files. This might be necessary when working with JS files in <code class="inline">vendor</code> if they depend on each other.
+</li>
+<li>Instead of manually copying third-party libraries into <code class="inline">assets/vendor</code> we can <a href="https://github.com/brunch/brunch-guide/blob/master/content/en/chapter05-using-third-party-registries.md">use Bower to download and install them</a>.
+</li>
+</ul>
+<p>Should we want one of these, please read <a href="http://brunch.io/docs/getting-started">the Brunch documentation</a>.</p>
+<h4>Phoenix Without Brunch</h4>
+<p>Should we decide not to use Brunch in our new Phoenix project, run the project generator task with option <code class="inline">--no-brunch</code>:</p>
+<pre><code class="">mix phoenix.new --no-brunch my_project</code></pre>
+<h4>Using Another Asset Management System in Phoenix</h4>
+<p>To integrate another asset management system with Phoenix we will need to</p>
+<ul>
+<li>configure that asset management system to put built assets into <code class="inline">priv/static/</code>.
+</li>
+<li>let Phoenix know how to run a command which would watch asset source files and build assets on each change
+</li>
+</ul>
+<p>While the first point is clear, how does Phoenix know which command to run to launch an asset build tool in watch mode? If we open <code class="inline">config/dev.exs</code> we will find configuration key <code class="inline">:watchers</code>. <code class="inline">:watchers</code> is a list of tuples containing an executable and its arguments. That is, with a config like the following:</p>
+<pre><code class="elixir">watchers: [node: [&quot;node_modules/brunch/bin/brunch&quot;, &quot;watch&quot;]]</code></pre>
+<p>the command launched in the development mode is</p>
+<pre><code class="">node node_modules/brunch/bin/brunch  watch</code></pre>
+<p>Let’s see how we can integrate <a href="http://webpack.github.io">Webpack</a> to work with Phoenix. First we generate a project without Brunch support:</p>
+<pre><code class="">mix phoenix.new --no-brunch my_project</code></pre>
+<p>or remove Brunch from the project:</p>
+<pre><code class="">rm brunch-config.js &amp;&amp; rm -rf node_modules/*</code></pre>
+<p>Modify <code class="inline">package.json</code>:</p>
+<pre><code class="json">{
+  &quot;devDependencies&quot;: {
+    &quot;webpack&quot;: &quot;^1.11.0&quot;
+  }
+}</code></pre>
+<p>Install webpack:</p>
+<pre><code class="">npm install</code></pre>
+<p>Create webpack configuration file <code class="inline">webpack.config.js</code>:</p>
+<pre><code class="javascript">module.exports = {
+  entry: &quot;./assets/js/app.js&quot;,
+  output: {
+    path: &quot;./priv/static/js&quot;,
+    filename: &quot;app.js&quot;
+  }
+};</code></pre>
+<p>Now we let Phoenix know how to run Webpack. Replace the <code class="inline">:watchers</code> definition by the following:</p>
+<pre><code class="elixir">watchers: [node: [&quot;node_modules/webpack/bin/webpack.js&quot;, &quot;--watch&quot;, &quot;--color&quot;]]</code></pre>
+<p>When we restart Phoenix, webpack will be rebuilding assets as they are changed.</p>
+<p>Please note that this configuration is very basic. This is just a demonstration of how another asset build tool can be integrated with Phoenix. Please refer to <a href="http://webpack.github.io/docs/">Webpack documentation</a> for details.</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+  </body>
+</html>

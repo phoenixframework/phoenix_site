@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/2008/fbml" itemscope="itemscope" itemtype="http://schema.org/Product">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="readme-deploy" content="0a76ad4a2ae68a6f7b480e04f93f1d2d4fab9046">
+    <title>Phoenix</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    <meta name="description" content="Productive. Reliable. Fast. A productive web framework that does not compromise speed and maintainability">
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <meta property="og:title" content="Phoenix">
+    <meta property="og:description" content="Productive. Reliable. Fast. A productive web framework that does not compromise speed and maintainability">
+    <meta property="og:image" content="https://files.readme.io/PKPqx8L9TJSAY2Bnmw7F_phoenixframework-logo-white@2x.png">
+    <meta property="og:site_name" content="Phoenix">
+    <meta id="config-proxy-url" content="https://proxy.readme.io/proxy">
+    <link rel="canonical" href="http://www.phoenixframework.org/www.phoenixframework.org">
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed for Phoenix" href="/blog.rss">
+    <link rel="stylesheet" href="/assets/css/base.css" />
+    <script type="text/javascript" src="/assets/js/app.js"></script>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-57337100-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:400:sans-serif|Open+Sans:400:sans-serif" rel="stylesheet" type="text/css">
+  </head>
+
+  <body class="layout page-home body-none theme-solid header-solid header-bg-size-auto header-bg-pos-tl header-overlay-triangles lumosity-light undefined theme-threes ng-scope os-linux" cz-shortcut-listen="true">
+<div class="wrapper">
+  <header id="header" class="header">
+    <div class="container">
+      <h1 class="navbar-brand"><a href="/">Phoenix</a></h1>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="https://hexdocs.pm/phoenix/overview.html">Guides</a></li>
+          <li><a href="https://hexdocs.pm/phoenix/Phoenix.html">Docs</a></li>
+          <li><a href="/community">Community</a></li>
+          <li><a href="https://github.com/phoenixframework/phoenix">GitHub</a></li>
+          <li><a href="/blog" title="Blog">Blog</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav pull-right">
+          <li><a class="phx-book" href="https://pragprog.com/book/phoenix/programming-phoenix" title="Book">📙 &nbsp;&nbsp; Book</a></li>
+        </ul>
+      </div>
+    </div>
+    </header>
+    <br/>
+<div class="container body-container">
+  <div class="row">
+    <div class="col-sm-3 border-right">
+        <div class="sidebar-nav">
+          <h4>News</h4>
+          <ul>
+            <li><a href="/blog/phoenix-1-3-0-released" class="active"><span>Phoenix 1.3.0 Released</span></a></li>
+            <li><a href="/blog/contribution-sprint" class="active"><span>Contribution Sprint</span></a></li>
+            <li><a href="/blog/upgrading-from-120-to-130" class="active"><span>Upgrading from 1.2.x to 1.3.0</span></a></li>
+            <li><a href="/blog/upgrading-from-11x-to-120" class="active"><span>Upgrading from 1.1.x to 1.2.0</span></a></li>
+            <li><a href="/blog/upgrading-from-111-to-112" class="active"><span>Upgrading from 1.1.1 to 1.1.2</span></a></li>
+            <li><a href="/blog/upgrading-from-v10-to-v11" class="active"><span>Upgrading from v1.0 to v1.1</span></a></li>
+            <li><a href="/blog/the-road-to-2-million-websocket-connections" class="active"><span>The Road to 2 Million Websocket Connections in Phoenix</span></a></li>
+            <li><a href="/blog/phoenix-10-the-framework-for-the-modern-web-just-landed"><span>Phoenix 1.0 – the framework for the modern web just landed</span></a></li>
+            <li><a href="/blog/phoenix-0100-released-with-assets-handling-generat"><span>Phoenix 0.10.0 released with assets handling, generators, &amp; more</span></a></li>
+          </ul>
+        </div>
+    </div>
+    <div class="col-sm-9 border-left">
+      <div class="docs-content">
+        <div class="docs-header">
+          <h1>Config</h1>
+          
+          <hr>
+        </div>
+        <div class="content block-content ready">
+          <h1>Configuration</h1>
+<p>Since our Phoenix apps are simply Elixir applications, they  have the same configuration and structure as other Mix projects. Recall that Mix is the build tool used by most Elixir apps.</p>
+<h4>.ex and .exs Files Types</h4>
+<p>The config for our Phoenix app is stored in a combination of <code class="inline">.ex</code> and <code class="inline">.exs</code> files. Although both file types are Elixir scripts, they are compiled differently.</p>
+<p>Our <code class="inline">.exs</code> files are compiled in memory each time they are run (such as on reload), which makes them ideal for storing configuration details and scripts that change often (such as standalone tasks during development).</p>
+<p>Whereas <code class="inline">.ex</code> files are compiled to <code class="inline">.beam</code> files that run on the Erlang Virtual Machine (BEAM), which makes them useful for storing higher level configuration that changes less frequently (such as endpoint and OTP supervisor/worker config).</p>
+<h4>Config Files and Environments</h4>
+<p>Our <code class="inline">mix.exs</code> config file is located in the root folder of our app and contains some important overall config details relating to our app, including compilation paths, dependencies and aliases.</p>
+<p>Phoenix applications are intended to be run with configuration particular to different environments, such as ‘development’ or ‘production’. This allows for an improved developer experience and smoother workflow when deploying apps to production. By default, the <code class="inline">/config</code> folder at the root of our app will include the following config files:</p>
+<p><code class="inline">config.exs</code>, which is our master config file that is common across all our environments. It contains overall app config such as our logging and endpoint details, such as our app url and root directory. Additionally, towards the bottom of this file, we also take the important step of importing the configuration specific to our current environment.  We can easily switch between the different configuration files for our environments by adjusting the value for the <code class="inline">Mix.env</code> environment variable below when we start/deploy our app; for instance, we’d set the value to <code class="inline">&quot;#prod.exs&quot;</code> for our production environment.</p>
+<pre><code class="elixir">...
+# Import environment specific config. This must remain at the bottom
+# of this file so it overrides the configuration defined above.
+import_config &quot;#{Mix.env}.exs&quot;
+...</code></pre>
+<p><code class="inline">dev.exs</code>, which is used to store config details specific to our development environment, such as debugging settings and our database connection details.</p>
+<p><code class="inline">prod.exs</code>, which is used to store config for our production environment, since these settings often need to be different and more strict than our dev or test environments. For instance, in production we use stronger hashing of passwords, which would slow down performance during development or testing, but is an unavoidable expense for a production app.</p>
+<p><code class="inline">prod.secret.exs</code>, which is used to store sensitive configuration details relating to our production environment (such as passwords or API keys), and is thus generally excluded from the version control in our code repository.  Note that config details from this file can be imported into our other files as appropriate.</p>
+<p><code class="inline">test.exs</code>, which is used to store any config details specific to our testing environment.</p>
+<p>We should open each of these files and familiarize ourselves with the contents.</p>
+<p>In addition to these default development (<code class="inline">dev.exs</code>), test (<code class="inline">test.exs</code>) and production (<code class="inline">prod.exs</code>) environment configurations, Phoenix supports the use of custom environment configurations that we can manually add as we get more advanced.</p>
+<h4>Umbrella Apps</h4>
+<p>Umbrella apps enable multiple child applications to run together, which can help to reduce the overall complexity of our app by separating different functionality into smaller apps that run together. While a full discussion of Umbrella Apps extends beyond the scope of this Guide, for now it’s worth simply noting that the configuration of an Umbrella app is slightly different (and in some ways a bit simpler) than what’s outlined above, since much of the configuration details will reside in the config for each of the children apps.</p>
+<h4>Summary</h4>
+<p>Config is an important topic and essential to every app we build. The important points to take away from this guide are that:</p>
+<ul>
+<li>Our <code class="inline">.ex</code> and <code class="inline">.exs</code> files are used to store the configuration for our app.
+</li>
+<li>Our <code class="inline">.exs</code> files are compiled in memory each time they are run which makes them ideal for storing configuration details.
+</li>
+<li>Mix apps include config for development, test and production environments by default, and custom environments can be manually added.
+</li>
+<li>We can store our sensitive production config in our <code class="inline">prod.secret.exs</code> file, outside of version control.
+</li>
+</ul>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+  </body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/2008/fbml" itemscope="itemscope" itemtype="http://schema.org/Product">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="readme-deploy" content="0a76ad4a2ae68a6f7b480e04f93f1d2d4fab9046">
+    <title>Phoenix</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    <meta name="description" content="Productive. Reliable. Fast. A productive web framework that does not compromise speed and maintainability">
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <meta property="og:title" content="Phoenix">
+    <meta property="og:description" content="Productive. Reliable. Fast. A productive web framework that does not compromise speed and maintainability">
+    <meta property="og:image" content="https://files.readme.io/PKPqx8L9TJSAY2Bnmw7F_phoenixframework-logo-white@2x.png">
+    <meta property="og:site_name" content="Phoenix">
+    <meta id="config-proxy-url" content="https://proxy.readme.io/proxy">
+    <link rel="canonical" href="http://www.phoenixframework.org/www.phoenixframework.org">
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed for Phoenix" href="/blog.rss">
+    <link rel="stylesheet" href="/assets/css/base.css" />
+    <script type="text/javascript" src="/assets/js/app.js"></script>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-57337100-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:400:sans-serif|Open+Sans:400:sans-serif" rel="stylesheet" type="text/css">
+  </head>
+
+  <body class="layout page-home body-none theme-solid header-solid header-bg-size-auto header-bg-pos-tl header-overlay-triangles lumosity-light undefined theme-threes ng-scope os-linux" cz-shortcut-listen="true">
+<div class="wrapper">
+  <header id="header" class="header">
+    <div class="container">
+      <h1 class="navbar-brand"><a href="/">Phoenix</a></h1>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="https://hexdocs.pm/phoenix/overview.html">Guides</a></li>
+          <li><a href="https://hexdocs.pm/phoenix/Phoenix.html">Docs</a></li>
+          <li><a href="/community">Community</a></li>
+          <li><a href="https://github.com/phoenixframework/phoenix">GitHub</a></li>
+          <li><a href="/blog" title="Blog">Blog</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav pull-right">
+          <li><a class="phx-book" href="https://pragprog.com/book/phoenix/programming-phoenix" title="Book">📙 &nbsp;&nbsp; Book</a></li>
+        </ul>
+      </div>
+    </div>
+    </header>
+    <br/>
+<div class="container body-container">
+  <div class="row">
+    <div class="col-sm-3 border-right">
+        <div class="sidebar-nav">
+          <h4>News</h4>
+          <ul>
+            <li><a href="/blog/phoenix-1-3-0-released" class="active"><span>Phoenix 1.3.0 Released</span></a></li>
+            <li><a href="/blog/contribution-sprint" class="active"><span>Contribution Sprint</span></a></li>
+            <li><a href="/blog/upgrading-from-120-to-130" class="active"><span>Upgrading from 1.2.x to 1.3.0</span></a></li>
+            <li><a href="/blog/upgrading-from-11x-to-120" class="active"><span>Upgrading from 1.1.x to 1.2.0</span></a></li>
+            <li><a href="/blog/upgrading-from-111-to-112" class="active"><span>Upgrading from 1.1.1 to 1.1.2</span></a></li>
+            <li><a href="/blog/upgrading-from-v10-to-v11" class="active"><span>Upgrading from v1.0 to v1.1</span></a></li>
+            <li><a href="/blog/the-road-to-2-million-websocket-connections" class="active"><span>The Road to 2 Million Websocket Connections in Phoenix</span></a></li>
+            <li><a href="/blog/phoenix-10-the-framework-for-the-modern-web-just-landed"><span>Phoenix 1.0 – the framework for the modern web just landed</span></a></li>
+            <li><a href="/blog/phoenix-0100-released-with-assets-handling-generat"><span>Phoenix 0.10.0 released with assets handling, generators, &amp; more</span></a></li>
+          </ul>
+        </div>
+    </div>
+    <div class="col-sm-9 border-left">
+      <div class="docs-content">
+        <div class="docs-header">
+          <h1>Phoenix 0.10.0 released with assets handling, generators, & more</h1>
+          
+            <div class="byline">
+                <span>By Chris McCord</span>
+                &nbsp;·&nbsp;<span class="ago">2015-03-09</span>
+                &nbsp;·&nbsp;<span>v0.10.0</span>
+            </div>
+          
+          <hr>
+        </div>
+        <div class="content block-content ready">
+          <p>We released Phoenix 0.10.0 this weekend and we’re really excited to
+share the new features we’ve been working on. This release brings an
+asset build system powered by <a href="http://brunch.io">brunch</a>, live-reloading of
+css/js/eex templates, form builders, and new <a href="https://github.com/elixir-lang/ecto">Ecto</a> integration with generators
+that lets you get up and running quickly.</p>
+<p>There’s so much good stuff packed into this release, that it deserved
+a screencast so you can see it in action:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Nh5OQjb8G9E" frameborder="0" allowfullscreen></iframe><h2>Live-Reload</h2>
+<p>Change any css, js, or EEx template, and watch the browser instantly
+reload with your changes. The best part is that we don’t need any browser plugin. Everything is powered by Phoenix channels and works regardless of your javascript tooling of choice. Try it out–you’ll love it.</p>
+<h2>Static Asset Handling</h2>
+<p>We’ve integrated Brunch for fast and simple asset
+compilation that Just Works. When you start your <code class="inline">mix phoenix.server</code>
+in development, a brunch process is run automatically alongside your
+endpoint and your assets in <code class="inline">web/static/js</code> and <code class="inline">web/static/css</code> will
+be compiled as the files change. Even better, with our new live-reload
+feature, those recompiles get reloaded in the browser for a
+streamlined development experience. We’ve also built Brunch
+integration in a way that will let you wire up your own asset system,
+such as Gulp, Grunt, Webpack, etc.</p>
+<p>Out of the box, we support Sass and ES6 javascript compilation, but
+it’s very easy to extend your <code class="inline">brunch-config.js</code> with additional tools
+to support your asset workflow.</p>
+<h2>We’ve integrated Brunch for fast and simple asset</h2>
+<p>compilation that Just Works. When you start your <code class="inline">mix phoenix.server</code>
+in development, a brunch process is run automatically alongside your
+endpoint and your assets in <code class="inline">web/static/js</code> and <code class="inline">web/static/css</code> will
+be compiled as the files change. Even better, with our new live-reload
+feature, those recompiles get reloaded in the browser for a
+streamlined development experience. We’ve also built Brunch
+integration in a way that will let you wire up your own asset system,
+such as Gulp, Grunt, Webpack, etc.</p>
+<p>Out of the box, we support Sass and ES6 javascript compilation, but
+it’s very easy to extend your <code class="inline">brunch-config.js</code> with additional tools
+to support your asset workflow.</p>
+<p>This release brings two new protocols, <code class="inline">Phoenix.HTML.FormData</code> and
+<code class="inline">Phoenix.Param</code> that makes it simple to integrate your model layer
+with Phoenix’s new form and link builders. As a default, but optional
+dep, we now include Ecto integration through the
+<a href="https://github.com/phoenixframework/phoenix_ecto">phoenix_ecto</a>
+project where you can see these two new protocols in action. Let’s check it out:</p>
+<pre><code class="erb">&lt;%= form_for @changeset, @action, fn f -&gt; %&gt;
+  &lt;%= if @changeset.errors != [] do %&gt;
+    &lt;p style=&quot;color: red&quot;&gt;Oops, something went wrong!&lt;/p&gt;
+  &lt;% end %&gt;
+
+  &lt;p&gt;
+    &lt;label&gt;
+      &lt;span&gt;Title:&lt;/span&gt;
+      &lt;%= text_input f, :title %&gt;
+    &lt;/label&gt;
+  &lt;/p&gt;
+
+  &lt;p&gt;
+    &lt;label&gt;
+      &lt;span&gt;Rank:&lt;/span&gt;
+      &lt;%= number_input f, :rank %&gt;
+    &lt;/label&gt;
+  &lt;/p&gt;
+
+  &lt;p&gt;
+    &lt;%= submit &quot;Submit&quot; %&gt;
+  &lt;/p&gt;
+&lt;% end %&gt;</code></pre>
+<p><code class="inline">form_for</code> accepts an Ecto changeset here, but will support any data
+structure that implements the <code class="inline">FormData</code> protocol. With form builders,
+we inject the CSRF token for you automatically to verify requests and
+you can enjoy the new form input helpers, ie <code class="inline">text_input</code>,
+<code class="inline">number_input</code>.</p>
+<p>In addition to forms, we now include a <code class="inline">link</code> function for building
+anchors in your templates:</p>
+<pre><code class="erb">&lt;%= for post &lt;- @posts do %&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;%= post.title %&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;%= post.rank %&gt;&lt;/td&gt;
+
+    &lt;td&gt;&lt;%= link &quot;Show&quot;, to: post_path(@conn, :show, post) %&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;%= link &quot;Edit&quot;, to: post_path(@conn, :edit, post) %&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;%= link &quot;Delete&quot;, to: post_path(@conn, :delete, post), method: :delete %&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;% end %&gt;</code></pre>
+<p>Notice how we able to write <code class="inline">post_path(@conn, :show, post)</code> instead of
+<code class="inline">post_path(@conn, :show, post.id)</code>? This is thanks to the new
+<code class="inline">Phoenix.Param</code> protocol that lets you define how resources should be
+converted to paths and URLs. You may have also noticed the `method:
+:delete` option. This will convert the link tag into a form submission,
+as a DELETE request, and will inject the CSRF token for you. It’s
+handy for quick links to delete or update a resource without having to
+build a form yourself.</p>
+<h2>Resource Generator</h2>
+<p>The Ecto integration includes a new <code class="inline">mix phoenix.gen.resource</code> task
+that bootstraps a model with boilerplate code generation that lets you
+get up to speed quickly with Phoenix and Ecto and start building
+applications right away. From a single command like:</p>
+<pre><code class="console">mix phoenix.gen.resource Post posts title:string rank:integer</code></pre>
+<p>A migration file is created with the provided schema and the model,
+view, template, and controller files are generated for CRUD actions.
+It’s a great way to learn the basics of Phoenix and experience the
+latest and greatest Ecto features.</p>
+<h2>Upgrading from 0.9.x</h2>
+<p>See these <a href="https://gist.github.com/chrismccord/cf51346c6636b5052885">0.9.x to 0.10.0 upgrade instructions</a> to bring your existing apps up to speed.</p>
+<h2>Get Involved</h2>
+<p>That’s Phoenix 0.10.0. In case you missed it in the previous release, we have done many improvements to our channel system, including support for 3rd party backends, starting with Redis. Now we have streamlined the development experience. We have some big announcements coming soon as
+we head towards 1.0, so keep up to date by subscribing to the
+<a href="https://groups.google.com/forum/#!forum/phoenix-core">phoenix-core</a> and <a href="https://groups.google.com/forum/#!forum/phoenix-talk">phoenix-talk</a> mailing lists, and get involved on
+<a href="irc://irc.freenode.net/elixir-lang">#elixir-lang IRC</a>. Feel free to join in and ask questions, and provide
+help to others.</p>
+<p>Happy coding!</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+  </body>
+</html>

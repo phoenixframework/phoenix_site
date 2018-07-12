@@ -11,6 +11,7 @@ defmodule Mix.Tasks.Guides.Build do
     minify_css()
     copy_assets()
     copy_blog_files()
+    write_cname()
   end
 
   defp build_local_files do
@@ -45,6 +46,10 @@ defmodule Mix.Tasks.Guides.Build do
       log "build: moving blog/#{basename}"
       File.rename(full_name, "docs/blog/#{basename}.html")
     end)
+  end
+
+  defp write_cname() do
+    File.write!("docs/CNAME", "phoenixframework.org")
   end
 
   defp log(msg) do

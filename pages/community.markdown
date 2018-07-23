@@ -8,9 +8,8 @@ There are a number of places to connect with community members at all experience
 
 * We're on Freenode IRC in the [\#elixir-lang](http://webchat.freenode.net/?channels=elixir-lang) channel.
 * [Request an invitation](https://elixir-slackin.herokuapp.com/) and join the #phoenix channel on [Slack](https://elixir-lang.slack.com).
-* For general Phoenix questions, email the [phoenix-talk mailing list](http://groups.google.com/group/phoenix-talk).
 * To discuss new features in the framework, email the [phoenix-core mailing list](http://groups.google.com/group/phoenix-core).
-* Engage with other Elixir enthusiasts at [Elixir forum](https://elixirforum.com/).
+* Ask general Phoenix questions and engage with other Elixir enthusiasts at [Elixir forum](https://elixirforum.com/).
 * Read about [bug reports](https://github.com/phoenixframework/phoenix/blob/master/CONTRIBUTING.md#bug-reports) or open an issue in the Phoenix [issue tracker](https://github.com/phoenixframework/phoenix/issues).
 * Ask or answer questions about Phoenix on [Stack Overflow](http://stackoverflow.com/questions/tagged/phoenix-framework).
 * Follow the Phoenix Framework on [Twitter](https://twitter.com/elixirphoenix).

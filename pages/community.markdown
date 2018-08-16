@@ -24,7 +24,7 @@ In addition to the [Guides](https://hexdocs.pm/phoenix/overview.html), [Docs](ht
 
 * [Phoenix Inside Out - Book Series (by Shankar Dhanasekaran - July 2017)](https://shankardevy.com/phoenix-book/)
 
-* [Functional Web Development with Elixir, OTP, and Phoenix Rethink the Modern Web App (by Lance Halvorsen - Oct 2017)](https://pragprog.com/book/cdc-elixir/learn-functional-programming-with-elixir)
+* [Functional Web Development with Elixir, OTP, and Phoenix Rethink the Modern Web App (by Lance Halvorsen - Oct 2017)](https://pragprog.com/book/lhelph/functional-web-development-with-elixir-otp-and-phoenix)
 
 * [Phoenix in Action (by Geoffrey Lessel - 2017)](https://manning.com/books/phoenix-in-action)
 

@@ -88,10 +88,16 @@
             <img title="The Outline" alt="The Outline" src="/assets/img/logos/the-outline.png">
           </a>
         </div>
-        <div class="col-sm-6 col-md-4 col-sm-offset-4">
+        <div class="col-sm-6 col-md-4 col-sm-offset-2">
           <br>
           <a href="https://voicelayer.io" class="thumbnail">
             <img title="VoiceLayer" alt="VoiceLayer" src="/assets/img/logos/voicelayer.png">
+          </a>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <br>
+          <a href="https://www.podium.com" class="thumbnail">
+            <img title="Podium" alt="Podium" src="/assets/img/logos/podium.png">
           </a>
         </div>
       </div>

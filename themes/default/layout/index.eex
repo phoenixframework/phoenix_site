@@ -100,6 +100,18 @@
             <img title="Podium" alt="Podium" src="/assets/img/logos/podium.png">
           </a>
         </div>
+        <div class="col-sm-6 col-md-4">
+          <br>
+          <a href="https://www.xaptum.com" class="thumbnail">
+            <img title="Xaptum" alt="Xaptum" src="/assets/img/logos/Xaptum.png">
+          </a>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <br>
+          <a href="https://www.here.com" class="thumbnail">
+            <img title="HERE" alt="HERE" src="/assets/img/logos/HERE.png">
+          </a>
+        </div>
       </div>
 
       <div class="container body-container">

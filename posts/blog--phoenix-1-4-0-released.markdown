@@ -18,6 +18,8 @@ $ mix archive.uninstall phx_new
 $ mix archive.install hex phx_new 1.4.0
 ```
 
+The new generators now default to Ecto 3.0, which should be an easy upgrade for existing applications. Ecto 3.0 is packed with new features and improvements, which you can read more about in the [Ecto 3.0 sneak peek post](http://blog.plataformatec.com.br/2018/10/a-sneak-peek-at-ecto-3-0-performance-migrations-and-more/).
+
 The new generators also use [Milligram](https://milligram.io) in favor of Bootstrap to support classless markup generation. The result is nice looking defaults that allow generated markup to be much more easily customized to your individual CSS requirements.
 
 **Note**: Existing Phoenix applications will continue to work on Elixir 1.4, but the new `phx.new` archive requires Elixir 1.5+.

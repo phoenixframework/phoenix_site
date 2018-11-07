@@ -75,13 +75,13 @@
       <div class="docs-content">
         <div class="docs-header">
           <h1>Phoenix 1.4.0 released</h1>
-
+          
             <div class="byline">
                 <span>By Chris McCord</span>
                 &nbsp;·&nbsp;<span class="ago">2018-11-07</span>
                 &nbsp;·&nbsp;<span>v1.4.0</span>
             </div>
-
+          
           <hr>
         </div>
         <div class="content block-content ready">
@@ -91,6 +91,7 @@
 <p>To grab the new archive, simply run:</p>
 <pre><code class="">$ mix archive.uninstall phx_new
 $ mix archive.install hex phx_new 1.4.0</code></pre>
+<p>The new generators now default to Ecto 3.0, which should be an easy upgrade for existing applications. Ecto 3.0 is packed with new features and improvements, which you can read more about in the <a href="http://blog.plataformatec.com.br/2018/10/a-sneak-peek-at-ecto-3-0-performance-migrations-and-more/">Ecto 3.0 sneak peek post</a>.</p>
 <p>The new generators also use <a href="https://milligram.io">Milligram</a> in favor of Bootstrap to support classless markup generation. The result is nice looking defaults that allow generated markup to be much more easily customized to your individual CSS requirements.</p>
 <p><strong>Note</strong>: Existing Phoenix applications will continue to work on Elixir 1.4, but the new <code class="inline">phx.new</code> archive requires Elixir 1.5+.</p>
 <h3>HTTP2</h3>
@@ -131,7 +132,7 @@ presence.onSync(() =&gt; {
 <p>In addition to telemetry and firenest initiatives, we are also working on <code class="inline">Phoenix.LiveView</code>, to enable server-rendered real-time experiences without all the complexity of today’s single page application landscape. LiveView can enable rich UX on par with single-page apps in certain usecases and we can’t wait to get the initial release out to the community.</p>
 <p>My ElixirConf keynote covers telemetry and LiveView in detail:</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Z2DU0qLfPIY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><h3>Programming Phoenix Book</h3>
-<p>The <a href="https://pragprog.com/book/phoenix14/programming-phoenix-1-4">Programming Phoenix Book</a>
+<p>The <a href="https://pragprog.com/book/phoenix14/programming-phoenix-1-4">Programming Phoenix Book</a> 
 is in beta and available through PragProg, and includes all the latest changes for 1.4.
 We have titled the book “&gt;= 1.4” and consider it relatively future proof as we continue
 minor version releases.</p>
@@ -151,7 +152,7 @@ questions. The full list of changes from the changelog can be found below.</p>
 <ul>
 <li>[phx.new] Update Ecto deps with the release of Ecto 3.0 including <code class="inline">phoenix_ecto</code> 4.0
 </li>
-<li>[phx.new] Import Ecto’s <code class="inline">.formatter.exs</code> in new projects
+<li>[phx.new] Import Ecto’s <code class="inline">.formatter.exs</code> in new projects 
 </li>
 <li>[phx.new] Use Ecto 3.0RC, with <code class="inline">ecto_sql</code> in new project deps
 </li>

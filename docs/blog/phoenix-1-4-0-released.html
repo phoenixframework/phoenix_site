@@ -96,7 +96,7 @@ $ mix archive.install hex phx_new 1.4.0</code></pre>
 <p><strong>Note</strong>: Existing Phoenix applications will continue to work on Elixir 1.4, but the new <code class="inline">phx.new</code> archive requires Elixir 1.5+.</p>
 <h3>HTTP2</h3>
 <p>Thanks to the release of Cowboy 2, Phoenix 1.4 supports HTTP2 with a
-single line change to your <code class="inline">mix.exs</code>. Simply add <code class="inline">{:plug_cowboy, &quot;~&gt; 2.5&quot;}</code> to your deps and Phoenix will run with the Cowboy 2 adapter.</p>
+single line change to your <code class="inline">mix.exs</code>. Simply add <code class="inline">{:plug_cowboy, &quot;~&gt; 2.0&quot;}</code> to your deps and Phoenix will run with the Cowboy 2 adapter.</p>
 <h3>Local SSL development</h3>
 <p>Most browsers require connections over SSL for HTTP2 requests,
 otherwise they fallback to HTTP 1.1 requests. To aid local development

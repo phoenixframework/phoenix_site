@@ -27,7 +27,7 @@ The new generators also use [Milligram](https://milligram.io) in favor of Bootst
 ### HTTP2
 
 Thanks to the release of Cowboy 2, Phoenix 1.4 supports HTTP2 with a
-single line change to your `mix.exs`. Simply add `{:plug_cowboy, "~> 2.5"}` to your deps and Phoenix will run with the Cowboy 2 adapter.
+single line change to your `mix.exs`. Simply add `{:plug_cowboy, "~> 2.0"}` to your deps and Phoenix will run with the Cowboy 2 adapter.
 
 
 ### Local SSL development

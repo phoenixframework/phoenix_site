@@ -2,6 +2,7 @@
 title: Blog
 ---
 
+- #### [Phoenix 1.4.0 Released](/blog/phoenix-1-4-0-released)
 - #### [Phoenix 1.3.0 Released](/blog/phoenix-1-3-0-released)
 - #### [Contribution Sprint](/blog/contribution-sprint)
 - #### [Upgrading from 1.2.x to 1.3.0](/blog/upgrading-from-120-to-130)

@@ -5,7 +5,7 @@ created: 2018-11-07
 phoenix_version: v1.4.0
 ---
 
-Phoenix 1.4 is out! This release ships with exciting new features, most notably HTTP2 support, improved development experience with faster compile times, new error pages, and local SSL certificate generation. Additionally, our channel layer internals receiveced an overhaul, providing better structure and extensibility. We also shipped a new and improved Presence javascript API, as well as Elixir formatter integration for our routing and testing DSLs.
+Phoenix 1.4 is out! This release ships with exciting new features, most notably HTTP2 support, improved development experience with faster compile times, new error pages, and local SSL certificate generation. Additionally, our channel layer internals received an overhaul, providing better structure and extensibility. We also shipped a new and improved Presence javascript API, as well as Elixir formatter integration for our routing and testing DSLs.
 
 ### phx_new hex archive
 

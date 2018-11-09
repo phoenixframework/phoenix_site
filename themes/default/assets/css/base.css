@@ -1,10 +1,18 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
 
 .phx-book {
+    display: flex!important;
+    align-items: center!important;
+    justify-content: center!important;
     background: rgba(255, 255, 255, 0.25)!important;
     border-radius: 14px;
     padding: 0.5em!important;
     padding-right: 1em!important;
+    padding-left: 1em!important;
+}
+
+.phx-book img {
+    margin-right: 1em;
 }
 
 .magictextarea {
@@ -2934,7 +2942,8 @@ scope,
 }
 .header .nav.navbar-nav.pull-right {
     position: relative;
-    right: -30px
+    right: -30px;
+    top: 8px;
 }
 .header .nav.navbar-nav .not-link {
     padding: 15px;

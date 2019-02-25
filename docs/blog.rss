@@ -4,7 +4,7 @@
   <title>Phoenix</title>
   <link>https://phoenixframework.org</link>
   <description>This is my blog about things</description>
-  <lastBuildDate>2018-07-12 18:56:23</lastBuildDate>
+  <lastBuildDate>2019-02-25 08:06:05</lastBuildDate>
   <language>en-us</language>
 <item>
   <title>Upgrading from v1.0 to v1.1</title>
@@ -80,8 +80,8 @@
   <title>Phoenix Behind a Proxy</title>
   <description>[CDATA[  ]]</description>
   <pubDate>blog--phoe</pubDate>
-  <link>https://phoenixframework.org/blog--phoenix-behind-proxy.html</link>
-  <guid>https://phoenixframework.org/blog--phoenix-behind-proxy.html</guid>
+  <link>https://phoenixframework.org/blog--phoenix-behind-a-proxy.html</link>
+  <guid>https://phoenixframework.org/blog--phoenix-behind-a-proxy.html</guid>
 </item>
 <item>
   <title>Phoenix 1.0 – the framework for the modern web just landed</title>
@@ -89,6 +89,13 @@
   <pubDate>blog--phoe</pubDate>
   <link>https://phoenixframework.org/blog--phoenix-10-the-framework-for-the-modern-web-just-landed.html</link>
   <guid>https://phoenixframework.org/blog--phoenix-10-the-framework-for-the-modern-web-just-landed.html</guid>
+</item>
+<item>
+  <title>Phoenix 1.4.0 released</title>
+  <description>[CDATA[  ]]</description>
+  <pubDate>blog--phoe</pubDate>
+  <link>https://phoenixframework.org/blog--phoenix-1-4-0-released.html</link>
+  <guid>https://phoenixframework.org/blog--phoenix-1-4-0-released.html</guid>
 </item>
 <item>
   <title>Phoenix 1.3.0 released</title>

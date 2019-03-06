@@ -44,4 +44,6 @@ In addition to the [Guides](https://hexdocs.pm/phoenix/overview.html), [Docs](ht
 
 * [Build Real-Time Web Apps with Phoenix (Oct 2016)](https://pragprog.com/screencast/v-bhphnx/build-real-time-web-apps-with-phoenix)
 
+* [Elixir for Programmers (June 2017)](https://codestool.coding-gnome.com/courses/elixir-for-programmers)
+
 * [LearnPhoenix.io: Build Scalable, Real-Time Apps with Phoenix, React, and React Native (Aug 2016)](https://www.learnphoenix.io/)

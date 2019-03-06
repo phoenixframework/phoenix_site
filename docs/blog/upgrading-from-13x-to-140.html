@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/2008/fbml" itemscope="itemscope" itemtype="http://schema.org/Product">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="readme-deploy" content="0a76ad4a2ae68a6f7b480e04f93f1d2d4fab9046">
+    <title>Phoenix</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    <meta name="description" content="Productive. Reliable. Fast. A productive web framework that does not compromise speed and maintainability">
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <meta property="og:title" content="Phoenix">
+    <meta property="og:description" content="Productive. Reliable. Fast. A productive web framework that does not compromise speed and maintainability">
+    <meta property="og:image" content="https://files.readme.io/PKPqx8L9TJSAY2Bnmw7F_phoenixframework-logo-white@2x.png">
+    <meta property="og:site_name" content="Phoenix">
+    <meta id="config-proxy-url" content="https://proxy.readme.io/proxy">
+    <link rel="canonical" href="http://www.phoenixframework.org/www.phoenixframework.org">
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed for Phoenix" href="/blog.rss">
+    <link rel="stylesheet" href="/assets/css/base.css" />
+    <script type="text/javascript" src="/assets/js/app.js"></script>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-57337100-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:400:sans-serif|Open+Sans:400:sans-serif" rel="stylesheet" type="text/css">
+  </head>
+
+  <body class="layout page-home body-none theme-solid header-solid header-bg-size-auto header-bg-pos-tl header-overlay-triangles lumosity-light undefined theme-threes ng-scope os-linux" cz-shortcut-listen="true">
+<div class="wrapper">
+  <header id="header" class="header">
+    <div class="container">
+      <h1 class="navbar-brand"><a href="/">Phoenix</a></h1>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="https://hexdocs.pm/phoenix/overview.html">Guides</a></li>
+          <li><a href="https://hexdocs.pm/phoenix/Phoenix.html">Docs</a></li>
+          <li><a href="/community">Community</a></li>
+          <li><a href="https://github.com/phoenixframework/phoenix">GitHub</a></li>
+          <li><a href="/blog" title="Blog">Blog</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav pull-right">
+          <li><a class="phx-book" href="https://pragprog.com/book/phoenix14/programming-phoenix-1-4" title="Book">📙 &nbsp;&nbsp; Book</a></li>
+        </ul>
+      </div>
+    </div>
+    </header>
+    <br/>
+<div class="container body-container">
+  <div class="row">
+    <div class="col-sm-3 border-right">
+        <div class="sidebar-nav">
+          <h4>News</h4>
+          <ul>
+            <li><a href="/blog/phoenix-1-4-0-released" class="active"><span>Phoenix 1.4.0 Released</span></a></li>
+            <li><a href="/blog/phoenix-1-3-0-released" class="active"><span>Phoenix 1.3.0 Released</span></a></li>
+            <li><a href="/blog/contribution-sprint" class="active"><span>Contribution Sprint</span></a></li>
+            <li><a href="/blog/upgrading-from-120-to-130" class="active"><span>Upgrading from 1.2.x to 1.3.0</span></a></li>
+            <li><a href="/blog/upgrading-from-11x-to-120" class="active"><span>Upgrading from 1.1.x to 1.2.0</span></a></li>
+            <li><a href="/blog/upgrading-from-111-to-112" class="active"><span>Upgrading from 1.1.1 to 1.1.2</span></a></li>
+            <li><a href="/blog/upgrading-from-v10-to-v11" class="active"><span>Upgrading from v1.0 to v1.1</span></a></li>
+            <li><a href="/blog/the-road-to-2-million-websocket-connections" class="active"><span>The Road to 2 Million Websocket Connections in Phoenix</span></a></li>
+            <li><a href="/blog/phoenix-10-the-framework-for-the-modern-web-just-landed"><span>Phoenix 1.0 – the framework for the modern web just landed</span></a></li>
+            <li><a href="/blog/phoenix-0100-released-with-assets-handling-generat"><span>Phoenix 0.10.0 released with assets handling, generators, &amp; more</span></a></li>
+          </ul>
+        </div>
+    </div>
+    <div class="col-sm-9 border-left">
+      <div class="docs-content">
+        <div class="docs-header">
+          <h1>Upgrading from v1.3 to v1.4</h1>
+          
+            <div class="byline">
+                <span>By Chris McCord</span>
+                &nbsp;·&nbsp;<span class="ago">2019-02-26</span>
+                &nbsp;·&nbsp;<span>v1.4.0</span>
+            </div>
+          
+          <hr>
+        </div>
+        <div class="content block-content ready">
+          <p>Phoenix 1.4 ships with exciting new features, most notably with HTTP2 support, improved development experience with faster compile times, new error pages, and local SSL certificate generation. Additionally, our channel layer internals receiveced an overhaul, provided better structure and extensibility. We also shipped a new and improved Presence javascript API, as well as Elixir formatter integration for our routing and test DSLs.</p>
+<p>This release requires few user-facing changes and should be a fast upgrade for those on Phoenix 1.3.x.</p>
+<h2>Install the new phx.new project generator</h2>
+<p>The mix phx.new archive can now be installed via hex, for a simpler, versioned installation experience.</p>
+<p>To grab the new archive, simply run:</p>
+<pre><code class="console">$ mix archive.uninstall phx_new
+$ mix archive.install hex phx_new 1.4.0</code></pre>
+<h2>Update Phoenix and Cowboy deps</h2>
+<p>To get started, simply update your Phoenix dep in <code class="inline">mix.exs</code>:</p>
+<pre><code class="elixir">{:phoenix, &quot;~&gt; 1.4.0&quot;}</code></pre>
+<p>Next, replace your <code class="inline">:cowboy</code> dependency with <code class="inline">:plug_cowboy</code>: </p>
+<pre><code class="elixir">{:plug_cowboy, &quot;~&gt; 2.0&quot;}
+{:plug, &quot;~&gt; 1.7&quot;}</code></pre>
+<p>To upgrade to Cowboy 2 for HTTP2 support, use <code class="inline">~&gt; 2.0</code> as above. To stay on cowboy 1, pass <code class="inline">~&gt; 1.0</code>.</p>
+<p>Finally, remove your explicit <code class="inline">:ecto</code> dependency and update your <code class="inline">:phoenix_ecto</code> and <code class="inline">:ecto_sql</code> dependencies with the following versions:</p>
+<pre><code class="elixir">...,
+  {:ecto_sql, &quot;~&gt; 3.0&quot;},
+  {:phoenix_ecto, &quot;~&gt; 4.0&quot;}</code></pre>
+<p>After running <code class="inline">mix deps.get</code>, then be sure to grab the latest npm pacakges with:</p>
+<pre><code class="console">$ cd assets
+$ npm install</code></pre>
+<h2>Update your Jason configuration</h2>
+<p>Phoenix 1.4 uses <code class="inline">Jason</code> for json generation in favor of poison. Poison may still be used, but you must add <code class="inline">:poison</code> to your deps to continue using it on 1.4. To use Jason instead, <code class="inline">:jason</code> to your deps in mix.exs:</p>
+<pre><code class="elixir">...,
+  {:jason, &quot;~&gt; 1.0&quot;},</code></pre>
+<p>Then add the following configuration in <code class="inline">config/config.exs</code>:</p>
+<pre><code class="elixir"># Use Jason for JSON parsing in Phoenix
+config :phoenix, :json_library, Jason</code></pre>
+<h2>Update your UserSocket</h2>
+<p>Phoenix 1.4 deprecated the <code class="inline">transport</code> macro, in favor of providing transport information directly on the <code class="inline">socket</code> call in your endpoint. Make the following changes:</p>
+<pre><code class="diff"># app_web/channels/user_socket.ex
+- transport :websocket, Phoenix.Transports.WebSocket
+- transport :longpoll, Phoenix.Transports.LongPoll, [check_origin: ...]
+
+# app_web/endpoint.ex
+- socket &quot;/socket&quot;, MyAppWeb.UserSocket
++ socket &quot;/socket&quot;, MyAppWeb.UserSocket, 
++   websocket: true # or list of options
++   longpoll: [check_origin: ...]</code></pre>
+<h2>Update your Presence javascript</h2>
+<p>A new, backwards compatible <code class="inline">Presence</code> JavaScript API has been
+introduced to both resolve race conditions as well as simplify the
+usage. Previously, multiple channel callbacks against
+<code class="inline">&quot;presence_state</code> and <code class="inline">&quot;presence_diff&quot;</code> events were required on the
+client which dispatched to <code class="inline">Presence.syncState</code> and
+<code class="inline">Presence.syncDiff</code> functions. Now, the interface has been unified to
+a single <code class="inline">onSync</code> callback and the presence instance tracks its own
+channel callbacks and state. For example:</p>
+<pre><code class="diff">import {Socket, Presence} from &quot;phoenix&quot;
+
+let renderUsers(presence){
+-  someContainer.innerHTML = Presence.list(presence, (id, user) {
+-    `&lt;br/&gt;${escape(user.name)}`
+-  }.join(&quot;&quot;)
++  someContainer.innerHTML = presence.list((id, user) {
++    `&lt;br/&gt;${escape(user.name)}`   
++  }).join(&quot;&quot;)
+}
+
+let onJoin = (id, current, newPres) =&gt; {
+  if(!current){
+    console.log(&quot;user has entered for the first time&quot;, newPres)
+  } else {
+    console.log(&quot;user additional presence&quot;, newPres)
+  }
+}
+ 
+let onLeave = (id, current, leftPres) =&gt; {
+  if(current.metas.length === 0){
+    console.log(&quot;user has left from all devices&quot;, leftPres)
+  } else {
+    console.log(&quot;user left from a device&quot;, leftPres)
+  }
+})
+
+let channel = new socket.channel(&quot;...&quot;)
+- let presence = {}
+- channel.on(&quot;presence_state&quot;, state =&gt; {
+-   presence = Presence.syncState(presence, state, onJoin, onLeave)
+-   renderUsers(presence)
+- })
+- channel.on(&quot;presence_diff&quot;, diff =&gt; {
+-   presence = Presence.syncDiff(presence, diff, onJoin, onLeave)
+-   renderUsers(presence)
+- })
++ let presence = new Presence(channel)
+
++ presence.onJoin(onJoin)
++ presence.onLeave(onLeave)
++ presence.onSync(() =&gt; renderUsers(presence))</code></pre>
+<h2>Optional Updates</h2>
+<p>The above changes are the only ones necessary to be up and running with Phoenix 1.4. The remaining changes will bring you up to speed with new conventions, but are strictly optional.</p>
+<h3>Add formatter support</h3>
+<p>Phoenix 1.4 includes formatter integration for our routing and test DSLs. Create or ammend your <code class="inline">.formatter.exs</code> in the root of your project(s) with the following:</p>
+<pre><code class="elixir">[
+  import_deps: [:phoenix],
+  inputs: [&quot;*.{ex,exs}&quot;, &quot;{config,lib,priv,test}/**/*.{ex,exs}&quot;]
+]</code></pre>
+<h3>Add a Routes alias and update your router calls</h3>
+<p>A <code class="inline">Routes</code> alias has been added to <code class="inline">app_web.ex</code> for <code class="inline">view</code> and <code class="inline">controller</code> blocks in favor over the previously imported <code class="inline">AppWeb.Router.Helpers</code>.</p>
+<p>The new <code class="inline">Routes</code> alias makes it clearer where <code class="inline">page_path/page_url</code> and friends exist and removes compile-time dependencies across your web stack. To use the latest conventions, make the following changes to <code class="inline">app_web.ex</code>:</p>
+<pre><code class="diff">- import AppWeb.Router.Helpers
++ alias AppWeb.Router.Helpers, as: Routes</code></pre>
+<p>Next, update any controllers, views, and templates calling your imported helpers or <code class="inline">static_path|url</code>, to use the new alias, for example:</p>
+<pre><code class="diff">- &lt;%= link &quot;show&quot;, to: user_path(@conn, :show, @user) %&gt;
++ &lt;%= link &quot;show&quot;, to: Routes.user_path(@conn, :show, @user) %&gt;
+
+- &lt;script type=&quot;text/javascript&quot; src=&quot;&lt;%= static_url(@conn, &quot;/js/app.js&quot;) %&gt;&quot;&gt;&lt;/script&gt;
++ &lt;script type=&quot;text/javascript&quot; src=&quot;&lt;%= Routes.static_url(@conn, &quot;/js/app.js&quot;) %&gt;&quot;&gt;&lt;/script&gt;</code></pre>
+<h3>Replace Brunch with webpack</h3>
+<p>The <code class="inline">mix phx.new</code> generator in 1.4 now uses webpack for asset generation instead of brunch. The development experience remains the same – javascript goes in <code class="inline">assets/js</code>, css goes in <code class="inline">assets/css</code>, static assets live in <code class="inline">assets/static</code>, so those not interested in JS tooling nuances can continue the same patterns while using webpack. Those in need of optimal js tooling can benefit from webpack’s more sophisticated code bunding, with dead code elimination and more.</p>
+<p>To proceed:</p>
+<ul>
+<li>update <code class="inline">assets/package.json</code> to replace Brunch with webpack:
+</li>
+</ul>
+<pre><code class="diff">&quot;repository&quot;: {},
+   &quot;license&quot;: &quot;MIT&quot;,
+   &quot;scripts&quot;: {
+-    &quot;deploy&quot;: &quot;brunch build --production&quot;,
+-    &quot;watch&quot;: &quot;brunch watch --stdin&quot;
++    &quot;deploy&quot;: &quot;webpack --mode production&quot;,
++    &quot;watch&quot;: &quot;webpack --mode development --watch-stdin&quot;
+   },
+   &quot;dependencies&quot;: {
+     &quot;phoenix&quot;: &quot;file:../deps/phoenix&quot;,
+     &quot;phoenix_html&quot;: &quot;file:../deps/phoenix_html&quot;
+   },
+   &quot;devDependencies&quot;: {
+-    &quot;babel-brunch&quot;: &quot;6.1.1&quot;,
+-    &quot;brunch&quot;: &quot;2.10.9&quot;,
+-    &quot;clean-css-brunch&quot;: &quot;2.10.0&quot;,
+-    &quot;uglify-js-brunch&quot;: &quot;2.10.0&quot;
+
++    &quot;@babel/core&quot;: &quot;^7.0.0&quot;,
++    &quot;@babel/preset-env&quot;: &quot;^7.0.0&quot;,
++    &quot;babel-loader&quot;: &quot;^8.0.0&quot;,
++    &quot;copy-webpack-plugin&quot;: &quot;^4.5.0&quot;,
++    &quot;css-loader&quot;: &quot;^0.28.10&quot;,
++    &quot;mini-css-extract-plugin&quot;: &quot;^0.4.0&quot;,
++    &quot;optimize-css-assets-webpack-plugin&quot;: &quot;^4.0.0&quot;,
++    &quot;uglifyjs-webpack-plugin&quot;: &quot;^1.2.4&quot;,
++    &quot;webpack&quot;: &quot;4.4.0&quot;,
++    &quot;webpack-cli&quot;: &quot;^2.0.10&quot;
+   }
+ }</code></pre>
+<ul>
+<li>delete <code class="inline">assets/brunch-config.js</code>
+</li>
+<li>create <code class="inline">assets/.babelrc</code> with the following contents:
+</li>
+</ul>
+<pre><code class="json">{
+    &quot;presets&quot;: [
+        &quot;env&quot;
+    ]
+}</code></pre>
+<ul>
+<li>create <code class="inline">assets/webpack.config.js</code> with the following contents:
+</li>
+</ul>
+<pre><code class="javascript">const path = require(&#39;path&#39;);
+const glob = require(&#39;glob&#39;);
+const MiniCssExtractPlugin = require(&#39;mini-css-extract-plugin&#39;);
+const UglifyJsPlugin = require(&#39;uglifyjs-webpack-plugin&#39;);
+const OptimizeCSSAssetsPlugin = require(&#39;optimize-css-assets-webpack-plugin&#39;);
+const CopyWebpackPlugin = require(&#39;copy-webpack-plugin&#39;);
+
+module.exports = (env, options) =&gt; ({
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin({ cache: true, parallel: true, sourceMap: false }),
+      new OptimizeCSSAssetsPlugin({})
+    ]
+  },
+  entry: {
+      &#39;./js/app.js&#39;: [&#39;./js/app.js&#39;].concat(glob.sync(&#39;./vendor/**/*.js&#39;))
+  },
+  output: {
+    filename: &#39;app.js&#39;,
+    path: path.resolve(__dirname, &#39;../priv/static/js&#39;)
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: &#39;babel-loader&#39;
+        }
+      },
+      {
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, &#39;css-loader&#39;]
+      }
+    ]
+  },
+  plugins: [
+    new MiniCssExtractPlugin({ filename: &#39;../css/app.css&#39; }),
+    new CopyWebpackPlugin([{ from: &#39;static/&#39;, to: &#39;../&#39; }])
+  ]
+});</code></pre>
+<ul>
+<li>Update <code class="inline">config/dev.exs</code> to use <code class="inline">webpack</code> instead of <code class="inline">brunch</code>:
+</li>
+</ul>
+<pre><code class="diff">-  watchers: [node: [&quot;node_modules/brunch/bin/brunch&quot;, &quot;watch&quot;, &quot;--stdin&quot;,
++  watchers: [
++    node: [
++      &quot;node_modules/webpack/bin/webpack.js&quot;,
++      &quot;--mode&quot;,
++      &quot;development&quot;,
++      &quot;--watch-stdin&quot;,
++      cd: Path.expand(&quot;../assets&quot;, __DIR__)
++    ]</code></pre>
+<h3>CSS changes</h3>
+<ul>
+<li>The main CSS bundle must now be imported from the <code class="inline">app.js</code> file. Add the following line to the top of <code class="inline">assets/js/app.js</code>:
+</li>
+</ul>
+<pre><code class="javascript">import css from &#39;../css/app.css&#39;;</code></pre>
+<ul>
+<li>If you are using the default css, replace <code class="inline">assets/css/phoenix.css</code> with the following:
+</li>
+</ul>
+<p><a href="https://raw.githubusercontent.com/phoenixframework/phoenix/89cdcfbaa041da1daba39e39b0828f6a28b6d52f/installer/templates/phx_assets/phoenix.css">https://raw.githubusercontent.com/phoenixframework/phoenix/89cdcfbaa041da1daba39e39b0828f6a28b6d52f/installer/templates/phx_assets/phoenix.css</a></p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+  </body>
+</html>

@@ -4,7 +4,7 @@
   <title>Phoenix</title>
   <link>https://phoenixframework.org</link>
   <description>This is my blog about things</description>
-  <lastBuildDate>2019-02-25 08:06:05</lastBuildDate>
+  <lastBuildDate>2019-03-06 11:39:13</lastBuildDate>
   <language>en-us</language>
 <item>
   <title>Upgrading from v1.0 to v1.1</title>
@@ -12,6 +12,13 @@
   <pubDate>blog--upgr</pubDate>
   <link>https://phoenixframework.org/blog--upgrading-from-v10-to-v11.html</link>
   <guid>https://phoenixframework.org/blog--upgrading-from-v10-to-v11.html</guid>
+</item>
+<item>
+  <title>Upgrading from v1.3 to v1.4</title>
+  <description>[CDATA[  ]]</description>
+  <pubDate>blog--upgr</pubDate>
+  <link>https://phoenixframework.org/blog--upgrading-from-13x-to-140.html</link>
+  <guid>https://phoenixframework.org/blog--upgrading-from-13x-to-140.html</guid>
 </item>
 <item>
   <title>Upgrading from v1.2 to v1.3</title>

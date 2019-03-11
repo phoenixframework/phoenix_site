@@ -142,14 +142,14 @@ from our Mailer module. We can do this from wherever we want to in our
 application.
 
 ```elixir
-MyApp.Email.welcome_text_email("us@example.com") |> Mailer.deliver_now
+MyApp.Email.welcome_text_email("us@example.com") |> MyApp.Mailer.deliver_now
 ```
 
 We can also deliver emails asyncronously in the background rather than waiting
 for the email to be be sent.
 
 ```elixir
-MyApp.Email.welcome_text_email("us@example.com") |> Mailer.deliver_later
+MyApp.Email.welcome_text_email("us@example.com") |> MyApp.Mailer.deliver_later
 ```
 
 See the Bamboo [README](https://github.com/thoughtbot/bamboo#delivering-emails-in-the-background)

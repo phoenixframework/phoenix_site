@@ -5,7 +5,7 @@
         <div class="col-sm-offset-2 col-sm-8">
           <h2>Productive. Reliable. Fast.</h2>
           <p>A productive web framework that
-            <br>does not compromise speed and maintainability.</p>
+            <br>does not compromise speed or maintainability.</p>
             <a href="https://hexdocs.pm/phoenix/up_and_running.html" class="btn btn-lg btn-primary">
               <span class="button-title">Build APIs, HTML 5 apps &amp; more</span>
               <br><span class="button-teaser">See our guides</span>

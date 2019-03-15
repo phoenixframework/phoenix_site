@@ -11,7 +11,9 @@ defmodule Mix.Tasks.Guides.Build do
     minify_css()
     copy_assets()
     copy_blog_files()
-    write_docs_redirect()
+    File.mkdir("docs/docs")
+    write_redirect("docs/docs.html", "https://hexdocs.pm/phoenix/Phoenix.html")
+    write_redirect("docs/docs/deployment.html", "https://hexdocs.pm/phoenix/deployment.html")
     write_cname()
   end
 
@@ -53,17 +55,17 @@ defmodule Mix.Tasks.Guides.Build do
     File.write!("docs/CNAME", "phoenixframework.org")
   end
 
-  defp write_docs_redirect() do
+  defp write_redirect(path, link) do
     contents =
     """
     <!DOCTYPE html>
     <meta charset="utf-8">
-    <title>Redirecting to https://hexdocs.pm/phoenix/Phoenix.html</title>
-    <meta http-equiv="refresh" content="0; URL=https://hexdocs.pm/phoenix/Phoenix.html">
-    <link rel="canonical" href="https://hexdocs.pm/phoenix/Phoenix.html">
+    <title>Redirecting to #{link}</title>
+    <meta http-equiv="refresh" content="0; URL=#{link}">
+    <link rel="canonical" href="#{link}">
     """
 
-    File.write!("docs/docs.html", contents)
+    File.write!(path, contents)
   end
 
   defp log(msg) do

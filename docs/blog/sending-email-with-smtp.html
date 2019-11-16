@@ -178,7 +178,7 @@ from our Mailer module. We can do this from wherever we want to in our
 application.</p>
 <pre><code class="elixir">MyApp.Email.welcome_text_email(&quot;us@example.com&quot;) |&gt; Mailer.deliver_now</code></pre>
 <p>We can also deliver emails asyncronously in the background rather than waiting
-for the email to be be sent.</p>
+for the email to be sent.</p>
 <pre><code class="elixir">MyApp.Email.welcome_text_email(&quot;us@example.com&quot;) |&gt; Mailer.deliver_later</code></pre>
 <p>See the Bamboo <a href="https://github.com/thoughtbot/bamboo#delivering-emails-in-the-background">README</a>
 for more information.</p>

@@ -146,7 +146,7 @@ MyApp.Email.welcome_text_email("us@example.com") |> MyApp.Mailer.deliver_now
 ```
 
 We can also deliver emails asyncronously in the background rather than waiting
-for the email to be be sent.
+for the email to be sent.
 
 ```elixir
 MyApp.Email.welcome_text_email("us@example.com") |> MyApp.Mailer.deliver_later

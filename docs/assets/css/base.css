@@ -5828,28 +5828,28 @@ tags-input.ng-invalid .tags {
   border-bottom-right-radius: 3px;
 }
 
-.input-group-lg tags-input,tags-input.ti-input-lg {
+.input-group-lg tags-input {
   min-height: 46px;
 }
 
-.input-group-lg tags-input .tags,tags-input.ti-input-lg .tags {
+.input-group-lg tags-input .tags {
   border-radius: 6px;
 }
 
-.input-group-lg tags-input .tags .input,tags-input.ti-input-lg .tags .input {
+.input-group-lg tags-input .tags .input {
   height: 38px;
   font-size: 18px;
 }
 
-.input-group-sm tags-input,tags-input.ti-input-sm {
+.input-group-sm tags-input {
   min-height: 30px;
 }
 
-.input-group-sm tags-input .tags,tags-input.ti-input-sm .tags {
+.input-group-sm tags-input .tags {
   border-radius: 3px;
 }
 
-.input-group-sm tags-input .tags .input,tags-input.ti-input-sm .tags .input {
+.input-group-sm tags-input .tags .input {
   height: 22px;
   font-size: 12px;
 }

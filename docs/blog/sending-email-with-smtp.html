@@ -15,7 +15,7 @@
     <meta property="og:image" content="https://files.readme.io/PKPqx8L9TJSAY2Bnmw7F_phoenixframework-logo-white@2x.png">
     <meta property="og:site_name" content="Phoenix">
     <meta id="config-proxy-url" content="https://proxy.readme.io/proxy">
-    <link rel="canonical" href="http://www.phoenixframework.org/www.phoenixframework.org">
+    <link rel="canonical" href="https://www.phoenixframework.org">
     <link rel="alternate" type="application/rss+xml" title="RSS Feed for Phoenix" href="/blog.rss">
     <link rel="stylesheet" href="/assets/css/base.css" />
     <script type="text/javascript" src="/assets/js/app.js"></script>
@@ -176,10 +176,10 @@ end</code></pre>
 Once we have the email we can then send it by piping into a delivery function
 from our Mailer module. We can do this from wherever we want to in our
 application.</p>
-<pre><code class="elixir">MyApp.Email.welcome_text_email(&quot;us@example.com&quot;) |&gt; Mailer.deliver_now</code></pre>
+<pre><code class="elixir">MyApp.Email.welcome_text_email(&quot;us@example.com&quot;) |&gt; MyApp.Mailer.deliver_now</code></pre>
 <p>We can also deliver emails asyncronously in the background rather than waiting
 for the email to be sent.</p>
-<pre><code class="elixir">MyApp.Email.welcome_text_email(&quot;us@example.com&quot;) |&gt; Mailer.deliver_later</code></pre>
+<pre><code class="elixir">MyApp.Email.welcome_text_email(&quot;us@example.com&quot;) |&gt; MyApp.Mailer.deliver_later</code></pre>
 <p>See the Bamboo <a href="https://github.com/thoughtbot/bamboo#delivering-emails-in-the-background">README</a>
 for more information.</p>
 <h4>HTML Emails</h4>

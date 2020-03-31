@@ -29,6 +29,7 @@ defmodule PhoenixSite.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [{ :obelisk, "~> 0.10.0" },
+      {:plug, "~> 1.5.0", override: true},
       { :yamerl, github: "yakaz/yamerl"}]
   end
 end

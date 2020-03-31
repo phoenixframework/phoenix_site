@@ -1,9 +1,9 @@
-defmodule Mix.Tasks.Guides.Build do
+defmodule Mix.Tasks.Site.Build do
   use Mix.Task
 
   @blog_prefix "docs/blog--"
 
-  @doc "Build guides"
+  @doc "Build site"
 
   def run([]) do
     build_local_files()
@@ -52,7 +52,7 @@ defmodule Mix.Tasks.Guides.Build do
   end
 
   defp write_cname() do
-    File.write!("docs/CNAME", "phoenixframework.org")
+    File.write!("docs/CNAME", "www.phoenixframework.org")
   end
 
   defp write_redirect(path, link) do

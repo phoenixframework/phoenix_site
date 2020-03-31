@@ -1,13 +1,18 @@
-%{"anubis": {:hex, :anubis, "0.1.0", "24cafba5a9106112a60607439cbbcf72b581172576978eded353fa080f49e45d", [:mix], []},
+%{
+  "anubis": {:hex, :anubis, "0.1.0", "24cafba5a9106112a60607439cbbcf72b581172576978eded353fa080f49e45d", [:mix], []},
   "calliope": {:hex, :calliope, "0.3.0", "81c2937b27094eee8f8a3fce5effb9140cb8a1fbc03620c6ff57a798d400a3ce", [:mix], []},
   "chronos": {:hex, :chronos, "0.3.9", "e3a307b7ac6ec5c7ebd40ee6fdf844ce6a47161215f0ad4af1df63f4097ec183", [:mix], []},
   "cowboy": {:hex, :cowboy, "1.0.4", "a324a8df9f2316c833a470d918aaf73ae894278b8aa6226ce7a9bf699388f878", [:make, :rebar], [{:cowlib, "~> 1.0.0", [hex: :cowlib, optional: false]}, {:ranch, "~> 1.0", [hex: :ranch, optional: false]}]},
   "cowlib": {:hex, :cowlib, "1.0.2", "9d769a1d062c9c3ac753096f868ca121e2730b9a377de23dec0f7e08b1df84ee", [:make], []},
   "earmark": {:hex, :earmark, "0.1.19", "ffec54f520a11b711532c23d8a52b75a74c09697062d10613fa2dbdf8a9db36e", [:mix], []},
   "meck": {:hex, :meck, "0.8.7", "ebad16ca23f685b07aed3bc011efff65fbaf28881a8adf925428ef5472d390ee", [:rebar3], []},
+  "mime": {:hex, :mime, "1.3.1", "30ce04ab3175b6ad0bdce0035cba77bba68b813d523d1aac73d9781b4d193cf8", [:mix], [], "hexpm"},
   "mock": {:hex, :mock, "0.1.3", "657937b03f88fce89b3f7d6becc9f1ec1ac19c71081aeb32117db9bc4d9b3980", [:mix], [{:meck, "~> 0.8.2", [hex: :meck, optional: false]}]},
   "obelisk": {:hex, :obelisk, "0.10.0", "5a068fc816d0649e8c602a488a38e0c9933dc2fd92f418a5c6a40c7cd9ff7a9c", [:mix], [{:anubis, "~> 0.1.0", [hex: :anubis, optional: false]}, {:calliope, "~> 0.3.0", [hex: :calliope, optional: false]}, {:chronos, "~> 0.3.7", [hex: :chronos, optional: false]}, {:cowboy, "~> 1.0.0", [hex: :cowboy, optional: false]}, {:earmark, "~> 0.1.10", [hex: :earmark, optional: false]}, {:mock, "~> 0.1.0", [hex: :mock, optional: false]}, {:plug, "~> 0.11.0", [hex: :plug, optional: false]}, {:rss, "~> 0.2.1", [hex: :rss, optional: false]}]},
-  "plug": {:hex, :plug, "0.11.3", "e91f84d602763b5835c5df1321c036d797e8747749602b05e39d3fcf0f574aef", [:mix], [{:cowboy, "~> 1.0", [hex: :cowboy, optional: true]}]},
-  "ranch": {:hex, :ranch, "1.4.0", "10272f95da79340fa7e8774ba7930b901713d272905d0012b06ca6d994f8826b", [:rebar3], []},
+  "plug": {:hex, :plug, "1.5.1", "1ff35bdecfb616f1a2b1c935ab5e4c47303f866cb929d2a76f0541e553a58165", [:mix], [{:cowboy, "~> 1.0.1 or ~> 1.1 or ~> 2.3", [hex: :cowboy, repo: "hexpm", optional: true]}, {:mime, "~> 1.0", [hex: :mime, repo: "hexpm", optional: false]}], "hexpm"},
+  "plug_cowboy": {:hex, :plug_cowboy, "1.0.0", "2e2a7d3409746d335f451218b8bb0858301c3de6d668c3052716c909936eb57a", [:mix], [{:cowboy, "~> 1.0", [hex: :cowboy, repo: "hexpm", optional: false]}, {:plug, "~> 1.7", [hex: :plug, repo: "hexpm", optional: false]}], "hexpm"},
+  "plug_crypto": {:hex, :plug_crypto, "1.1.2", "bdd187572cc26dbd95b87136290425f2b580a116d3fb1f564216918c9730d227", [:mix], [], "hexpm"},
+  "ranch": {:hex, :ranch, "1.7.1", "6b1fab51b49196860b733a49c07604465a47bdb78aa10c1c16a3d199f7f8c881", [:rebar3], [], "hexpm"},
   "rss": {:hex, :rss, "0.2.1", "034f2fe5250a490862e692eb34a31bb5c142913c2fe0fb093e1fd982f010e15d", [:mix], []},
-  "yamerl": {:git, "https://github.com/yakaz/yamerl.git", "296b399f99babadc3e5aa1fdfe17f6cd8ba844aa", []}}
+  "yamerl": {:git, "https://github.com/yakaz/yamerl.git", "296b399f99babadc3e5aa1fdfe17f6cd8ba844aa", []},
+}

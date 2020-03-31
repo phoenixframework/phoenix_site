@@ -2,41 +2,23 @@
 
 > Phoenix Guides landing page publisher
 
+## Pre requisites
+
+Elixir 1.6 **or below** is required.
 
 ## Setup
 
-1. Install `awscli`
-
-```console
-$ brew install awscli
-```
-
-see the [awscli docs](http://docs.aws.amazon.com/cli/latest/userguide/cli-install-macos.html#awscli-install-osx-path) for other installation options.
-
-2. Configure your awscli credentials:
-
-```console
-$ aws configure
-```
-
-3. Fetch mix deps and test local build
+1. Fetch dependencies
 
 ```console
 
 $ mix deps.get
-$ mix obelisk build
+$ npm install -g purifycss
 ```
 
-Your built static files will be located in `build/`
+2. Build the site
 
-
-## Publishing Guides to S3
-
-Ensure that purifycss is installed
-
-`npm install -g purifycss`
-
-To publish all content to S3, simply run `mix guides.publish`
+To publish all content to S3, simply run `mix site.build`
 
 
 ## Blog/News naming convention

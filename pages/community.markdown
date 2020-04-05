@@ -28,6 +28,8 @@ In addition to the [Guides](https://hexdocs.pm/phoenix/overview.html), [Docs](ht
 
 * [Phoenix in Action (by Geoffrey Lessel - 2017)](https://manning.com/books/phoenix-in-action)
 
+* [Real-Time Phoenix Build Highly Scalable Systems with Channels (by Stephen Bussey - 2020)](https://pragprog.com/book/sbsockets/real-time-phoenix)
+
 ** Screencasts/Courses **
 
 * [The Complete Elixir and Phoenix Bootcamp Master Functional Programming Techniques with Elixir and Phoenix while Learning to Build Compelling Web Applications (Udemy - Jun 2017)](https://www.udemy.com/the-complete-elixir-and-phoenix-bootcamp-and-tutorial/)

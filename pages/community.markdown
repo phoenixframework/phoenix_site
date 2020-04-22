@@ -20,7 +20,11 @@ In addition to the [Guides](https://hexdocs.pm/phoenix/overview.html), [Docs](ht
 
 ** Books **
 
+* [Programming Phoenix 1.4 Productive |> Reliable |> Fast (by Bruce Tate and Phoenix core team members Chris McCord and José Valim - Aug 2019)](https://pragprog.com/book/phoenix14/programming-phoenix-1-4)
+
 * [Programming Phoenix Productive |> Reliable |> Fast (by Bruce Tate and Phoenix core team members Chris McCord and José Valim - Apr 2016)](https://pragprog.com/book/phoenix/programming-phoenix)
+
+* [Phoenix in Action (by Geoffrey Lessel - April 2019)](https://www.manning.com/books/phoenix-in-action)
 
 * [Phoenix Inside Out - Book Series (by Shankar Dhanasekaran - July 2017)](https://shankardevy.com/phoenix-book/)
 

@@ -1,6 +1,6 @@
 # PhoenixSite
 
-> Phoenix Guides landing page publisher
+**This project is archived**. The guides have been moved [to the Phoenix repo](https://github.com/phoenixframework/phoenix/tree/master/guides).
 
 ## Pre requisites
 
